@@ -31,4 +31,4 @@ build: ## Build service image from source
 	docker compose build
 
 test: ## Test the service with docker
-	$(call docker_run_target, test)
+	docker compose run --rm test
