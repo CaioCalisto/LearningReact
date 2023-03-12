@@ -3,10 +3,15 @@ version: '3.7'
 services:
 
   sample:
-    container_name: fast-food-ui
+    image: ${UI_IMAGE_NAME?}:${UI_IMAGE_TAG?}
+    restart: ${RESTART_POLICY?}
+    container_name: ${UI_CONTAINER_NAME?}
     build:
       context: .
       dockerfile: Dockerfile
+      tags:
+        - ${UI_IMAGE_NAME?}:${UI_IMAGE_TAG?}
+        - ${UI_IMAGE_NAME?}:latest
     volumes:
       - '.:/app'
       - '/app/node_modules'
