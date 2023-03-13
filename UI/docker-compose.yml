@@ -19,6 +19,7 @@ services:
       - 3000:3000
 
   test:
+    image: ${UI_IMAGE_NAME?}-test:${UI_IMAGE_TAG?}
     build:
       context: ./src/contoso-ui
     environment:
