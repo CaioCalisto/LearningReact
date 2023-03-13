@@ -32,3 +32,21 @@ build: ## Build service image from source
 
 test: ## Test the service with docker
 	docker compose run --rm test
+
+# ---------------------------------------
+
+local-push: ## Push image to local minikube
+	minikube image load fast-food-ui:${UI_IMAGE_TAG}
+	minikube image load fast-food-ui:latest
+
+local-deploy: ## Deploy application to local minikube
+	kubectl apply -f=k8s/ui-deployment.yaml
+
+local-set-image: ## Set the image to the deployment container
+    kubectl set image deployment/fast-food-ui fast-food-ui=fast-food-ui:${UI_IMAGE_TAG}
+
+local-expose: ## Expose service endpoint accessible via port-forward
+	kubectl port-forward --address 0.0.0.0 service/fast-food-ui 3000
+
+local-delete: ## Delete application from local minikube
+	kubectl delete -f=k8s/ui-deployment.yaml

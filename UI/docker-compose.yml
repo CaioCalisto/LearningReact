@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
 
-  contoso-ui:
+  fast-food-ui:
     image: ${UI_IMAGE_NAME?}:${UI_IMAGE_TAG?}
     restart: ${RESTART_POLICY?}
     container_name: ${UI_CONTAINER_NAME?}
@@ -16,9 +16,7 @@ services:
       - '.:/app'
       - '/app/node_modules'
     ports:
-      - ${UI_PORT?}:3000
-    environment:
-      - CHOKIDAR_USEPOLLING=true
+      - 3000:3000
 
   test:
     build:
