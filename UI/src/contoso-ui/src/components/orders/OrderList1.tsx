@@ -16,6 +16,7 @@ export const OrderList1: React.FC<{orders : Order[]}> = ({orders}) => {
 }
 */
 
+// este é bom para caso tenhamos MUITOS inputs
 type MyProps = {
   orders : Order[]
 }
