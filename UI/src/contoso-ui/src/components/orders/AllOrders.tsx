@@ -3,7 +3,8 @@ import { OrderList } from "./OrderList"
 import { Order } from "./Order"
 import { Status } from "./Status";
 import Button from "@mui/material/Button";
-import { All_Order } from "./AllOrders1";
+import { All_Order_1 } from "./AllOrders1";
+import { ShowAllOrder } from "./AllOrders2";
 
 export class AllOrders extends React.Component{
    
@@ -21,13 +22,19 @@ export class AllOrders extends React.Component{
 
     return(
       <div>
-        <Button variant="outlined">Add new</Button>
+        <h1>Using class</h1>
+        <Button variant="outlined">Add new (it does not work)</Button>
         <OrderList title="New" orders={this.newOrders}/>
         <br></br>
         <OrderList title="Preparing" orders={this.preparingOrder} />
         <br></br>
         <OrderList title="Ready" orders={this.readyOrder} />
-        <All_Order />
+        <hr />
+        <h1>Using const</h1>
+        <All_Order_1 />
+        <hr />
+        <h1>Using function with props</h1>
+        <ShowAllOrder />
       </div>
     )
   }
