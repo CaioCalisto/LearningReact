@@ -1,42 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap"
 
 
-export const CustomGrid = () =>{
-  let description = 
-  <Container>
-    <Row>
-      <Col>Name</Col>
-      <Col>Description</Col>
-    </Row>
-    <Row>
-      <Col>xxl</Col>
-      <Col>extra large devices (≥1400px)</Col>
-    </Row>
-    <Row>
-      <Col>xl</Col>
-      <Col>extra large devices (≥1200px)</Col>
-    </Row>
-    <Row>
-      <Col>lg</Col>
-      <Col>large devices (≥992px)</Col>
-    </Row>
-    <Row>
-      <Col>md</Col>
-      <Col>medium devices (≥768px)</Col>
-    </Row>
-    <Row>
-      <Col>sm</Col>
-      <Col>small devices (≥576px)</Col>
-    </Row>
-    <Row>
-      <Col>xs</Col>
-      <Col>extra small devices (less than 576px)</Col>
-    </Row>
-  </Container>
-
+export const CustomGrid = () => {
   return (
     <Container>
-      {description}
+      <SizeDescription />
       <Row>
         <Col>| 1 of 1</Col>
       </Row>
@@ -127,6 +95,41 @@ export const CustomGrid = () =>{
         <Col>1 of 3</Col>
         <Col>2 of 3</Col>
         <Col>3 of 3</Col>
+      </Row>
+    </Container>
+  )
+}
+
+function SizeDescription(){
+  return(
+    <Container>
+      <Row>
+        <Col>Name</Col>
+        <Col>Description</Col>
+      </Row>
+      <Row>
+        <Col>xxl</Col>
+        <Col>extra large devices (≥1400px)</Col>
+      </Row>
+      <Row>
+        <Col>xl</Col>
+        <Col>extra large devices (≥1200px)</Col>
+      </Row>
+      <Row>
+        <Col>lg</Col>
+        <Col>large devices (≥992px)</Col>
+      </Row>
+      <Row>
+        <Col>md</Col>
+        <Col>medium devices (≥768px)</Col>
+      </Row>
+      <Row>
+        <Col>sm</Col>
+        <Col>small devices (≥576px)</Col>
+      </Row>
+      <Row>
+        <Col>xs</Col>
+        <Col>extra small devices (less than 576px)</Col>
       </Row>
     </Container>
   )
