@@ -1,6 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
+
 
 export const CustomGrid = () =>{
   let description = 
