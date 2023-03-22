@@ -40,9 +40,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', './src/index.html'),
     }),
-    new CopyPlugin({
+    /*new CopyPlugin({
       patterns: [{ from: 'source', to: 'dest'}]
-    })
+    })*/
   ],
   stats: 'errors-only',
 }
