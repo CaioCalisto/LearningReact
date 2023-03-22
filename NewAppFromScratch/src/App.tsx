@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 import './styles.css'
 import logo from './assets/logo-react.svg'
-import { ClickCounter } from "./ClickCounter"
+import { ClickCounter } from './ClickCounter'
 
 export const App = () => {
   return (
