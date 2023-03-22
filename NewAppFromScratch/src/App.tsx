@@ -4,7 +4,7 @@ import logo from './assets/logo-react.svg'
 import { ClickCounter } from './ClickCounter'
 
 export const App = () => {
-  const name = "Caio"
+  const name = "Caioo"
   return (
     <div>
       <h1>React from scratch.</h1>
