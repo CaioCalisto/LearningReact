@@ -1,6 +1,7 @@
 import { Button, Card } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { formatCurrency } from "../utilities/formatCurrency"
+import { Trans } from "react-i18next"
 
 type StoreItemProps = {
   id: number,
@@ -35,13 +36,15 @@ export function StoreItem({id, name, price, imgUrl} : StoreItemProps){
         </Card.Title>
         <div className="mt-auto">
           {quantity === 0 ?(
-            <Button className="w-100" onClick={() => increaseItemQuantity(id)}>+ Add to cart</Button>
+            <Button className="w-100" onClick={() => increaseItemQuantity(id)}>
+              + <Trans i18nKey="item.addToCart"></Trans>
+            </Button>
           ) : 
           <div className="d-flex align-items-center flex-column" style={{ gap: ".5rem"}}>
             <div className="d-flex align-items-center justify-content-center" style={{ gap: ".5rem"}}>
               <Button onClick={() => decreaseItemQuantity(id)}>-</Button>
               <div>
-                <span className="fs-3">{quantity}</span> in Cart
+                <span className="fs-3">{quantity}</span> <Trans i18nKey="item.inCart"></Trans>
               </div>
               <Button onClick={() => increaseItemQuantity(id)}>+</Button>
             </div>  
@@ -50,7 +53,7 @@ export function StoreItem({id, name, price, imgUrl} : StoreItemProps){
               size="sm" 
               onClick={() => removeFromCart(id)}
             >
-              Remove
+              <Trans i18nKey="item.remove"></Trans>
             </Button>
           </div>}
         </div>

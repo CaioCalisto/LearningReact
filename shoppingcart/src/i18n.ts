@@ -29,6 +29,12 @@ i18n
           },
           home:{
             title: 'This is the home page'
+          },
+          item:{
+            addToCart: 'Add to cart',
+            remove: 'Remove',
+            inCart: 'in Cart',
+            cartTitle: 'Cart'
           }
         }
       },
@@ -44,6 +50,12 @@ i18n
           },
           home:{
             title: 'Esta é a pagina inicial'
+          },
+          item:{
+            addToCart: 'Adicionar ao carrinho',
+            remove: 'Remover',
+            inCart: 'no Carrinho',
+            cartTitle: 'Carrinho'
           }
         }
       }

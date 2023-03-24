@@ -3,6 +3,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from "../utilities/formatCurrency";
 import { CartItem } from "./CartItem";
 import storeItems from "../data/items.json"
+import { Trans } from "react-i18next"
 
 type ShoppingCartProps = {
   isOpen: boolean
@@ -14,7 +15,7 @@ export function ShoppingCart({isOpen} : ShoppingCartProps){
   <Offcanvas show={isOpen} onHide={closeCart} placement="end">
     <Offcanvas.Header closeButton>
       <Offcanvas.Title>
-        Cart
+      <Trans i18nKey="item.cartTitle"></Trans>
       </Offcanvas.Title>
     </Offcanvas.Header>
     <Offcanvas.Body>
