@@ -23,6 +23,12 @@ i18n
             home: 'HOME',
             store: 'STORE',
             about: 'ABOUT'
+          },
+          about:{
+            title: 'More about us'
+          },
+          home:{
+            title: 'This is the home page'
           }
         }
       },
@@ -32,6 +38,12 @@ i18n
             home: 'INICIO',
             store: 'LOJA',
             about: 'SOBRE NÓS'
+          },
+          about:{
+            title: 'Mais sobre nós'
+          },
+          home:{
+            title: 'Esta é a pagina inicial'
           }
         }
       }
