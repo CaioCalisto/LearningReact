@@ -7,10 +7,15 @@ import { Navbar} from "./components/Navbar"
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
 import { useTranslation, Trans } from 'react-i18next';
 
-const lngs = {
-  en: { nativeName: 'English' },
-  pt: { nativeName: 'Portuguese' }
-};
+interface Language {
+  code: string,
+  nativeName: string
+}
+
+const languages: Language[] = [
+  { code: 'pt', nativeName: 'Portuguese'},
+  { code: 'en', nativeName: 'English'}
+]
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -18,13 +23,11 @@ function App() {
   return (
     <ShoppingCartProvider>
       <Navbar />
-      <div>
-          {Object.keys(lngs).map((lng) => (
-            <Button key={lng} onClick={() => i18n.changeLanguage(lng)}>
-              {lngs[lng].nativeName}
-            </Button>
-          ))}
-        </div>
+      {languages.map(language => (
+        <Button key={language.code} onClick={() => i18n.changeLanguage(language.code)}>
+          {language.nativeName}
+        </Button>
+      ))}
       <Container className="mb-4">
         <Routes>
           <Route path="/" element={<Home />} />
