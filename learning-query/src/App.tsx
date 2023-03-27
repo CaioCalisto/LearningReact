@@ -5,7 +5,9 @@ import { Home } from './pages/Home'
 import { RQSuperheroes } from './pages/RQSuperheroes'
 import { Superheroes } from './pages/Superheroes'
 
-const Menu = () => {
+const queryClient = new QueryClient()
+
+const Menu = (): JSX.Element => {
   return (
     <BrowserRouter>
       <nav>
@@ -31,8 +33,11 @@ const Menu = () => {
 }
 
 function App() {
+
   return (
-    <Menu />
+    <QueryClientProvider client={queryClient}>
+      <Menu />
+    </QueryClientProvider>
   )
 }
 
