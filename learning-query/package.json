@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve-json": "json-server --watch datasource.json --port 4000"
   },
   "dependencies": {
     "json-server": "^0.17.3",
