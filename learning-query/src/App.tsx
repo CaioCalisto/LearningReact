@@ -1,4 +1,5 @@
 import './App.css'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { Home } from './pages/Home'
@@ -37,6 +38,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Menu />
+      <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
     </QueryClientProvider>
   )
 }
