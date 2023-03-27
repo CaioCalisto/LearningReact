@@ -4,7 +4,7 @@ import { Hero } from "../Types/Hero"
 
 export const RQSuperheroes = () => {
   // super-heroes is the query key
-  const {isLoading, data} = useQuery(['super-heroes'], () => {
+  const {isLoading, isSuccess, isError, data, error, refetch} = useQuery(['super-heroes'], () => {
     return axios.get('http://localhost:4000/superheroes')
   })
 
