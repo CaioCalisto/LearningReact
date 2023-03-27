@@ -6,6 +6,7 @@ import { Home } from './pages/Home'
 import { RQSuperheroes } from './pages/RQSuperheroes'
 import { Superheroes } from './pages/Superheroes'
 import { RQSuperHero } from './pages/RQSuperHero'
+import { ParallelQueries } from './pages/ParallelQueries'
 
 const queryClient = new QueryClient()
 
@@ -23,9 +24,13 @@ const Menu = (): JSX.Element => {
           <li>
             <Link to='/rq-super-heroes'>RQ Super Heroes</Link>
           </li>
+          <li>
+            <Link to='/rq-parallel'>RQ Parallel</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
+          <Route path="/rq-parallel" element={<ParallelQueries />}></Route>
           <Route path="/rq-super-heroes" element={<RQSuperheroes />}></Route>
           <Route path="/super-heroes" element={<Superheroes />}></Route>
           <Route path="/" element={<Home />}></Route>
