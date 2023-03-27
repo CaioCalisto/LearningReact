@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { RQSuperheroes } from './pages/RQSuperheroes'
 import { Superheroes } from './pages/Superheroes'
-import { SuperHero } from './pages/SuperHero'
+import { RQSuperHero } from './pages/RQSuperHero'
 
 const queryClient = new QueryClient()
 
@@ -29,7 +29,7 @@ const Menu = (): JSX.Element => {
           <Route path="/rq-super-heroes" element={<RQSuperheroes />}></Route>
           <Route path="/super-heroes" element={<Superheroes />}></Route>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/rq-super-heroes/:heroId" element={<SuperHero />}></Route>
+          <Route path="/rq-super-heroes/:heroId" element={<RQSuperHero />}></Route>
       </Routes>
     </BrowserRouter>
     )
