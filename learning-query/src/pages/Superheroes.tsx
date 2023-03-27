@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
-type Hero = {
-  id: number,
-  name: string,
-  alterEgo: string
-}
+import { Hero } from '../Types/Hero'
 
 export const Superheroes = () => {
 
