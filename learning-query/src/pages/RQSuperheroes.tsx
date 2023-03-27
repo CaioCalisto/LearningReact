@@ -1,11 +1,6 @@
 import { useQuery } from "react-query"
 import axios, { AxiosError } from "axios"
-import { Hero } from '../Types/Hero'
-
-const fetchSuperHero = () => {
-  return axios
-    .get('http://localhost:4000/superheroes')
-}
+import { useSuperHeroesData } from "../hooks/useSuperHeroesData"
 
 export const RQSuperheroes = () => {
 
@@ -18,14 +13,7 @@ export const RQSuperheroes = () => {
   }
 
   // super-heroes is the query key
-  const {isLoading, isSuccess, isFetching, isError, data, error, refetch} = useQuery(['super-heroes'], fetchSuperHero,
-  {
-    //cacheTime: 5000,
-    //refetchInterval: 1000,
-    enabled: false,
-    onSuccess: onSuccess,
-    onError: onError
-  })
+  const {isLoading, isSuccess, isFetching, isError, data, error, refetch} = useSuperHeroesData(onSuccess, onError)
 
   if (isLoading || isFetching){
     return <h2>Loading</h2>
