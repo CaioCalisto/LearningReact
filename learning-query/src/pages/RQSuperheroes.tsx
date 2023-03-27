@@ -1,8 +1,10 @@
 import { useQuery } from "react-query"
-import axios from "axios"
+import axios, { AxiosError } from "axios"
+import { Hero } from '../Types/Hero'
 
 const fetchSuperHero = () => {
-  return axios.get('http://localhost:4000/superheroes')
+  return axios
+    .get('http://localhost:4000/superheroes')
 }
 
 export const RQSuperheroes = () => {
@@ -12,7 +14,11 @@ export const RQSuperheroes = () => {
   if (isLoading){
     return <h2>Loading</h2>
   }
-  
+
+  if (isError){
+    console.log({error})
+  }
+
   return (
     <>
       <h2>Super Heroes</h2>
