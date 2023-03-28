@@ -38,7 +38,7 @@ const Menu = (): JSX.Element => {
         </ul>
       </nav>
       <Routes>
-          <Route path="/rq-dependent-queries" element={<DependentQueries />}></Route>
+          <Route path="/rq-dependent-queries" element={<DependentQueries email="caio@gmail.com" />}></Route>
           <Route path="/rq-dynamic-parallel" element={<DynamicParallel heroIds={[1,3]} />}></Route>
           <Route path="/rq-parallel" element={<ParallelQueries />}></Route>
           <Route path="/rq-super-heroes" element={<RQSuperheroes />}></Route>

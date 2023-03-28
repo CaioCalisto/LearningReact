@@ -29,5 +29,17 @@
       "id": 3,
       "name": "Rachel Green"
     }
+  ],
+  "users": [
+    {
+      "id": "caio@gmail.com",
+      "channelId": "craftsmanship"
+    }
+  ],
+  "channels": [
+    {
+      "id": "craftsmanship",
+      "courses": ["react", "best practices", "TDD"]
+    }
   ]
 }
