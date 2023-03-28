@@ -1,12 +1,19 @@
+import { useState } from 'react'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 
-const fetchColors = () => {
-  return axios.get('http://localhost:4000/colors')
+const fetchColors = (pageNumber: number) => {
+  return axios.get(`http://localhost:4000/colors?_limit=2&_page=${pageNumber}`)
 }
 
 export const PaginatedQueries = () => {
-  const { isLoading, isError, error, data} = useQuery('colors', fetchColors)
+  const [pageNumber, setPageNumber] = useState(1)
+  const { isLoading, isError, error, data, isFetching} = useQuery(
+    ['colors', pageNumber], 
+    () => fetchColors(pageNumber),
+    {
+      keepPreviousData: true,
+    })
 
   if (isLoading){
     return <h2>Loading...</h2>
@@ -26,6 +33,13 @@ export const PaginatedQueries = () => {
             </div>
           )
         })}
+      </div>
+      <div>
+        <button onClick={() => setPageNumber(page => page - 1)} disabled={pageNumber === 1}>Previous</button>
+        <button onClick={() => setPageNumber(page => page + 1)} disabled={pageNumber === 5}>Next</button>
+      </div>
+      <div>
+        { isFetching && 'Loading'}
       </div>
     </>
   )
