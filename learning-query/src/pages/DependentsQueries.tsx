@@ -21,8 +21,13 @@ export const DependentQueries = ({ email }) => {
 
   if (channel != null){
     return (
-      <h1>{channel?.data.id}</h1>
-      // SHOW
+      <>
+        <h1>{channel?.data.id}</h1>
+        <h1>Coourses</h1>
+        {channel?.data.courses.map((course) => (
+          <h3>{course}</h3>
+        ))}
+      </>
     )
   }
 
