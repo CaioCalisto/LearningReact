@@ -8,6 +8,7 @@ import { Superheroes } from './pages/Superheroes'
 import { RQSuperHero } from './pages/RQSuperHero'
 import { ParallelQueries } from './pages/ParallelQueries'
 import { DynamicParallel } from './pages/DynamicParallel'
+import { DependentQueries } from './pages/DependentsQueries'
 
 const queryClient = new QueryClient()
 
@@ -31,9 +32,13 @@ const Menu = (): JSX.Element => {
           <li>
             <Link to='/rq-dynamic-parallel'>RQ Dynamic Parallel</Link>
           </li>
+          <li>
+            <Link to='/rq-dependent-queries'>RQ Dependent Parallel</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
+          <Route path="/rq-dependent-queries" element={<DependentQueries />}></Route>
           <Route path="/rq-dynamic-parallel" element={<DynamicParallel heroIds={[1,3]} />}></Route>
           <Route path="/rq-parallel" element={<ParallelQueries />}></Route>
           <Route path="/rq-super-heroes" element={<RQSuperheroes />}></Route>
