@@ -41,5 +41,47 @@
       "id": "craftsmanship",
       "courses": ["react", "best practices", "TDD"]
     }
+  ],
+  "colors":[
+    {
+      "id": 1,
+      "label": "blue"
+    },
+    {
+      "id": 2,
+      "label": "green"
+    },
+    {
+      "id": 3,
+      "label": "red"
+    },
+    {
+      "id": 4,
+      "label": "purple"
+    },
+    {
+      "id": 5,
+      "label": "white"
+    },
+    {
+      "id": 6,
+      "label": "gray"
+    },
+    {
+      "id": 7,
+      "label": "orange"
+    },
+    {
+      "id": 8,
+      "label": "black"
+    },
+    {
+      "id": 9,
+      "label": "yellow"
+    },
+    {
+      "id": 10,
+      "label": "maroon"
+    }
   ]
 }

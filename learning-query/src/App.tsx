@@ -9,6 +9,7 @@ import { RQSuperHero } from './pages/RQSuperHero'
 import { ParallelQueries } from './pages/ParallelQueries'
 import { DynamicParallel } from './pages/DynamicParallel'
 import { DependentQueries } from './pages/DependentsQueries'
+import { PaginatedQueries } from './pages/PaginatedQueries'
 
 const queryClient = new QueryClient()
 
@@ -35,9 +36,13 @@ const Menu = (): JSX.Element => {
           <li>
             <Link to='/rq-dependent-queries'>RQ Dependent Parallel</Link>
           </li>
+          <li>
+            <Link to='/rq-paginated-queries'>RQ Paginated Parallel</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
+          <Route path="/rq-paginated-queries" element={<PaginatedQueries email="caio@gmail.com" />}></Route>
           <Route path="/rq-dependent-queries" element={<DependentQueries email="caio@gmail.com" />}></Route>
           <Route path="/rq-dynamic-parallel" element={<DynamicParallel heroIds={[1,3]} />}></Route>
           <Route path="/rq-parallel" element={<ParallelQueries />}></Route>
