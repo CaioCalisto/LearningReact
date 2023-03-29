@@ -1,0 +1,19 @@
+{
+  "menu":{
+    "home": "HOME",
+    "store": "STORE",
+    "about": "ABOUT"
+  },
+  "about":{
+    "title": "More about us"
+  },
+  "home":{
+    "title": "This is the home page"
+  },
+  "item":{
+    "addToCart": "Add to cart",
+    "remove": "Remove",
+    "inCart": "in Cart",
+    "cartTitle": "Cart"
+  }
+}
