@@ -28,7 +28,12 @@ export const SignUp = () => {
   })
 
   const handleSubmit = (event: any) => {
-    
+    event.preventDefault()
+    if (error.name == '' && error.email == '' && error.password == ''){
+      alert('Submit OK')
+    } else {
+      alert('Error - Name: ' + error.name + ', Email: ' + error.email + ', Password: ' + error.password)
+    }
   }
 
   const handleChange = (event: any) => {
