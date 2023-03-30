@@ -17,12 +17,18 @@ const sliceLanguage = createSlice({
   reducers: {
     addLanguage(state, {payload}: PayloadAction<string>){
       return [...state,{name: payload, favorite: false}]
+    },
+    toFavorite(state, { payload } : PayloadAction<string>){
+      return state.map(currentState => 
+        currentState.name === payload 
+          ? {...currentState, favorite: !currentState.favorite} 
+          : currentState)
     }
   }
 })
 
 export default sliceLanguage.reducer
-export const { addLanguage } = sliceLanguage.actions
+export const { addLanguage, toFavorite } = sliceLanguage.actions
 
 export const useLanguage = (state: any) => {
   return state.languages as Language[]

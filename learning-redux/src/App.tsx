@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useLanguage, addLanguage } from "./redux/sliceLanguage"
+import { useLanguage, addLanguage, toFavorite } from "./redux/sliceLanguage"
 
 function App() {
 
@@ -12,8 +12,15 @@ function App() {
     <div>
       <ul>
         {
-          languages.map(language =>
-            <li>{language.name}</li>
+          languages.map(language => {
+            return (
+              <div style={{ display: 'flex', gap: '20px', marginBottom: '10px'}}>
+                <span style={{ color: language.favorite ? 'green' : 'black'}}>{language.name}</span>
+                <button type='button' onClick={() => dispatch(toFavorite(language.name))}>
+                  {language.favorite ? 'Remove' : 'Add'}
+                </button>
+              </div>
+            )}
           )
         }
       </ul>
