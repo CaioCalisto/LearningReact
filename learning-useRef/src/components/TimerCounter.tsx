@@ -5,14 +5,23 @@ type TimerArgs = {
   seconds?: number
 }
 
+/*
+The useRef Hook allows you to persist values between renders.
+
+It can be used to store a mutable value that does not cause a re-render when updated.
+
+It can be used to access a DOM element directly.
+*/
+
 export const TimerCounter = (args: TimerArgs) => {
   
   const [seconds, setSeconds] = useState(0)
-  const ref = useRef()
+  const intervalRef = useRef()
 
   useEffect(() => {
-    ref.current && clearInterval(ref.current)
-    ref.current = setInterval(() => setSeconds(s => s + 1), args.miliseconds)
+    console.log('useEffect was called')
+    intervalRef.current && clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(() => setSeconds(s => s + 1), args.miliseconds)
   }, [args.miliseconds])
   
   return (
