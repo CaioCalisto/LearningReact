@@ -7,7 +7,7 @@ export const Timer = () => {
 
   return (
     <>
-      <span>Miliseconds: {miliseconds}</span>
+      <span>Delay in Miliseconds: {miliseconds}</span>
       <br />
       <button 
         className='btn btn-outline-success'
@@ -18,9 +18,9 @@ export const Timer = () => {
       <br />
       <button 
         className='btn btn-outline-success'
-        onClick={() => setMiliseconds(2000)}
+        onClick={() => setMiliseconds(5000)}
       >
-        2000
+        5000
       </button>
       <br />
       <br />
