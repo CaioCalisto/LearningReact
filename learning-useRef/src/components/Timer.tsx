@@ -7,6 +7,8 @@ export const Timer = () => {
 
   return (
     <>
+      <h1>Timer</h1>
+      <br />
       <span>Delay in Miliseconds: {miliseconds}</span>
       <br />
       <button 

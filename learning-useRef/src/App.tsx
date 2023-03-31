@@ -1,3 +1,4 @@
+import { Counter } from "./components/Counter"
 import { Timer } from "./components/Timer"
 
 function App() {
@@ -5,6 +6,9 @@ function App() {
   return (
     <>
       <Timer />
+      <br />
+      <br />
+      <Counter />
     </>
   )
 }
