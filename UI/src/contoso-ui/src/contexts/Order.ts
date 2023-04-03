@@ -1,6 +1,6 @@
 import { Status } from "./Status"
 
-export interface Order {
+export type Order = {
   id: number,
   start: Date,
   end: Date | null,
