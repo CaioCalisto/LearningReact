@@ -31,19 +31,21 @@ export default function OrderProvider( { children } : OrderProviderProps){
 
   function move(id: number){
     setOrders(previousState => {
-      const newState = previousState.map(order => {
-        if (order.id === id){
-          if (order.status == Status.New){
-            return {...order, status: Status.Preparing}
-          } else if (order.status == Status.Preparing){
-            return {...order, status: Status.Ready}
+      if (previousState.find(order => order.id === id && order.status == Status.Ready)){
+        return previousState.filter(order => order.id != id)
+      } else {
+        return previousState.map(order => {
+          if (order.id == id){
+            if (order.status == Status.New){
+              return {...order, status: Status.Preparing}
+            } else {
+              return {...order, status: Status.Ready}
+            }
+          } else {
+            return order
           }
-        }
-
-        return order
-      })
-
-      return newState
+        })
+      }
     })
   }
 
