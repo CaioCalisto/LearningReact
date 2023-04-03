@@ -1,6 +1,7 @@
-import React, { createContext, ReactNode, useContext } from "react";
+import React, { createContext, ReactNode, useContext, useState } from "react";
 import { Order } from "./Order"
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { Status } from "./Status";
 
 type OrderProviderProps = {
   children: ReactNode
@@ -20,13 +21,30 @@ export function useOrderContext(){
 
 export default function OrderProvider( { children } : OrderProviderProps){
   const [orders, setOrders] = useLocalStorage<Order[]>("order", [])
+  const [id, setId] = useLocalStorage<number>("id", 0)
   
   function createOrder(){
-    alert('oi')
+    const newOrder: Order = {id: id, start: new Date(), status: Status.New}
+    setOrders([...orders, newOrder])
+    setId(currentId => currentId + 1)
   }
 
   function move(id: number){
-    alert('move ' + id)
+    setOrders(previousState => {
+      const newState = previousState.map(order => {
+        if (order.id === id){
+          if (order.status == Status.New){
+            return {...order, status: Status.Preparing}
+          } else if (order.status == Status.Preparing){
+            return {...order, status: Status.Ready}
+          }
+        }
+
+        return order
+      })
+
+      return newState
+    })
   }
 
   return (

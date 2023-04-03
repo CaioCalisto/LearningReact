@@ -8,9 +8,8 @@ interface OrderRecordProps{
 
 export function OrderRecord(props: OrderRecordProps) {
   
-  const { 
-    move
-  } = useOrderContext()
+  const { move } = useOrderContext()
+  
   return (
     <>
       <li>
