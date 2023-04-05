@@ -1,12 +1,7 @@
-import {ClickCounter} from "remote/ClickCounter"
+import { RealConsumerComponent } from "./RealConsumerComponent"
 
 export const Consumer = () => {
   return (
-    <>
-      <br />
-      <br />
-      <br />
-      <ClickCounter />
-    </>
+    <RealConsumerComponent />
   )
 }
