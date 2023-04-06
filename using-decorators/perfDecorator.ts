@@ -1,9 +1,13 @@
-import { Performance } from "perf_hooks"
+import { performance } from "perf_hooks"
 
 export function logTiming<T extends { new (...args: any[]): {}}>(constructor: T){
   return class extends constructor{
     __timings= []
   }
+}
+
+interface ThisWithTimings {
+  __timings: unknown[]
 }
 
 export function timing(){
@@ -18,8 +22,8 @@ export function timing(){
       const out = await value.apply(this, args)
       const end = performance.now()
 
-      if ((this as { __timings: unknown[] }).__timings){
-        (this as { __timings: unknown[] }).__timings.push({
+      if ((this as ThisWithTimings).__timings){
+        (this as ThisWithTimings).__timings.push({
           method: propertykey,
           time: end - start
         })
