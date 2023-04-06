@@ -1,0 +1,14 @@
+{
+  "name": "using-decorators",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "D": "^1.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11"
+  }
+}
