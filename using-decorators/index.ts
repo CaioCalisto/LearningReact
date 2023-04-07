@@ -35,3 +35,6 @@ class Users {
   // @ts-ignore
   users?.printTimings()
 })();
+
+// To test, run this command
+// npx ts-node index.ts
