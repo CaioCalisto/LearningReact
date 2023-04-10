@@ -10,7 +10,7 @@ function ShowItem(item: MyItemType){
   return (
     <>
       {item.name}-{item.age} years
-      <button>Remove</button>
+      <button onClick={() => alert('Remove item')}>Remove</button>
     </>
   )
 }

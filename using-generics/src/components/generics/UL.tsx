@@ -13,7 +13,10 @@ export function UL<T>({
   return (
     <ul>
       {items.map((item, index) => (
-        <li onClick={() => itemClick(item)} key={index}>{render(item)}</li>
+        <li key={index}>
+          {render(item)}
+          <button onClick={() => itemClick(item)}>Another button</button>
+        </li>
       ))}
     </ul>
   );
