@@ -1,5 +1,14 @@
 import { UL } from "./generics/UL"
 
+function ShowItem(todo: string){
+  return (
+    <>
+      {todo}
+      <button>Remove</button>
+    </>
+  )
+}
+
 export function ShowItems() {
   const todos = [] = [ "A", "B"]
   
@@ -8,12 +17,7 @@ export function ShowItems() {
       className=""
       items={todos}
       itemClick={(item) => alert(item)}
-      render={(todo) => (
-        <>
-          {todo}
-          <button>Remove</button>
-        </>
-      )}
+      render={(todo) => ShowItem(todo)}
     />
   )
 }
