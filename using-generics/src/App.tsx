@@ -6,7 +6,9 @@ const todos = [] = [ "A", "B"]
 function App() {
   return (
     <UL 
+      className=""
       items={todos}
+      itemClick={(item) => alert(item)}
       render={(todo) => (
         <>
           {todo}
@@ -20,14 +22,19 @@ function App() {
 function UL<T>({
   items,
   render,
-}: {
+  itemClick,
+}: React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLUListElement>, 
+  HTMLUListElement
+> & {
   items: T[];
   render: (item: T) => React.ReactNode;
+  itemClick: (item: T) => void
 }) {
   return (
     <ul>
       {items.map((item, index) => (
-        <li key={index}>{render(item)}</li>
+        <li onClick={() => itemClick(item)} key={index}>{render(item)}</li>
       ))}
     </ul>
   );
