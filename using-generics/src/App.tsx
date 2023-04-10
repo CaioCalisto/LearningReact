@@ -1,20 +1,10 @@
-import { UL } from "./components/UL";
+import { ShowItems } from "./components/Items";
 
 const todos = [] = [ "A", "B"]
 
 function App() {
   return (
-    <UL 
-      className=""
-      items={todos}
-      itemClick={(item) => alert(item)}
-      render={(todo) => (
-        <>
-          {todo}
-          <button>Remove</button>
-        </>
-      )}
-    />
+    <ShowItems />
   )
 }
 
