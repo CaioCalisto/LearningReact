@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { render } from "react-dom";
+import { UL } from "./components/UL";
 
 const todos = [] = [ "A", "B"]
 
@@ -17,27 +16,6 @@ function App() {
       )}
     />
   )
-}
-
-function UL<T>({
-  items,
-  render,
-  itemClick,
-}: React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLUListElement>, 
-  HTMLUListElement
-> & {
-  items: T[];
-  render: (item: T) => React.ReactNode;
-  itemClick: (item: T) => void
-}) {
-  return (
-    <ul>
-      {items.map((item, index) => (
-        <li onClick={() => itemClick(item)} key={index}>{render(item)}</li>
-      ))}
-    </ul>
-  );
 }
 
 export default App;
