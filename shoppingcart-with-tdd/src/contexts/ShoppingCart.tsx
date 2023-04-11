@@ -21,13 +21,16 @@ export function ShoppingCartContextProvider({ children } : ShoppingCartProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
 
   function addItem(id: number){
-    setCartItems(currItems => {
-      if (currItems.find(item => item.id === id) == null){
-        return [...currItems, { id, quantity: 1}]
-      } else {
-        return currItems
-      }
-    })
+    if (cartItems.find(item => item.id === id) == null){
+      setCartItems(current => [...current, { id, quantity: 1}])
+    } else {
+      const itemIndex = cartItems.findIndex(item => item.id === id)
+      const updatedItem = { ...cartItems[itemIndex], quantity: cartItems[itemIndex].quantity + 1 }
+      const updatedItems = [...cartItems]
+      updatedItems[itemIndex] = updatedItem
+
+      setCartItems(updatedItems)
+    }
   }
 
   return (

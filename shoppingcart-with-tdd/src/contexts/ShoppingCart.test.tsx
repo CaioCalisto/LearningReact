@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
+import { act } from 'react-dom/test-utils'
 import {
   ShoppingCartContextProvider,
   useShoppingCartContext,
@@ -21,13 +22,34 @@ describe('Shopping Cart Context', () => {
   test('Add item id 1 to Cart', () => {
     render(
       <ShoppingCartContextProvider>
-        <TestingComponentWithAdd id={1}  />
+        <TestingComponentWithAdd id={1} />
       </ShoppingCartContextProvider>
     )
 
-    const label = screen.getByRole('totalItems')
+    // Act
+    const button = screen.getByRole('button')
+    fireEvent.click(button)
 
+    // Assert
+    const label = screen.getByRole('totalItems')
     expect(label).toHaveTextContent('1 items with id 1')
+  })
+
+  test('Add 2 items with id 1 to Cart', () => {
+    render(
+        <ShoppingCartContextProvider>
+          <TestingComponentWithAdd id={1} />
+        </ShoppingCartContextProvider>
+      )
+
+    // Act
+    const button = screen.getByRole('button')
+    fireEvent.click(button)
+    fireEvent.click(button)
+
+    // Assert
+    const label = screen.getByRole('totalItems')
+    expect(label).toHaveTextContent('2 items with id 1')
   })
 })
 
@@ -43,11 +65,11 @@ const TestingComponent = () => {
 
 const TestingComponentWithAdd = ({id} : {id: number}) => {
   const { cartItems, addItem } = useShoppingCartContext()
-  addItem(id)
-
+  
   return (
     <>
-      <h1 role="totalItems">{cartItems.length} items with id {id}</h1>
+      <h1 role="totalItems">{cartItems.find(item => item.id == id)?.quantity} items with id {id}</h1>
+      <button onClick={() => addItem(id)}>Add</button>
     </>
   )
 }
