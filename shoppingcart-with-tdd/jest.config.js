@@ -7,5 +7,6 @@ module.exports = {
     "@testing-library/jest-dom/extend-expect"
   ],
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  testEnvironment: "jsdom"
 };
