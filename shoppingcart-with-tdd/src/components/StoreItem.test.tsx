@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import React from "react"
 import { StoreItem } from "./StoreItem"
 import { useShoppingCartContext, ShoppingCartContextProps } from '../contexts/ShoppingCart'
@@ -79,6 +79,44 @@ describe('Store item', () => {
     )
 
     expect(screen.getByTestId('btn_remove')).toBeInTheDocument()
+  })
+
+  test('Call addItem method when Add button is clicked', () => {
+    const itemId = 983
+    getItemQuantityMock.mockImplementation((id: number) => {
+      if (id == itemId){
+        return 0
+      } 
+
+      return 10
+    })
+
+    render(
+      <StoreItem id={itemId} name="MyItem" imgUrl="someUrl" />
+    )
+
+    const addButton = screen.getByTestId('btn_add')
+    fireEvent.click(addButton)
+
+    expect(addItemMock.mock.calls.length).toBe(1)
+    expect(addItemMock.mock.calls[0][0]).toBe(itemId)
+  })
+
+  test('Call removeItem method when Remove button is clicked', () => {
+    const itemId = 983
+    getItemQuantityMock.mockImplementation((id: number) => {
+      return 10
+    })
+
+    render(
+      <StoreItem id={itemId} name="MyItem" imgUrl="someUrl" />
+    )
+
+    const removeButton = screen.getByTestId('btn_remove')
+    fireEvent.click(removeButton)
+
+    expect(removeItemMock.mock.calls.length).toBe(1)
+    expect(removeItemMock.mock.calls[0][0]).toBe(itemId)
   })
 })
 

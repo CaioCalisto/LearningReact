@@ -9,7 +9,7 @@ type StoreItemProps = {
 }
 
 export function StoreItem({id, name, imgUrl} : StoreItemProps){
-  const { getItemQuantity } = useShoppingCartContext()
+  const { getItemQuantity, addItem, removeItem } = useShoppingCartContext()
   const { t } = useTranslation()
 
   return (
@@ -31,6 +31,7 @@ export function StoreItem({id, name, imgUrl} : StoreItemProps){
             <Button 
               className="w-100"
               data-testid='btn_add'
+              onClick={() => addItem(id)}
             >
               {t('item.addToCart')}
             </Button>
@@ -40,6 +41,7 @@ export function StoreItem({id, name, imgUrl} : StoreItemProps){
                 variant="danger" 
                 size="sm"
                 data-testid='btn_remove'
+                onClick={() => removeItem(id)}
               >
                 {t('item.remove')}
               </Button>
