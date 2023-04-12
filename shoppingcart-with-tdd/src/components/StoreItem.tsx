@@ -1,5 +1,6 @@
-import { Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 import { useShoppingCartContext } from "../contexts/ShoppingCart"
+import { useTranslation } from "react-i18next"
 
 type StoreItemProps = {
   id: number,
@@ -9,7 +10,8 @@ type StoreItemProps = {
 
 export function StoreItem({id, name, imgUrl} : StoreItemProps){
   const { getItemQuantity } = useShoppingCartContext()
-  
+  const { t } = useTranslation()
+
   return (
     <Card className="h-100">
       <Card.Img 
@@ -26,7 +28,7 @@ export function StoreItem({id, name, imgUrl} : StoreItemProps){
         </Card.Title>
         <div className="mt-auto">
           {getItemQuantity(id) == 0 ?(
-            <button data-testid='btn_add'></button>
+            <Button className="w-100" data-testid='btn_add'>{t('item.addToCart')}</Button>
           ) : (
             <div>oi</div>
           )}

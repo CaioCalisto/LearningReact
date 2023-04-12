@@ -2,7 +2,17 @@ import { render, screen } from "@testing-library/react"
 import React from "react"
 import { StoreItem } from "./StoreItem"
 import { useShoppingCartContext, ShoppingCartContextProps } from '../contexts/ShoppingCart'
+import { useTranslation } from "react-i18next"
+
 jest.mock('../contexts/ShoppingCart')
+
+const btnAddLabel = "Add To Cart"
+
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key === 'item.addToCart' ? btnAddLabel : 'translation_not_found',
+  }),
+}))
 
 const addItemMock: jest.Mock = jest.fn()
 const removeItemMock: jest.Mock = jest.fn()
@@ -53,6 +63,6 @@ describe('Store item', () => {
       <StoreItem id={itemId} name="MyItem" imgUrl="someUrl" />
     )
 
-    expect(screen.getByTestId('btn_add')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: btnAddLabel})).toBeInTheDocument()
   })
 })
