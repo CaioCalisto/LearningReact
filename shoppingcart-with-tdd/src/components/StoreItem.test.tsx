@@ -2,17 +2,8 @@ import { render, screen } from "@testing-library/react"
 import React from "react"
 import { StoreItem } from "./StoreItem"
 import { useShoppingCartContext, ShoppingCartContextProps } from '../contexts/ShoppingCart'
-import { useTranslation } from "react-i18next"
 
 jest.mock('../contexts/ShoppingCart')
-
-const btnAddLabel = "Add To Cart"
-
-jest.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string) => key === 'item.addToCart' ? btnAddLabel : 'translation_not_found',
-  }),
-}))
 
 const addItemMock: jest.Mock = jest.fn()
 const removeItemMock: jest.Mock = jest.fn()
@@ -50,6 +41,33 @@ describe('Store item', () => {
   })
 
   test('Show Add button if quantity in cart is Zero', () => {
+    const itemId = 983
+    getItemQuantityMock.mockImplementation((id: number) => {
+      if (id == itemId){
+        return 0
+      } 
+
+      return 10
+    })
+
+    render(
+      <StoreItem id={itemId} name="MyItem" imgUrl="someUrl" />
+    )
+
+    expect(screen.getByTestId('btn_add')).toBeInTheDocument()
+  })
+})
+
+const btnAddLabel = "Add To Cart"
+
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key === 'item.addToCart' ? btnAddLabel : 'translation_not_found',
+  }),
+}))
+
+describe('Store item - content with Translations', () => {
+  test('Show Add button with text translated', () => {
     const itemId = 983
     getItemQuantityMock.mockImplementation((id: number) => {
       if (id == itemId){
