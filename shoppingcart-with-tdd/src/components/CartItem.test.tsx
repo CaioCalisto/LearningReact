@@ -1,5 +1,22 @@
-import { render, screen } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
 import { CartItem } from "./CartItem"
+import { useShoppingCartContext, ShoppingCartContextProps } from '../contexts/ShoppingCart'
+
+jest.mock('../contexts/ShoppingCart')
+
+const addItemMock: jest.Mock = jest.fn()
+const removeItemMock: jest.Mock = jest.fn()
+const getItemQuantityMock: jest.Mock = jest.fn()
+const contextMock: ShoppingCartContextProps = {
+  addItem: addItemMock, 
+  removeItem: removeItemMock,
+  getItemQuantity: getItemQuantityMock,
+  cartItems: []
+}
+
+beforeAll(() => {
+  (useShoppingCartContext as jest.Mock).mockReturnValue(contextMock)
+})
 
 describe('Cart Item', () => {
   test('Show Image', () => {
@@ -64,5 +81,18 @@ describe('Cart Item', () => {
     )
 
     expect(queryByText('$ ' + price)).toBeInTheDocument()
+  })
+
+  test('Call removeFromCart method in Context', () => {
+    const itemId = 837
+    render(
+      <CartItem id={itemId} name={"itemName"} price={15} quantity={2} imgUrl={"imgUrl"} />
+    )
+
+    const removeButton = screen.getByTestId('btn_remove')
+    fireEvent.click(removeButton)
+
+    expect(removeItemMock.mock.calls).toHaveLength(1)
+    expect(removeItemMock.mock.calls[0][0]).toBe(itemId)
   })
 })

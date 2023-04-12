@@ -1,4 +1,5 @@
 import { Button, Stack } from "react-bootstrap";
+import { useShoppingCartContext } from "../contexts/ShoppingCart"
 
 type CartItemProps = {
   id: number
@@ -9,6 +10,8 @@ type CartItemProps = {
 }
 
 export function CartItem({ id, name, price, quantity, imgUrl} : CartItemProps){
+  const { removeItem } = useShoppingCartContext()
+
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
       <img 
@@ -39,6 +42,7 @@ export function CartItem({ id, name, price, quantity, imgUrl} : CartItemProps){
         variant="outline-danger" 
         size="sm" 
         data-testid='btn_remove'
+        onClick={() => removeItem(id)}
       >
           &times;
       </Button>
