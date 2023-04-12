@@ -83,10 +83,21 @@ describe('Store item', () => {
 })
 
 const btnAddLabel = "Add To Cart"
+const btnRemoveLabel = "Remove"
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key: string) => key === 'item.addToCart' ? btnAddLabel : 'translation_not_found',
+    t: (key: string) => {
+      if (key === 'item.addToCart'){
+        return btnAddLabel
+      }
+      if (key === 'item.remove'){
+        return btnRemoveLabel
+      }
+
+      return 'translation_not_found'
+    }
+    ///t: (key: string) => key === 'item.addToCart' ? btnAddLabel : 'translation_not_found',
   }),
 }))
 
@@ -106,5 +117,17 @@ describe('Store item - content with Translations', () => {
     )
 
     expect(screen.getByRole('button', { name: btnAddLabel})).toBeInTheDocument()
+  })
+
+  test('Show Remove button with text translated', () => {
+    getItemQuantityMock.mockImplementation((id: number) => {
+      return 10
+    })
+
+    render(
+      <StoreItem id={1} name="MyItem" imgUrl="someUrl" />
+    )
+
+    expect(screen.getByRole('button', { name: btnRemoveLabel})).toBeInTheDocument()
   })
 })

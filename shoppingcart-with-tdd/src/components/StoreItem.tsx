@@ -40,7 +40,7 @@ export function StoreItem({id, name, imgUrl} : StoreItemProps){
               size="sm"
               data-testid='btn_remove'
             >
-              R
+              {t('item.remove')}
             </Button>
           )}
         </div>
