@@ -97,7 +97,6 @@ jest.mock('react-i18next', () => ({
 
       return 'translation_not_found'
     }
-    ///t: (key: string) => key === 'item.addToCart' ? btnAddLabel : 'translation_not_found',
   }),
 }))
 

@@ -35,13 +35,15 @@ export function StoreItem({id, name, imgUrl} : StoreItemProps){
               {t('item.addToCart')}
             </Button>
           ) : (
-            <Button 
-              variant="danger" 
-              size="sm"
-              data-testid='btn_remove'
-            >
-              {t('item.remove')}
-            </Button>
+            <div className="d-flex align-items-center flex-column" style={{ gap: ".5rem"}}>
+              <Button 
+                variant="danger" 
+                size="sm"
+                data-testid='btn_remove'
+              >
+                {t('item.remove')}
+              </Button>
+            </div>
           )}
         </div>
       </Card.Body>
