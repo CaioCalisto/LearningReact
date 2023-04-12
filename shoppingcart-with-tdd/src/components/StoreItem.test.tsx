@@ -56,6 +56,18 @@ describe('Store item', () => {
 
     expect(screen.getByTestId('btn_add')).toBeInTheDocument()
   })
+
+  test('Not show Add button if quantity in cart is more than Zero', () => {
+    getItemQuantityMock.mockImplementation((id: number) => {
+      return 10
+    })
+
+    const {queryByTestId} = render(
+      <StoreItem id={1} name="MyItem" imgUrl="someUrl" />
+    )
+
+    expect(queryByTestId(/btn_add/i)).toBeNull()
+  })
 })
 
 const btnAddLabel = "Add To Cart"
