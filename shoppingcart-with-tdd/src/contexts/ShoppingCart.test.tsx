@@ -1,6 +1,5 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { act } from 'react-dom/test-utils'
 import {
   ShoppingCartContextProvider,
   useShoppingCartContext,
@@ -27,28 +26,28 @@ describe('Shopping Cart Context', () => {
     )
 
     // Act
-    const button = screen.getByRole('ADD')
+    const button = screen.getByTestId('btn_add')
     fireEvent.click(button)
 
     // Assert
-    const label = screen.getByRole('totalItems')
+    const label = screen.getByRole('dialog')
     expect(label).toHaveTextContent('1 items with id 1')
   })
 
   test('Add 2 items with id 1 to Cart', () => {
     render(
-        <ShoppingCartContextProvider>
-          <TestingComponentWithAdd id={1} />
-        </ShoppingCartContextProvider>
-      )
+      <ShoppingCartContextProvider>
+        <TestingComponentWithAdd id={1} />
+      </ShoppingCartContextProvider>
+    )
 
     // Act
-    const button = screen.getByRole('ADD')
+    const button = screen.getByTestId('btn_add')
     fireEvent.click(button)
     fireEvent.click(button)
 
     // Assert
-    const label = screen.getByRole('totalItems')
+    const label = screen.getByRole('dialog')
     expect(label).toHaveTextContent('2 items with id 1')
   })
 
@@ -58,13 +57,13 @@ describe('Shopping Cart Context', () => {
         <TestingComponentWithAdd id={1} />
       </ShoppingCartContextProvider>
     )
-    const addButton = screen.getByRole('ADD')
-    const removeButton = screen.getByRole('REMOVE')
+    const addButton = screen.getByTestId('btn_add')
+    const removeButton = screen.getByTestId('btn_remove')
 
     fireEvent.click(addButton)
     fireEvent.click(addButton)
 
-    const label = screen.getByRole('totalItems')
+    const label = screen.getByRole('dialog')
     expect(label).toHaveTextContent('2 items with id 1')
 
     fireEvent.click(removeButton)
@@ -77,18 +76,17 @@ describe('Shopping Cart Context', () => {
         <TestingComponentWithAdd id={1} />
       </ShoppingCartContextProvider>
     )
-    const addButton = screen.getByRole('ADD')
-    const removeButton = screen.getByRole('REMOVE')
+    const addButton = screen.getByTestId('btn_add')
+    const removeButton = screen.getByTestId('btn_remove')
 
     fireEvent.click(addButton)
 
-    const label = screen.getByRole('totalItems')
+    const label = screen.getByRole('dialog')
     expect(label).toHaveTextContent('1 items with id 1')
 
     fireEvent.click(removeButton)
     expect(label).toHaveTextContent('no items')
   })
-  
 })
 
 const TestingComponent = () => {
@@ -101,19 +99,24 @@ const TestingComponent = () => {
   )
 }
 
-const TestingComponentWithAdd = ({id} : {id: number}) => {
+const TestingComponentWithAdd = ({ id }: { id: number }) => {
   const { cartItems, addItem, removeItem } = useShoppingCartContext()
   let content = 'no items'
 
-  if (cartItems.length != 0){
-    content = cartItems.find(item => item.id == id)?.quantity + ' items with id ' + id
+  if (cartItems.length != 0) {
+    content =
+      cartItems.find((item) => item.id == id)?.quantity + ' items with id ' + id
   }
 
   return (
     <>
-      <h1 role="totalItems">{content}</h1>
-      <button role='ADD' onClick={() => addItem(id)}>Add</button>
-      <button role='REMOVE' onClick={() => removeItem(id)}>Remove</button>
+      <h1 role="dialog">{content}</h1>
+      <button data-testid="btn_add" onClick={() => addItem(id)}>
+        Add
+      </button>
+      <button data-testid="btn_remove" onClick={() => removeItem(id)}>
+        Remove
+      </button>
     </>
   )
 }
