@@ -5,9 +5,10 @@ interface ShoppingCartProps {
   children: ReactNode
 }
 
-type ShoppingCartContextProps = {
+export type ShoppingCartContextProps = {
   addItem: (id: number) => void
   removeItem: (id: number) => void
+  getItemQuantity: (id: number) => number
   cartItems: CartItem[]
 }
 
@@ -54,11 +55,16 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartProps) {
     }
   }
 
+  function getItemQuantity(id: number){
+    return cartItems.find(item => item.id === id)?.quantity || 0;
+  }
+
   return (
     <ShoppingCartContext.Provider
       value={{
         addItem,
         removeItem,
+        getItemQuantity,
         cartItems,
       }}
     >

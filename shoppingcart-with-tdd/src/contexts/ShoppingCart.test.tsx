@@ -25,11 +25,9 @@ describe('Shopping Cart Context', () => {
       </ShoppingCartContextProvider>
     )
 
-    // Act
     const button = screen.getByTestId('btn_add')
     fireEvent.click(button)
 
-    // Assert
     const label = screen.getByRole('dialog')
     expect(label).toHaveTextContent('1 items with id 1')
   })
@@ -100,12 +98,12 @@ const TestingComponent = () => {
 }
 
 const TestingComponentWithAdd = ({ id }: { id: number }) => {
-  const { cartItems, addItem, removeItem } = useShoppingCartContext()
+  const { cartItems, addItem, removeItem, getItemQuantity } = useShoppingCartContext()
   let content = 'no items'
+  let totalCount = cartItems.length
 
-  if (cartItems.length != 0) {
-    content =
-      cartItems.find((item) => item.id == id)?.quantity + ' items with id ' + id
+  if (totalCount != 0) {
+    content = getItemQuantity(id) + ' items with id ' + id
   }
 
   return (
