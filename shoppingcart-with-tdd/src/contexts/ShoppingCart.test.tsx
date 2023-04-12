@@ -70,6 +70,24 @@ describe('Shopping Cart Context', () => {
     fireEvent.click(removeButton)
     expect(label).toHaveTextContent('1 items with id 1')
   })
+
+  test('Remove item if quantity is 0', () => {
+    render(
+      <ShoppingCartContextProvider>
+        <TestingComponentWithAdd id={1} />
+      </ShoppingCartContextProvider>
+    )
+    const addButton = screen.getByRole('ADD')
+    const removeButton = screen.getByRole('REMOVE')
+
+    fireEvent.click(addButton)
+
+    const label = screen.getByRole('totalItems')
+    expect(label).toHaveTextContent('1 items with id 1')
+
+    fireEvent.click(removeButton)
+    expect(label).toHaveTextContent('no items')
+  })
   
 })
 
@@ -85,10 +103,15 @@ const TestingComponent = () => {
 
 const TestingComponentWithAdd = ({id} : {id: number}) => {
   const { cartItems, addItem, removeItem } = useShoppingCartContext()
-  
+  let content = 'no items'
+
+  if (cartItems.length != 0){
+    content = cartItems.find(item => item.id == id)?.quantity + ' items with id ' + id
+  }
+
   return (
     <>
-      <h1 role="totalItems">{cartItems.find(item => item.id == id)?.quantity} items with id {id}</h1>
+      <h1 role="totalItems">{content}</h1>
       <button role='ADD' onClick={() => addItem(id)}>Add</button>
       <button role='REMOVE' onClick={() => removeItem(id)}>Remove</button>
     </>

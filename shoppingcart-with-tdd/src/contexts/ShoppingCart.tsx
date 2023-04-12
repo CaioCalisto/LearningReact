@@ -37,11 +37,15 @@ export function ShoppingCartContextProvider({ children } : ShoppingCartProps) {
   function removeItem(id: number){
     const itemIndex = cartItems.findIndex(item => item.id === id)
     if (itemIndex != -1){
-      const updatedItem = { ...cartItems[itemIndex], quantity: cartItems[itemIndex].quantity - 1 }
-      const updatedItems = [...cartItems]
-      updatedItems[itemIndex] = updatedItem
-
-      setCartItems(updatedItems)
+      if (cartItems[itemIndex].quantity == 1){
+        setCartItems(cartItems.filter(item => item.id != id))
+      } else {
+        const updatedItem = { ...cartItems[itemIndex], quantity: cartItems[itemIndex].quantity - 1 }
+        const updatedItems = [...cartItems]
+        updatedItems[itemIndex] = updatedItem
+  
+        setCartItems(updatedItems)
+      }
     }
   }
 
