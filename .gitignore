@@ -9,7 +9,7 @@ obj/
 # Common node modules locations
 /node_modules
 /wwwroot/node_modules
-/coverage
+
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
@@ -132,6 +132,7 @@ logs
 
 node_modules
 bower_components
+coverage
 
 *.sublime*
 
