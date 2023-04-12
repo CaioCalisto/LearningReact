@@ -25,7 +25,7 @@ describe('Menu bar', () => {
       </BrowserRouter>
     )
 
-    const clickableLink = screen.getByRole('link')
+    const clickableLink = screen.getByRole('link', { name: menuHome})
 
     expect(clickableLink).toBeInTheDocument()
     expect(clickableLink).toHaveAttribute('href', '/')
