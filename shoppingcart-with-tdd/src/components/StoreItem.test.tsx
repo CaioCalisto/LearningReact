@@ -68,6 +68,18 @@ describe('Store item', () => {
 
     expect(queryByTestId(/btn_add/i)).toBeNull()
   })
+
+  test('Show Remove button if quantity in cart is more than Zero', () => {
+    getItemQuantityMock.mockImplementation((id: number) => {
+      return 10
+    })
+
+    render(
+      <StoreItem id={1} name="MyItem" imgUrl="someUrl" />
+    )
+
+    expect(screen.getByTestId('btn_remove')).toBeInTheDocument()
+  })
 })
 
 const btnAddLabel = "Add To Cart"

@@ -28,9 +28,20 @@ export function StoreItem({id, name, imgUrl} : StoreItemProps){
         </Card.Title>
         <div className="mt-auto">
           {getItemQuantity(id) == 0 ?(
-            <Button className="w-100" data-testid='btn_add'>{t('item.addToCart')}</Button>
+            <Button 
+              className="w-100"
+              data-testid='btn_add'
+            >
+              {t('item.addToCart')}
+            </Button>
           ) : (
-            <div>oi</div>
+            <Button 
+              variant="danger" 
+              size="sm"
+              data-testid='btn_remove'
+            >
+              R
+            </Button>
           )}
         </div>
       </Card.Body>
