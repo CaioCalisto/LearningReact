@@ -28,6 +28,9 @@ export function CartItem({ id, name, price, quantity, imgUrl} : CartItemProps){
             </span>
           )} 
         </div>
+        <div className="text-muted" style={{ fontSize: ".75rem"}}>
+          $ {price}
+        </div>
       </div>
       <div>
         $ {(price * quantity)}

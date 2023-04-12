@@ -56,4 +56,13 @@ describe('Cart Item', () => {
 
     expect(queryByText('$ 30')).toBeInTheDocument()
   })
+
+  test('Show item price', () => {
+    const price = 15.97
+    const { queryByText } = render(
+      <CartItem id={1} name={"itemName"} price={price} quantity={2} imgUrl={"imgUrl"} />
+    )
+
+    expect(queryByText('$ ' + price)).toBeInTheDocument()
+  })
 })
