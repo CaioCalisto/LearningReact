@@ -19,8 +19,6 @@ jest.mock('react-i18next', () => ({
   }),
 }))
 
-
-
 describe('Main App', () => {
   test('Should show the nav menu', () => {
     const { container } = render(
