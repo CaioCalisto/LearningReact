@@ -1,5 +1,8 @@
 import React from 'react'
+import { Menu } from './components/Menu'
 
 export const App = () => {
-  return <h1>React from scratch</h1>
+  return (
+    <Menu />
+  )
 }

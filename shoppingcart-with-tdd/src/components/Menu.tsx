@@ -12,6 +12,12 @@ export function Menu() {
           <Nav.Link to="/" as={NavLink}>
             {t('menu.home')}
           </Nav.Link>
+          <Nav.Link to="/store" as={NavLink}>
+            {t('menu.store')}
+          </Nav.Link>
+          <Nav.Link to="/about" as={NavLink}>
+            {t('menu.about')}
+          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>
