@@ -1,25 +1,25 @@
-import { Button, Card } from "react-bootstrap"
-import { useShoppingCartContext } from "../contexts/ShoppingCart"
-import { useTranslation } from "react-i18next"
+import { Button, Card } from 'react-bootstrap'
+import { useShoppingCartContext } from '../contexts/ShoppingCart'
+import { useTranslation } from 'react-i18next'
 
 type StoreItemProps = {
-  id: number,
-  name: string,
+  id: number
+  name: string
   imgUrl: string
 }
 
-export function StoreItem({id, name, imgUrl} : StoreItemProps){
+export function StoreItem({ id, name, imgUrl }: StoreItemProps) {
   const { getItemQuantity, addItem, removeItem } = useShoppingCartContext()
   const { t } = useTranslation()
 
   return (
     <Card className="h-100">
-      <Card.Img 
-        variant="top" 
-        src={imgUrl} 
+      <Card.Img
+        variant="top"
+        src={imgUrl}
         height="200px"
         style={{
-          objectFit: "cover"
+          objectFit: 'cover',
         }}
       />
       <Card.Body className="d-flex flex-column">
@@ -27,20 +27,23 @@ export function StoreItem({id, name, imgUrl} : StoreItemProps){
           <span className="fs-2">{name}</span>
         </Card.Title>
         <div className="mt-auto">
-          {getItemQuantity(id) == 0 ?(
-            <Button 
+          {getItemQuantity(id) == 0 ? (
+            <Button
               className="w-100"
-              data-testid='btn_add'
+              data-testid="btn_add"
               onClick={() => addItem(id)}
             >
               {t('item.addToCart')}
             </Button>
           ) : (
-            <div className="d-flex align-items-center flex-column" style={{ gap: ".5rem"}}>
-              <Button 
-                variant="danger" 
+            <div
+              className="d-flex align-items-center flex-column"
+              style={{ gap: '.5rem' }}
+            >
+              <Button
+                variant="danger"
                 size="sm"
-                data-testid='btn_remove'
+                data-testid="btn_remove"
                 onClick={() => removeItem(id)}
               >
                 {t('item.remove')}

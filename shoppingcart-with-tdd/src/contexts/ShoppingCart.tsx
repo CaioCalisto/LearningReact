@@ -55,8 +55,8 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartProps) {
     }
   }
 
-  function getItemQuantity(id: number){
-    return cartItems.find(item => item.id === id)?.quantity || 0;
+  function getItemQuantity(id: number) {
+    return cartItems.find((item) => item.id === id)?.quantity || 0
   }
 
   return (

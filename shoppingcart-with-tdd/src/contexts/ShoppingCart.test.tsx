@@ -98,9 +98,10 @@ const TestingComponent = () => {
 }
 
 const TestingComponentWithAdd = ({ id }: { id: number }) => {
-  const { cartItems, addItem, removeItem, getItemQuantity } = useShoppingCartContext()
+  const { cartItems, addItem, removeItem, getItemQuantity } =
+    useShoppingCartContext()
   let content = 'no items'
-  let totalCount = cartItems.length
+  const totalCount = cartItems.length
 
   if (totalCount != 0) {
     content = getItemQuantity(id) + ' items with id ' + id
