@@ -1,5 +1,5 @@
 export const Home = () => {
   return (
-    <>HELLO WORLD</>
+    <div title='Home page'></div>
   )
 }

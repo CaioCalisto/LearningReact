@@ -30,12 +30,12 @@ describe('Main App', () => {
 
   test('Should contain a clickable link to Home page', async () => {
     
-    const { getByText} = render(
+    const { getByText } = render(
       <App />, {wrapper: BrowserRouter}
     )
 
     await fireEvent.click(getByText('HOME'))
     
-    expect(screen.getByText(/HELLO WORLD/i)).toBeInTheDocument()
+    expect(screen.getByTitle(/Home page/i)).toBeInTheDocument()
   })
 })
