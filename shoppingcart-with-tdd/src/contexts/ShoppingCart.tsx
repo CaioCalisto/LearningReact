@@ -68,7 +68,9 @@ export function ShoppingCartContextProvider({ children }: ShoppingCartProps) {
         cartItems,
       }}
     >
-      {children}
+      <div data-testid='context-provider'>
+        {children}
+      </div>
     </ShoppingCartContext.Provider>
   )
 }

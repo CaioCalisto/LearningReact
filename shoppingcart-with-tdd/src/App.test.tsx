@@ -48,4 +48,10 @@ describe('Main App', () => {
 
     expect(screen.getByTitle(/About page/i)).toBeInTheDocument()
   })
+
+  test('Entire app should be wrapped by ShoppingCart context', () => {
+    const { getByTestId } = render(<App />, { wrapper: BrowserRouter })
+
+    expect(getByTestId('context-provider')).toBeInTheDocument()
+  })
 })

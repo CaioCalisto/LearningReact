@@ -5,10 +5,11 @@ import { Menu } from './components/Menu'
 import { Home } from './pages/Home'
 import { Store } from './pages/Store'
 import { About } from './pages/About'
+import { ShoppingCartContextProvider } from './contexts/ShoppingCart'
 
 export const App = () => {
   return (
-    <>
+    <ShoppingCartContextProvider>
       <Menu />
       <Container className="mb-4">
         <Routes>
@@ -17,6 +18,6 @@ export const App = () => {
           <Route path="/about" element={<About />} />
         </Routes>
       </Container>
-    </>
+    </ShoppingCartContextProvider>
   )
 }
