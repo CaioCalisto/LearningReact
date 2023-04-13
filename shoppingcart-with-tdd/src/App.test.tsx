@@ -32,4 +32,20 @@ describe('Main App', () => {
 
     expect(screen.getByTitle(/Home page/i)).toBeInTheDocument()
   })
+
+  test('Should contain a clickable link to Store page', async () => {
+    const { getByText } = render(<App />, { wrapper: BrowserRouter })
+
+    await fireEvent.click(getByText('STORE'))
+
+    expect(screen.getByTitle(/Store page/i)).toBeInTheDocument()
+  })
+
+  test('Should contain a clickable link to About page', async () => {
+    const { getByText } = render(<App />, { wrapper: BrowserRouter })
+
+    await fireEvent.click(getByText('ABOUT'))
+
+    expect(screen.getByTitle(/About page/i)).toBeInTheDocument()
+  })
 })

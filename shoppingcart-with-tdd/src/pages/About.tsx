@@ -1,3 +1,5 @@
 export const About = () => {
-  return <></>
+  return (
+    <div title="About page"></div>
+  )
 }
