@@ -100,3 +100,33 @@ describe('Store page with error responses', () => {
     expect(screen.getByText(errorMsg)).not.toBeNull()
   })
 })
+
+describe('Store page while is fetching data', () => {
+  const CartApiMock: CartApi = {
+    fetch: jest.fn().mockImplementation((onSuccess, onError) => {
+      return {
+        data: [],
+        error: {},
+        isLoading: false,
+        isFetching: true,
+        isSuccess: false,
+        isError: false,
+        refetch: jest.fn(),
+        remove: jest.fn(),
+        update: jest.fn(),
+        onSettled: jest.fn(),
+        onMutate: jest.fn(),
+      }
+    }),
+  }
+
+  beforeAll(() => {
+    container.register('api', { useValue: CartApiMock })
+  })
+
+  test('Should show a message saying that the status is Fetching', () => {
+    const { getByTestId } = render(<Store />)
+
+    expect(getByTestId('store-fetching-msg')).not.toBeNull()
+  })
+})

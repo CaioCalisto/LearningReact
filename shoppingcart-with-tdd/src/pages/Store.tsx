@@ -7,13 +7,18 @@ import { Product } from '../infrastructure/api/Product'
 export const Store = () => {
   const api: CartApi = container.resolve<CartApi>('api')
 
-  const { data, error, isError } = api.fetch<Product[], any>(
+  const { data, error, isError, isFetching } = api.fetch<Product[], any>(
     (onSuccess) => console.log(JSON.stringify(onSuccess)),
     (onError) => console.log(JSON.stringify(onError))
   )
 
   if (isError){
-    return <div>{error}</div>
+    return <h1>{error}</h1>
+  }
+
+  if (isFetching){
+    const fetchingMsg = 'Status is Fetching'
+    return <h1 data-testid='store-fetching-msg'>{fetchingMsg}</h1>
   }
 
   return (
