@@ -12,13 +12,13 @@ export const Store = () => {
     (onError) => console.log('ERROR:' + JSON.stringify(error))
   )
 
-  if (isError){
-    return <h1 data-testid='store-error-msg'>{error}</h1>
+  if (isError) {
+    return <h1 data-testid="store-error-msg">{error}</h1>
   }
 
-  if (isFetching){
+  if (isFetching) {
     const fetchingMsg = 'Status is Fetching'
-    return <h1 data-testid='store-fetching-msg'>{fetchingMsg}</h1>
+    return <h1 data-testid="store-fetching-msg">{fetchingMsg}</h1>
   }
 
   return (

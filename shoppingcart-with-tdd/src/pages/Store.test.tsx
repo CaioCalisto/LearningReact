@@ -26,7 +26,7 @@ const contextMock: ShoppingCartContextProps = {
 }
 
 beforeAll(() => {
-  (useShoppingCartContext as jest.Mock).mockReturnValue(contextMock)
+  ;(useShoppingCartContext as jest.Mock).mockReturnValue(contextMock)
 })
 
 describe('Store page with successfull responses', () => {
@@ -34,7 +34,7 @@ describe('Store page with successfull responses', () => {
     { id: 1, name: 'ProductA', price: 46, imgUrl: 'customUrl1' },
     { id: 2, name: 'ProductB', price: 23, imgUrl: 'customUrl2' },
   ]
-  
+
   const CartApiMock: CartApi = {
     fetch: jest.fn().mockImplementation((onSuccess, onError) => {
       return {
@@ -75,7 +75,7 @@ describe('Store page with error responses', () => {
     fetch: jest.fn().mockImplementation((onSuccess, onError) => {
       return {
         data: [],
-        error: "ERROR MSG",
+        error: 'ERROR MSG',
         isLoading: false,
         isFetching: false,
         isSuccess: false,
@@ -94,7 +94,7 @@ describe('Store page with error responses', () => {
   })
 
   test('Show error message if request goes wrong', () => {
-    const { getByTestId } =render(<Store />)
+    const { getByTestId } = render(<Store />)
 
     expect(getByTestId('store-error-msg')).not.toBeNull()
   })
