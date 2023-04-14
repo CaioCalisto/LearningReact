@@ -1,6 +1,30 @@
 import { render, fireEvent, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { container } from './DI'
 import { App } from './App'
+import { CartApi } from './infrastructure/api/CartApi'
+
+const CartApiMock: CartApi = {
+  fetch: jest.fn().mockImplementation((onSuccess, onError) => {
+    return {
+      data: [],
+      error: { /* mock error */ },
+      isLoading: false,
+      isFetching: false,
+      isSuccess: true,
+      isError: false,
+      refetch: jest.fn(),
+      remove: jest.fn(),
+      update: jest.fn(),
+      onSettled: jest.fn(),
+      onMutate: jest.fn(),
+    };
+  }),
+};
+
+beforeAll(() => {
+  container.register("api", { useValue: CartApiMock})
+})
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
