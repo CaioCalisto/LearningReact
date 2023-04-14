@@ -7,7 +7,7 @@ import { Product } from '../infrastructure/api/Product'
 export const Store = () => {
   const api: CartApi = container.resolve<CartApi>('api')
 
-  const { data, error, isError, isFetching } = api.fetch<Product[], any>(
+  const { data, error, isError, isFetching } = api.fetch<any, any>(
     (onSuccess) => console.log('SUCCESS:' + JSON.stringify(data)),
     (onError) => console.log('ERROR:' + JSON.stringify(error))
   )
@@ -21,10 +21,11 @@ export const Store = () => {
     return <h1 data-testid="store-fetching-msg">{fetchingMsg}</h1>
   }
 
+  console.log('Page Store: ' + data)
   return (
     <div title="Store page">
       <Row md={2} xs={1} lg={3} className="g-3">
-        {data?.map((item) => (
+        {data?.data?.map((item: Product) => (
           <Col key={item.id} data-testid="item">
             <StoreItem id={item.id} name={item.name} imgUrl={item.imgUrl} />
           </Col>

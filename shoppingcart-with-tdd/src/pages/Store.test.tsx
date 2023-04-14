@@ -38,7 +38,7 @@ describe('Store page with successfull responses', () => {
   const CartApiMock: CartApi = {
     fetch: jest.fn().mockImplementation((onSuccess, onError) => {
       return {
-        data: products,
+        data: { data: products},
         error: {
           /* mock error */
         },
@@ -74,7 +74,7 @@ describe('Store page with error responses', () => {
   const CartApiMock: CartApi = {
     fetch: jest.fn().mockImplementation((onSuccess, onError) => {
       return {
-        data: [],
+        data: {data: []},
         error: 'ERROR MSG',
         isLoading: false,
         isFetching: false,
@@ -104,7 +104,7 @@ describe('Store page while is fetching data', () => {
   const CartApiMock: CartApi = {
     fetch: jest.fn().mockImplementation((onSuccess, onError) => {
       return {
-        data: [],
+        data: {data: []},
         error: {},
         isLoading: false,
         isFetching: true,

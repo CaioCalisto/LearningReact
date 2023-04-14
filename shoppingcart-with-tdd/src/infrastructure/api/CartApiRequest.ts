@@ -10,7 +10,7 @@ export class CartApiRequest implements CartApi {
     return useQuery(['products'], fetchProducts, {
       //cacheTime: 5000,
       //refetchInterval: 1000,
-      enabled: false,
+      enabled: true,
       onSuccess: onSuccess,
       onError: onError,
     })
@@ -18,5 +18,5 @@ export class CartApiRequest implements CartApi {
 }
 
 const fetchProducts = () => {
-  return axios.get('http://localhost:3001/products')
+  return axios.get('http://localhost:4000/products')
 }

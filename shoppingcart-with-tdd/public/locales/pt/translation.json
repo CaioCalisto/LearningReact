@@ -1,0 +1,19 @@
+{
+  "menu":{
+    "home": "INICIO",
+    "store": "LOJA",
+    "about": "SOBRE NÓS"
+  },
+  "about":{
+    "title": "Mais sobre nós"
+  },
+  "home":{
+    "title": "Esta é a pagina inicial"
+  },
+  "item":{
+    "addToCart": "Adicionar ao carrinho",
+    "remove": "Remover",
+    "inCart": "no Carrinho",
+    "cartTitle": "Carrinho"
+  }
+}

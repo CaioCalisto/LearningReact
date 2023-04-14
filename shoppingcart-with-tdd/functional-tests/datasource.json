@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Macbook",
+      "price": 4999,
+      "imgUrl": "computer.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "IPad",
+      "price": 399,
+      "imgUrl": "computer.jpeg"
+    }
+  ]
+}
