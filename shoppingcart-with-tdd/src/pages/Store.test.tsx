@@ -71,12 +71,11 @@ describe('Store page with successfull responses', () => {
 })
 
 describe('Store page with error responses', () => {
-  const errorMsg = 'An error occurred while requesting data'
   const CartApiMock: CartApi = {
     fetch: jest.fn().mockImplementation((onSuccess, onError) => {
       return {
         data: [],
-        error: errorMsg,
+        error: "ERROR MSG",
         isLoading: false,
         isFetching: false,
         isSuccess: false,
@@ -95,9 +94,9 @@ describe('Store page with error responses', () => {
   })
 
   test('Show error message if request goes wrong', () => {
-    render(<Store />)
+    const { getByTestId } =render(<Store />)
 
-    expect(screen.getByText(errorMsg)).not.toBeNull()
+    expect(getByTestId('store-error-msg')).not.toBeNull()
   })
 })
 

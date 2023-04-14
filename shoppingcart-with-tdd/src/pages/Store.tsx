@@ -8,12 +8,12 @@ export const Store = () => {
   const api: CartApi = container.resolve<CartApi>('api')
 
   const { data, error, isError, isFetching } = api.fetch<Product[], any>(
-    (onSuccess) => console.log(JSON.stringify(onSuccess)),
-    (onError) => console.log(JSON.stringify(onError))
+    (onSuccess) => console.log('SUCCESS:' + JSON.stringify(data)),
+    (onError) => console.log('ERROR:' + JSON.stringify(error))
   )
 
   if (isError){
-    return <h1>{error}</h1>
+    return <h1 data-testid='store-error-msg'>{error}</h1>
   }
 
   if (isFetching){
