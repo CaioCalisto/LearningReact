@@ -8,7 +8,9 @@ const CartApiMock: CartApi = {
   fetch: jest.fn().mockImplementation((onSuccess, onError) => {
     return {
       data: [],
-      error: { /* mock error */ },
+      error: {
+        /* mock error */
+      },
       isLoading: false,
       isFetching: false,
       isSuccess: true,
@@ -18,12 +20,12 @@ const CartApiMock: CartApi = {
       update: jest.fn(),
       onSettled: jest.fn(),
       onMutate: jest.fn(),
-    };
+    }
   }),
-};
+}
 
 beforeAll(() => {
-  container.register("api", { useValue: CartApiMock})
+  container.register('api', { useValue: CartApiMock })
 })
 
 jest.mock('react-i18next', () => ({
