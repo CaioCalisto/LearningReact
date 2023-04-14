@@ -7,10 +7,14 @@ import { Product } from '../infrastructure/api/Product'
 export const Store = () => {
   const api: CartApi = container.resolve<CartApi>('api')
 
-  const { data, error } = api.fetch<Product[], any>(
+  const { data, error, isError } = api.fetch<Product[], any>(
     (onSuccess) => console.log(JSON.stringify(onSuccess)),
     (onError) => console.log(JSON.stringify(onError))
   )
+
+  if (isError){
+    return <div>{error}</div>
+  }
 
   return (
     <div title="Store page">
