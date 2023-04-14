@@ -21,13 +21,12 @@ export const Store = () => {
     return <h1 data-testid="store-fetching-msg">{fetchingMsg}</h1>
   }
 
-  console.log('Page Store: ' + data)
   return (
     <div title="Store page">
       <Row md={2} xs={1} lg={3} className="g-3">
         {data?.data?.map((item: Product) => (
           <Col key={item.id} data-testid="item">
-            <StoreItem id={item.id} name={item.name} imgUrl={item.imgUrl} />
+            <StoreItem id={item.id} price={item.price} name={item.name} imgUrl={item.imgUrl} />
           </Col>
         ))}
       </Row>

@@ -25,7 +25,7 @@ beforeAll(() => {
 describe('Store item', () => {
   test('Show item image in an img src', () => {
     const imgLink = 'imgLink'
-    render(<StoreItem id={0} name="someName" imgUrl={imgLink} />)
+    render(<StoreItem id={0} price={10} name="someName" imgUrl={imgLink} />)
 
     const img = screen.getByRole('img')
 
@@ -34,9 +34,16 @@ describe('Store item', () => {
 
   test('Show item name', () => {
     const itemName = 'My weird name that only exists here'
-    render(<StoreItem id={0} name={itemName} imgUrl="someUrl" />)
+    render(<StoreItem id={0} price={10} name={itemName} imgUrl="someUrl" />)
 
     expect(screen.getByText(itemName)).toBeInTheDocument()
+  })
+
+  test('Show item price', () => {
+    const price = 9736.10
+    render(<StoreItem id={0} price={price} name={'Product'} imgUrl="someUrl" />)
+
+    expect(screen.getByText('$ ' + price)).toBeInTheDocument()
   })
 
   test('Show Add button if quantity in cart is Zero', () => {
@@ -49,7 +56,7 @@ describe('Store item', () => {
       return 10
     })
 
-    render(<StoreItem id={itemId} name="MyItem" imgUrl="someUrl" />)
+    render(<StoreItem id={itemId} price={10} name="MyItem" imgUrl="someUrl" />)
 
     expect(screen.getByTestId('btn_add')).toBeInTheDocument()
   })
@@ -60,7 +67,7 @@ describe('Store item', () => {
     })
 
     const { queryByTestId } = render(
-      <StoreItem id={1} name="MyItem" imgUrl="someUrl" />
+      <StoreItem id={1} name="MyItem" price={10} imgUrl="someUrl" />
     )
 
     expect(queryByTestId(/btn_add/i)).toBeNull()
@@ -71,7 +78,7 @@ describe('Store item', () => {
       return 10
     })
 
-    render(<StoreItem id={1} name="MyItem" imgUrl="someUrl" />)
+    render(<StoreItem id={1} name="MyItem" price={10} imgUrl="someUrl" />)
 
     expect(screen.getByTestId('btn_remove')).toBeInTheDocument()
   })
@@ -86,7 +93,7 @@ describe('Store item', () => {
       return 10
     })
 
-    render(<StoreItem id={itemId} name="MyItem" imgUrl="someUrl" />)
+    render(<StoreItem id={itemId} name="MyItem" price={10} imgUrl="someUrl" />)
 
     const addButton = screen.getByTestId('btn_add')
     fireEvent.click(addButton)
@@ -101,7 +108,7 @@ describe('Store item', () => {
       return 10
     })
 
-    render(<StoreItem id={itemId} name="MyItem" imgUrl="someUrl" />)
+    render(<StoreItem id={itemId} name="MyItem" price={10} imgUrl="someUrl" />)
 
     const removeButton = screen.getByTestId('btn_remove')
     fireEvent.click(removeButton)
@@ -140,7 +147,7 @@ describe('Store item - content with Translations', () => {
       return 10
     })
 
-    render(<StoreItem id={itemId} name="MyItem" imgUrl="someUrl" />)
+    render(<StoreItem id={itemId} name="MyItem" price={10} imgUrl="someUrl" />)
 
     expect(
       screen.getByRole('button', { name: btnAddLabel })
@@ -152,7 +159,7 @@ describe('Store item - content with Translations', () => {
       return 10
     })
 
-    render(<StoreItem id={1} name="MyItem" imgUrl="someUrl" />)
+    render(<StoreItem id={1} name="MyItem" price={10} imgUrl="someUrl" />)
 
     expect(
       screen.getByRole('button', { name: btnRemoveLabel })
