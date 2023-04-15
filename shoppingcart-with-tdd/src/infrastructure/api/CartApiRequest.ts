@@ -18,5 +18,5 @@ export class CartApiRequest implements CartApi {
 }
 
 const fetchProducts = () => {
-  return axios.get('http://localhost:4000/products')
+  return axios.get(process.env.API_URL + '/products')
 }
