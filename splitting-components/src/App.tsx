@@ -2,7 +2,7 @@ import React, { lazy, Suspense} from 'react'
 import { Link, Outlet, Route, Routes } from 'react-router-dom'
 import { Home } from './components/Home'
 
-const Store = lazy(() => import("./components/Store"))
+const Store = lazy(() => wait(2000).then(() => import("./components/Store")))
 
 function App() {
 
@@ -39,6 +39,12 @@ function NavWrapper(){
       </Suspense>
     </>
   )
+}
+
+function wait(time: number){
+  return new Promise(resolve => {
+    setTimeout(resolve, time)
+  })
 }
 
 export default App
