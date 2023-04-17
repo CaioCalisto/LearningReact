@@ -21,7 +21,7 @@ export function NoteForm({ onSubmit, onAddTag, availableTags }: NoteFormProps) {
     onSubmit({
       title: titleRef.current!.value,
       markdown: markdownRef.current!.value,
-      tags: [],
+      tags: selectedTags,
     });
   }
 
