@@ -1,10 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css"
+import { useMemo } from "react"
 import { Container } from "react-bootstrap"
 import { Navigate, Route, Routes } from "react-router-dom"
 import { NewNote } from "./components/NewNote"
+import { NoteData, RawNote, Tag } from "./models/Note"
+import { useLocalStorage } from "./useLocalStorage"
 
 function App() {
+  const [notes, setNotes] = useLocalStorage<RawNote[]>("NOTES", [])
+  const [tags, setTags] = useLocalStorage<Tag[]>("TAGS", [])
   
+  const notesWithTags = useMemo(() => {
+    return notes.map(note => {
+      return {...note, tags: tags.filter(tag => note.tagIds.includes(tag.id))}
+    })
+  }, [notes, tags])
+
   return (
     <Container className="my-4">
       <Routes>
