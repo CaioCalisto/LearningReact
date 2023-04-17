@@ -7,9 +7,15 @@ import { MyCustomError } from './components/MyCustomError'
 function App() {
  
   return (
-    <ErrorBoundary fallback={<MyCustomError />}>
-      <Grid />  
-    </ErrorBoundary>
+    <>
+      <ErrorBoundary fallback={<MyCustomError />}>
+        <Grid />  
+      </ErrorBoundary>
+      <br />
+      <ErrorBoundary fallback={<MyCustomError />}>
+        <Grid />  
+      </ErrorBoundary>
+    </>
   )
 }
 
