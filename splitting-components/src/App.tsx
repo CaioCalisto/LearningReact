@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import React, { lazy, Suspense} from 'react'
+import { Link, Outlet, Route, Routes } from 'react-router-dom'
 import { Home } from './components/Home'
-import { Store } from './components/Store'
+
+const Store = lazy(() => import("./components/Store"))
 
 function App() {
-  
+
   return (
     <>
-    <NavWrapper />
       <Routes>
-        <Route>
+        <Route path="/" element={<NavWrapper />}>
           <Route path="/" element={<Home />} />
           <Route path="/store" element={<Store />} />
         </Route>
@@ -30,10 +30,13 @@ function App() {
 function NavWrapper(){
   return (
     <>
-      <nav>
+      <nav style={{ display: "flex", gap: "1rem"}}>
         <Link to="/">HOME</Link>
         <Link to="/store">STORE</Link>
       </nav>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Outlet />
+      </Suspense>
     </>
   )
 }
