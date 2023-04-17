@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState} from 'react'
+import React, { lazy, Suspense, useState, useTransition} from 'react'
 import { Link, Outlet, Route, Routes } from 'react-router-dom'
 
 const Store = lazy(() => wait(2000).then(() => import("./components/Store")))
@@ -7,6 +7,7 @@ const AdminData = lazy(() => wait(2000).then(() => import('./components/AdminDat
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
+  const [isPending, startTransition] = useTransition()
 
   return (
     <>
@@ -27,7 +28,14 @@ function App() {
       </button>
       <br />
       <br />
-      <button onClick={(() => setIsAdmin(prev => !prev))}>Admin</button>
+      <button onClick={(() => {
+        startTransition(() => {
+          setIsAdmin(prev => !prev)
+        })
+      })}>
+          Admin
+      </button>
+      {isPending && "Loading Transition"}
       <Suspense fallback={<h2>Loading...</h2>}>
         {isAdmin ? <AdminData /> : <h2>Not admin</h2>}
       </Suspense>
