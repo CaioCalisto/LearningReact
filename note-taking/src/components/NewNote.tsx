@@ -1,10 +1,21 @@
+import { NoteData, Tag } from "../models/Note";
 import { NoteForm } from "./NoteForm";
 
-export function NewNote(){
+type NewNoteProps = {
+  onSubmit: (data: NoteData) => void;
+  onAddTag: (tag: Tag) => void;
+  availableTags: Tag[];
+};
+
+export function NewNote({ onSubmit, onAddTag, availableTags }: NewNoteProps) {
   return (
     <>
       <h1 className="mb-4">New note</h1>
-      <NoteForm />
+      <NoteForm
+        onSubmit={onSubmit}
+        onAddTag={onAddTag}
+        availableTags={availableTags}
+      />
     </>
-  )
+  );
 }
