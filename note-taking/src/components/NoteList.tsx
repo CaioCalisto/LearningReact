@@ -34,7 +34,7 @@ export function NoteList({
           ))
       );
     });
-  }, [title, selectedTags]);
+  }, [title, selectedTags, notes]);
 
   return (
     <>
