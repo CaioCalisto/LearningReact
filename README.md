@@ -1,6 +1,4 @@
-# FastFood
-
-Studying backend, frontend, performance, docker, kubernetes...etc etc
+# Studying REACT JS
 
 # Commands
 ## Dev commands
