@@ -11,6 +11,7 @@ function BasicLayout() {
           <Link to={'/'}>Home</Link>
           <Divider />
           <Link to={'/buttons'}>Buttons</Link>
+          <Link to={'/custom-buttons'}>Custom Buttons</Link>
         </Stack>
       </nav>
       <main><Outlet /></main>
