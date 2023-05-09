@@ -13,8 +13,8 @@ function BasicLayout() {
           <Link to={'/buttons'}>Buttons</Link>
           <Link to={'/custom-buttons'}>Custom Buttons</Link>
           <Link to={'/text'}>Text fields</Link>
-          <Link to={'/text'}>Custom Text fields</Link>
-          <Link to={'/custom-text'}>Custom Text fields 2</Link>
+          <Link to={'/custom-text'}>Custom Text fields</Link>
+          <Link to={'/badges'}>Badges</Link>
         </Stack>
       </nav>
       <main><Outlet /></main>
