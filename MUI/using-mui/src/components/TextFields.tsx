@@ -156,12 +156,30 @@ function TextFields() {
               }
             />
           </FormControl>
+
           <Box sx={{ display: "flex", alignItems: "flex-end" }}>
             <AccountCircle sx={{ color: "action.active", mr: 1, my: 0.5 }} />
             <TextField id="input-with-sx" label="With sx" variant="standard" />
           </Box>
         </Box>
       </Grid>
+      <Divider />
+      <h3>Colors</h3>
+      <Stack direction="row" gap={2}>
+        <TextField label="Outlined secondary" color="secondary" focused />
+        <TextField
+          label="Filled success"
+          variant="filled"
+          color="success"
+          focused
+        />
+        <TextField
+          label="Standard warning"
+          variant="standard"
+          color="warning"
+          focused
+        />
+      </Stack>
     </>
   );
 }
