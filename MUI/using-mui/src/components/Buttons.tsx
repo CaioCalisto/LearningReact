@@ -182,6 +182,15 @@ function Buttons() {
           <DeleteIcon />
         </IconButton>
       </Stack>
+      <Divider />
+      <Stack
+        spacing={2}
+        direction="row"
+        style={{ height: "60px" }}
+        alignItems="center">
+          <h3>Loading</h3>
+          
+        </Stack>
     </>
   );
 }
