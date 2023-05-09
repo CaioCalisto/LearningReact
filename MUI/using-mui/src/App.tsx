@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Alerts from "./components/Alerts"
+import BackDrop from "./components/BackDrop"
 import Badges from "./components/Badges"
 import Buttons from "./components/Buttons"
 import CustomButtons from "./components/CustomButtons"
@@ -20,6 +21,7 @@ function App() {
         <Route path="/custom-text" element={<TextFields2 />} />
         <Route path="/badges" element={<Badges />} />
         <Route path="/alerts" element={<Alerts />} />
+        <Route path="/backdrop" element={<BackDrop />} />
       </Route>
     </Routes>
   )

@@ -16,6 +16,7 @@ function BasicLayout() {
           <Link to={'/custom-text'}>Custom Text fields</Link>
           <Link to={'/badges'}>Badges</Link>
           <Link to={'/alerts'}>Alerts</Link>
+          <Link to={'/backdrop'}>BackDrop</Link>
         </Stack>
       </nav>
       <main><Outlet /></main>
