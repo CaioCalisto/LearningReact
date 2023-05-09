@@ -12,6 +12,7 @@ function BasicLayout() {
           <Divider />
           <Link to={'/buttons'}>Buttons</Link>
           <Link to={'/custom-buttons'}>Custom Buttons</Link>
+          <Link to={'/text-fields'}>Text fields</Link>
         </Stack>
       </nav>
       <main><Outlet /></main>
