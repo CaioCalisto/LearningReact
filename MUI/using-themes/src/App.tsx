@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AnotherCustomButton } from "./components/AnotherCustomButton";
 import { CustomButton } from "./components/CustomButton";
 import FirstTheme from "./themes/FirstTheme";
+import NewTheme from "./themes/NewTheme";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
         <br />
         <br />
         <Button>Click here</Button>
+      </ThemeProvider>
+      <br /><br />
+      <ThemeProvider theme={NewTheme}>
+        <Button variant="dashed">Click</Button>
       </ThemeProvider>
     </>
   );
