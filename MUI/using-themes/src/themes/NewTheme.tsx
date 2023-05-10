@@ -12,12 +12,14 @@ declare module "@mui/material/styles" {
             style: {
               textTransform: string,
               border: string,
+              fontSize: string
             },
           },
           {
             props: { variant: string, color: string },
             style: {
               border: string,
+              fontSize: string
             },
           },
         ]
@@ -35,12 +37,14 @@ declare module "@mui/material/styles" {
             style: {
               textTransform: string,
               border: string,
+              fontSize: string
             },
           },
           {
             props: { variant: string, color: string },
             style: {
               border: string,
+              fontSize: string
             },
           },
         ]
@@ -58,6 +62,7 @@ const NewTheme = createTheme({
           style: {
             textTransform: 'none',
             border: `2px dashed ${blue[500]}`,
+            fontSize: '1.0rem'
           },
         },
         {
