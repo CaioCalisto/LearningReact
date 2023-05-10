@@ -17,6 +17,7 @@ function BasicLayout() {
           <Link to={'/badges'}>Badges</Link>
           <Link to={'/alerts'}>Alerts</Link>
           <Link to={'/backdrop'}>BackDrop</Link>
+          <Link to={'/snackbar'}>Snackbar</Link>
         </Stack>
       </nav>
       <main><Outlet /></main>
