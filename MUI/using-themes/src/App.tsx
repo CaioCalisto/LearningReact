@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
+import { Button } from "@mui/material";
 import { useState } from "react";
 import { AnotherCustomButton } from "./components/AnotherCustomButton";
 import { CustomButton } from "./components/CustomButton";
@@ -12,6 +13,9 @@ function App() {
         <br />
         <br />
         <AnotherCustomButton />
+        <br />
+        <br />
+        <Button>Click here</Button>
       </ThemeProvider>
     </>
   );

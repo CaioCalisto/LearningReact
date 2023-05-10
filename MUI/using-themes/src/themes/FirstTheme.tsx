@@ -7,6 +7,17 @@ declare module "@mui/material/styles" {
       backgroundColor: string;
       color: string;
     };
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            backgroundColor: string;
+            color: string;
+            fontSize: string;
+          }
+        }
+      };
+    };
   }
 
   // allow configuration using 'createTheme'
@@ -14,6 +25,17 @@ declare module "@mui/material/styles" {
     buttons?: {
       backgroundColor?: string;
       color?: string;
+    };
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            backgroundColor: string;
+            color: string;
+            fontSize: string;
+          }
+        }
+      };
     };
   }
 }
@@ -23,6 +45,17 @@ const FirstTheme = createTheme({
     backgroundColor: "#3b0d00",
     color: "#ddd7d0",
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#efa55c",
+          color: "#7ed5e4",
+          fontSize: '2rem'
+        }
+      }
+    }
+  }
 });
 
 export default FirstTheme;
