@@ -2,7 +2,7 @@
 import React from 'react'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-
+import userEvent from '@testing-library/user-event'
 import { TextField } from '@mui/material'
 
 describe('Testing My Form that uses MUI', () => {
@@ -12,10 +12,11 @@ describe('Testing My Form that uses MUI', () => {
     )
     var myValue = 'whatever I want as a value'
 
-    var textBox = getByTestId('myTextField').querySelector('.MuiInputBase-input')
+    var textBox = getByTestId('myTextField').querySelector('input')
+    
     fireEvent.change(textBox, { target: { value: myValue } })
 
     expect(textBox.value).toBe(myValue)
-    // expect(getByText(myValue)).toBeInTheDocument()
+    expect(getByText(myValue)).toBeInTheDocument()
   })
 })
