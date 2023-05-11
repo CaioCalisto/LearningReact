@@ -1,13 +1,18 @@
 // @ts-nocheck
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom/extend-expect'
 import MyForm from './MyForm'
 
 describe('Testing My Form that uses MUI', () => {
-  it('I want to just change a MUI Text box', () => {
+  it('I want to just change a MUI Text box', async () => {
     render(<MyForm />)
+    var myValue = 'whatever I want as a value'
+    
+    var textBox = screen.getByTestId('myTextField').querySelector('input')
+    fireEvent.change(textBox, { target: { value: myValue }})
 
-    expect(screen.getByText('MY_FORM')).toBeInTheDocument()
+    expect(textBox.value).toBe(myValue)
   })
 })

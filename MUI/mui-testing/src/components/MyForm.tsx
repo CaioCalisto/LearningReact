@@ -1,8 +1,11 @@
+import { TextField } from '@mui/material'
 import React from 'react'
 
 function MyForm() {
   return (
-    <h1>MY_FORM</h1>
+    <>
+      <TextField data-testid="myTextField" variant='outlined' />
+    </>
   )
 }
 
