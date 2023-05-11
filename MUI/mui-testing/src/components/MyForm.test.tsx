@@ -22,17 +22,18 @@ describe('Testing My Form that uses MUI', () => {
 
   it('I want to pass the TextField value as parameter', () => {
     const myCallbackMock: jest.Mock = jest.fn()
-    render(<MyForm myCallback={myCallbackMock} />)
+    const { getByTestId, getByText } = render(<MyForm myCallback={myCallbackMock} />)
 
     var myValue = 'whatever I want as a value'
 
-    var textBox = screen.getByTestId('myTextField').querySelector('input')
-    fireEvent.change(textBox, { target: { value: myValue } })
+    var textBox = getByTestId('myTextField').querySelector('input')
+    fireEvent.change(textBox, {target: {value: myValue}})
 
-    var button = screen.getByTestId('myButton')
+    var button = getByTestId('myButton')
     fireEvent.click(button)
 
     expect(myCallbackMock.mock.calls).toHaveLength(1)
+    // expect(screen.getByText(myValue)).toBeInTheDocument()
     expect(myCallbackMock.mock.calls[0][0]).toBe(myValue)
   })
 })

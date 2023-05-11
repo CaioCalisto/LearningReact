@@ -1,20 +1,23 @@
 import { Button, TextField } from '@mui/material'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 type MyFormProps = {
   myCallback: (myValue: string) => void;
 }
 
 function MyForm( {myCallback} : MyFormProps) {
-  const txtBoxValue = useRef<HTMLInputElement>(null);
-
+  const [value, setValue] = useState('default');
+  const onChange = (e: any) => {
+    setValue(e.target.value);
+  };
+  
   function act(){
-    myCallback(txtBoxValue.current!.value)
+    myCallback(value)
   }
 
   return (
     <>
-      <TextField ref={txtBoxValue} data-testid="myTextField" variant="outlined" />
+      <TextField value={value} onChange={onChange} data-testid="myTextField" variant="outlined" />
       <Button data-testid='myButton' onClick={act}>Click here</Button>
     </>
   )
