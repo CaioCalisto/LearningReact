@@ -1,9 +1,10 @@
 // @ts-nocheck
 import React from 'react'
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, getByTestId, render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import userEvent from '@testing-library/user-event'
 import { TextField } from '@mui/material'
+import MyForm from './MyForm'
 
 describe('Testing My Form that uses MUI', () => {
   it('I want to just change a MUI Text box', () => {
@@ -17,6 +18,21 @@ describe('Testing My Form that uses MUI', () => {
     fireEvent.change(textBox, { target: { value: myValue } })
 
     expect(textBox.value).toBe(myValue)
-    expect(getByText(myValue)).toBeInTheDocument()
+  })
+
+  it('I want to pass the TextField value as parameter', () => {
+    const myCallbackMock: jest.Mock = jest.fn()
+    render(<MyForm myCallback={myCallbackMock} />)
+
+    var myValue = 'whatever I want as a value'
+
+    var textBox = screen.getByTestId('myTextField').querySelector('input')
+    fireEvent.change(textBox, { target: { value: myValue } })
+
+    var button = screen.getByTestId('myButton')
+    fireEvent.click(button)
+
+    expect(myCallbackMock.mock.calls).toHaveLength(1)
+    expect(myCallbackMock.mock.calls[0][0]).toBe(myValue)
   })
 })
