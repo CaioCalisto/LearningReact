@@ -26,6 +26,6 @@ describe('Testing Parent component', () => {
     var button = screen.getByTestId('myButton')
     fireEvent.click(button)
 
-    expect(getByText('My Custom Value sent from callback')).toBeInTheDocument()
+    expect(getByText('Parent value: My Custom Value sent from callback')).toBeInTheDocument()
   })
 })
