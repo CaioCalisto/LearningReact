@@ -1,8 +1,7 @@
 // @ts-nocheck
 import React from 'react'
-import { fireEvent, getByTestId, render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import userEvent from '@testing-library/user-event'
 import { TextField } from '@mui/material'
 import MyForm from './MyForm'
 
@@ -37,8 +36,7 @@ describe('Testing My Form that uses MUI', () => {
   })
 
   it('I want to see the TextField value in the screen', () => {
-    const myCallbackMock: jest.Mock = jest.fn()
-    const { getByTestId, getByDisplayValue } = render(<MyForm myCallback={myCallbackMock} />)
+    const { getByTestId, getByDisplayValue } = render(<MyForm myCallback={jest.Mock = jest.fn()} />)
 
     var myValue = 'whatever I want as a value'
 
