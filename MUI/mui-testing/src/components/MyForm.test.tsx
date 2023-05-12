@@ -33,7 +33,18 @@ describe('Testing My Form that uses MUI', () => {
     fireEvent.click(button)
 
     expect(myCallbackMock.mock.calls).toHaveLength(1)
-    // expect(screen.getByText(myValue)).toBeInTheDocument()
     expect(myCallbackMock.mock.calls[0][0]).toBe(myValue)
+  })
+
+  it('I want to see the TextField value in the screen', () => {
+    const myCallbackMock: jest.Mock = jest.fn()
+    const { getByTestId, getByDisplayValue } = render(<MyForm myCallback={myCallbackMock} />)
+
+    var myValue = 'whatever I want as a value'
+
+    var textBox = getByTestId('myTextField').querySelector('input')
+    fireEvent.change(textBox, {target: {value: myValue}})
+
+    expect(getByDisplayValue(myValue)).toBeInTheDocument()
   })
 })
