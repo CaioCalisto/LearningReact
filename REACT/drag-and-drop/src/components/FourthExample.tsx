@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function FourthExample() {
   const [firstList, setFirstList] = useState<string[]>(["1", "2", "3"]);
 
-  const [myThings, setMyThings] = useState<string[]>([]);
+  const [secondList, setSecondList] = useState<string[]>([]);
 
   function handleOnDrag(e: React.DragEvent, thingType: string) {
     e.dataTransfer.setData("thingType", thingType);
@@ -12,15 +12,15 @@ function FourthExample() {
   function handleOnDrop1(e: React.DragEvent) {
     const thing = e.dataTransfer.getData("thingType") as string;
     setFirstList([...firstList, thing]);
-    setMyThings(myThings.filter((item) => item != thing));
-    console.table(myThings);
+    setSecondList(secondList.filter((item) => item != thing));
+    console.table(secondList);
   }
 
   function handleOnDrop2(e: React.DragEvent) {
     const thing = e.dataTransfer.getData("thingType") as string;
-    setMyThings([...myThings, thing]);
+    setSecondList([...secondList, thing]);
     setFirstList(firstList.filter((item) => item != thing));
-    console.table(myThings);
+    console.table(secondList);
   }
 
   function handleDragOver(e: React.DragEvent) {
@@ -33,7 +33,6 @@ function FourthExample() {
       <div className="box" onDrop={handleOnDrop1} onDragOver={handleDragOver}>
         {firstList.map((item, index) => (
           <div
-            className="thing"
             draggable
             onDragStart={(e) => handleOnDrag(e, item)}
           >
@@ -42,9 +41,8 @@ function FourthExample() {
         ))}
       </div>
       <div className="box" onDrop={handleOnDrop2} onDragOver={handleDragOver}>
-        {myThings.map((thing, index) => (
+        {secondList.map((thing, index) => (
           <div
-            className="dropped-thing"
             draggable
             onDragStart={(e) => handleOnDrag(e, thing)}
           >
