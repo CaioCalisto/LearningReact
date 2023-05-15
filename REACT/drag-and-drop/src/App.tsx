@@ -1,16 +1,17 @@
+import React from 'react'
 import './App.css'
 
 function App() {
 
-  function allowDrop(ev){
+  function onDragOver(ev: React.DragEvent<HTMLDivElement>){
     ev.preventDefault()
   }
 
-  function drag(ev) {
+  function onDragStart(ev: React.DragEvent<HTMLDivElement>) {
     ev.dataTransfer.setData("item", ev.target.id)
   }
 
-  function drop(ev) {
+  function onDragDrop(ev: React.DragEvent<HTMLDivElement>) {
     ev.preventDefault()
     const el = ev.dataTransfer.getData("item")
 
@@ -19,17 +20,15 @@ function App() {
   
   return (
     <>
-      <div className="box" onDrop={() => drop(event)} onDragOver={() => allowDrop(event)}>
-        <div id="item" draggable="true" onDragStart={() => drag(event)}>
+      <div className="box" onDrop={() => onDragDrop(event)} onDragOver={() => onDragOver(event)}>
+        <div id="item" draggable="true" onDragStart={() => onDragStart(event)}>
         </div>
       </div>
-      <div className="box" onDrop={() => drop(event)} onDragOver={() => allowDrop(event)}>
-        <div id="item" draggable="true" onDragStart={() => drag(event)}>
-        </div>
+      <div className="box" onDrop={() => onDragDrop(event)} onDragOver={() => onDragOver(event)}>
+        
       </div>
-      <div className="box" onDrop={() => drop(event)} onDragOver={() => allowDrop(event)}>
-        <div id="item" draggable="true" onDragStart={() => drag(event)}>
-        </div>
+      <div className="box" onDrop={() => onDragDrop(event)} onDragOver={() => onDragOver(event)}>
+        
       </div>
     </>
   )
