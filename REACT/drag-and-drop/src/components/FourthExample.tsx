@@ -5,19 +5,19 @@ function FourthExample() {
 
   const [secondList, setSecondList] = useState<string[]>([]);
 
-  function handleOnDrag(e: React.DragEvent, thingType: string) {
-    e.dataTransfer.setData("thingType", thingType);
+  function handleOnDrag(e: React.DragEvent, thingLabel: string) {
+    e.dataTransfer.setData("thingLabel", thingLabel);
   }
 
   function handleOnDrop1(e: React.DragEvent) {
-    const thing = e.dataTransfer.getData("thingType") as string;
+    const thing = e.dataTransfer.getData("thingLabel") as string;
     setFirstList([...firstList, thing]);
     setSecondList(secondList.filter((item) => item != thing));
     console.table(secondList);
   }
 
   function handleOnDrop2(e: React.DragEvent) {
-    const thing = e.dataTransfer.getData("thingType") as string;
+    const thing = e.dataTransfer.getData("thingLabel") as string;
     setSecondList([...secondList, thing]);
     setFirstList(firstList.filter((item) => item != thing));
     console.table(secondList);
