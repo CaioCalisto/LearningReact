@@ -19,6 +19,7 @@ function FirstExample() {
 
   return (
     <>
+      <h3>First Example</h3>
       <div
         className="box"
         onDrop={() => onDragDrop(event)}

@@ -1,0 +1,6 @@
+.page {
+  height: 300px;
+  width: 128px;
+  border: 2px dashed #000000;
+  border-radius: 8px;
+}

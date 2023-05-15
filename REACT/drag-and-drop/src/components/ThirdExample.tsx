@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import "./SecondExample.css";
+import "./ThirdExample.css";
 
-function SecondExample() {
+function ThirdExample() {
+  const [firstList, setFirstList] = useState<string[]>(["1", "2", "3"])
+
   const [myThings, setMyThings] = useState<string[]>([]);
 
   function handleOnDrag(e: React.DragEvent, thingType: string) {
@@ -11,6 +13,7 @@ function SecondExample() {
   function handleOnDrop(e: React.DragEvent) {
     const thing = e.dataTransfer.getData("thingType") as string;
     setMyThings([...myThings, thing]);
+    setFirstList(firstList.filter(item => item != thing))
     console.table(myThings);
   }
 
@@ -20,35 +23,17 @@ function SecondExample() {
 
   return (
     <>
-      <h3>Second example</h3>
+      <h3>Third example</h3>
       <div className="App">
         <div className="things">
-          <div
-            className="thing"
-            draggable
-            onDragStart={(e) => handleOnDrag(e, "1")}
-          >
-            1
-          </div>
-          <div
-            className="thing"
-            draggable
-            onDragStart={(e) => handleOnDrag(e, "2")}
-          >
-            2
-          </div>
-          <div
-            className="thing"
-            draggable
-            onDragStart={(e) => handleOnDrag(e, "3")}
-          >
-            3
-          </div>
+          {firstList.map((item, index) => (
+            <div className="thing" draggable onDragStart={(e) => handleOnDrag(e, item)}>{item}</div>
+          ))}
         </div>
       </div>
       <div className="page" onDrop={handleOnDrop} onDragOver={handleDragOver}>
         {myThings.map((thing, index) => (
-          <div className="dropped-thing" key={index}>
+          <div className="dropped-thing">
             {thing}
           </div>
         ))}
@@ -57,4 +42,4 @@ function SecondExample() {
   );
 }
 
-export default SecondExample;
+export default ThirdExample;

@@ -1,6 +1,7 @@
 import React from 'react'
 import FirstExample from './components/FirstExample'
 import SecondExample from './components/SecondExample'
+import ThirdExample from './components/ThirdExample'
 
 function App() {
 
@@ -11,6 +12,10 @@ function App() {
       <br />
       <br />
       <SecondExample />
+      <br />
+      <br />
+      <br />
+      <ThirdExample />
     </>
   )
 }
