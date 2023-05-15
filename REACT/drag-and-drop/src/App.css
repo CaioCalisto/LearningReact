@@ -1,0 +1,13 @@
+.box {
+  height: 128px;
+  width: 128px;
+  border: 2px dashed #ffffff;
+  border-radius: 8px;
+}
+
+.box #item {
+  height: 128px;
+  width: 128px;
+  background-color: #3db9d9;
+  border-radius: 8px;
+}
