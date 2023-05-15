@@ -27,6 +27,10 @@ function App() {
         <div id="item" draggable="true" onDragStart={() => drag(event)}>
         </div>
       </div>
+      <div className="box" onDrop={() => drop(event)} onDragOver={() => allowDrop(event)}>
+        <div id="item" draggable="true" onDragStart={() => drag(event)}>
+        </div>
+      </div>
     </>
   )
 }
