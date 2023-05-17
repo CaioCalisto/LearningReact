@@ -20,6 +20,7 @@ function App() {
       </ThemeProvider>
       <br /><br />
       <ThemeProvider theme={NewTheme}>
+        <Button variant="dashed" color='secondary'>Click</Button>
         <Button variant="dashed">Click</Button>
       </ThemeProvider>
     </>
