@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react"
-import { Divider, Typography } from "@mui/material"
+import { Button, Divider, Typography } from "@mui/material"
 import MainTheme from "./themes/MainTheme"
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <br />
         <Typography variant="body3_regular">Body 3 Medium</Typography>
         <Divider />
-        
+        <Button sx={{ color: "neutral.main_light" }}>Neutral</Button>
       </ThemeProvider>
     </>
   )

@@ -45,7 +45,7 @@ declare module "@mui/material/styles" {
         fontSize?: string,
         fontWeight?: string
       }
-    }
+    },
     components?: {
     }
   }
@@ -93,8 +93,30 @@ declare module "@mui/material/styles" {
         fontSize?: string,
         fontWeight?: string
       }
-    }
+    },
     components: {
+    }
+  }
+
+  interface Palette {
+    neutral?: {
+      darker?: string,
+      dark?: string
+      main?: string,
+      main_light?: string,
+      light?: string,
+      lighter?: string,
+    }
+  }
+
+  interface PaletteOptions {
+    neutral?: {
+      darker?: string,
+      dark?: string
+      main?: string,
+      main_light?: string,
+      light?: string,
+      lighter?: string,
     }
   }
 }
@@ -172,8 +194,17 @@ const MainTheme = createTheme({
         fontSize: '14px',
       }
     }
-  }
-  
+  },
+  palette: {
+    neutral: {
+      darker: "#212121",
+      dark: '#717171',
+      main: '#89939E',
+      main_light: '#ABBED1',
+      light: '#3F5F7FA',
+      lighter: '#FFFFFF',
+    }
+  },
 })
 
 export default MainTheme
