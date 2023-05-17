@@ -20,6 +20,30 @@ declare module "@mui/material/styles" {
       h4?: {
         fontSize?: string,
         fontWeight?: string
+      },
+      body1_medium?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body1_regular?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body2_medium?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body2_regular?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body3_medium?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body3_regular?: {
+        fontSize?: string,
+        fontWeight?: string
       }
     }
     components?: {
@@ -44,6 +68,30 @@ declare module "@mui/material/styles" {
       h4?: {
         fontSize?: string,
         fontWeight?: string
+      },
+      body1_medium?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body1_regular?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body2_medium?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body2_regular?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body3_medium?: {
+        fontSize?: string,
+        fontWeight?: string
+      },
+      body3_regular?: {
+        fontSize?: string,
+        fontWeight?: string
       }
     }
     components: {
@@ -59,28 +107,70 @@ const MainTheme = createTheme({
       fontWeight: '700',
       '@media (min-width:767px)': {
         fontSize: '64px',
-      },
+      }
     },
     h2: {
       fontSize: '20px',
       fontWeight: '700',
       '@media (min-width:767px)': {
         fontSize: '36px',
-      },
+      }
     },
     h3: {
       fontSize: '18px',
       fontWeight: '700',
       '@media (min-width:767px)': {
         fontSize: '28px',
-      },
+      }
     },
     h4: {
       fontSize: '16px',
       fontWeight: '700',
       '@media (min-width:767px)': {
         fontSize: '20px',
-      },
+      }
+    },
+    body1_medium: {
+      fontSize: '16px',
+      fontWeight: '500',
+      '@media (min-width:767px)': {
+        fontSize: '18px'
+      }
+    },
+    body1_regular: {
+      fontSize: '16px',
+      fontWeight: '400',
+      '@media (min-width:767px)': {
+        fontSize: '18px',
+      }
+    },
+    body2_medium: {
+      fontSize: '14px',
+      fontWeight: '500',
+      '@media (min-width:767px)': {
+        fontSize: '16px',
+      }
+    },
+    body2_regular: {
+      fontSize: '14px',
+      fontWeight: '400',
+      '@media (min-width:767px)': {
+        fontSize: '16px',
+      }
+    },
+    body3_medium: {
+      fontSize: '12px',
+      fontWeight: '500',
+      '@media (min-width:767px)': {
+        fontSize: '14px',
+      }
+    },
+    body3_regular: {
+      fontSize: '12px',
+      fontWeight: '400',
+      '@media (min-width:767px)': {
+        fontSize: '14px',
+      }
     }
   }
   
