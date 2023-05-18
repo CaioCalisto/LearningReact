@@ -115,6 +115,13 @@ declare module "@mui/material/styles" {
       light?: string,
       lighter?: string,
     }
+    secondary?: {
+      main?: string,
+      dark?: string,
+      light?: string
+      lighter?: string,
+      constrastText?: string
+    }
   }
 
   interface PaletteOptions {
@@ -133,6 +140,13 @@ declare module "@mui/material/styles" {
       main_light?: string,
       light?: string,
       lighter?: string,
+    }
+    secondary?: {
+      main?: string,
+      dark?: string,
+      light?: string
+      lighter?: string,
+      constrastText?: string
     }
   }
 }
@@ -235,6 +249,13 @@ const MainTheme = createTheme({
       main_light: '#C4DAB3',
       light: '#E2EDD9',
       lighter: '#F0F5EB',
+    },
+    secondary: {
+      main: "#0E2554",
+      dark: "#3E5176",
+      light: "#6E7C98",
+      lighter: "#9FA8BB",
+      constrastText: "#CFD3DD"
     }
   },
 })

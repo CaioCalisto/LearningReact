@@ -1,9 +1,9 @@
-import { ThemeProvider } from "@emotion/react"
-import { Button, Divider, Typography } from "@mui/material"
-import MainTheme from "./themes/MainTheme"
+import { ThemeProvider } from "@emotion/react";
+import { Button, Divider, Typography } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
+import MainTheme from "./themes/MainTheme";
 
 function App() {
-  
   return (
     <>
       <ThemeProvider theme={MainTheme}>
@@ -24,13 +24,26 @@ function App() {
         <br />
         <Typography variant="body3_regular">Body 3 Medium</Typography>
         <Divider />
-        <Button sx={{ backgroundColor: "neutral.darker", color: "neutral.lighter" }}>Neutral</Button>
+        <Button
+          sx={{ backgroundColor: "neutral.darker", color: "neutral.lighter" }}
+        >
+          Neutral
+        </Button>
         <br />
         <br />
-        <Button sx={{ backgroundColor: "primary.darker", color: "primary.lighter" }}>Primary</Button>
+        <Button
+          sx={{ backgroundColor: "primary.darker", color: "primary.lighter" }}
+        >
+          Primary
+        </Button>
+        <br />
+        <br />
+        <Button variant="contained" endIcon={<SendIcon />} sx={{backgroundColor: "secondary.main", color: "primary.lighter"}}>
+          Label
+        </Button>
       </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
