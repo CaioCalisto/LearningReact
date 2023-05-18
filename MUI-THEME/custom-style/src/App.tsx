@@ -43,7 +43,7 @@ function App() {
         </Button>
         <br />
         <br />
-        <Button variant="primary" endIcon={<SendIcon />} sx={{backgroundColor: "secondary.main", color: "primary.lighter"}}>
+        <Button variant="primary" endIcon={<SendIcon />}>
           Label
         </Button>
       </ThemeProvider>

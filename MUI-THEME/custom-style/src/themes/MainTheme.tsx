@@ -293,6 +293,8 @@ const muiElements = {
           textTransform: "none",
           border: `2px dashed ${red[500]}`,
           fontSize: "1.0rem",
+          backgroundColor: '#0E2554',
+          color: "#ffffff"
         },
       },
     ],
