@@ -24,7 +24,9 @@ function App() {
         <br />
         <Typography variant="body3_regular">Body 3 Medium</Typography>
         <Divider />
-        <Button sx={{ color: "neutral.main_light" }}>Neutral</Button>
+        <Button sx={{ backgroundColor: "neutral.darker", color: "neutral.lighter" }}>Neutral</Button>
+        <br />
+        <Button sx={{ backgroundColor: "primary.darker", color: "primary.lighter" }}>Neutral</Button>
       </ThemeProvider>
     </>
   )

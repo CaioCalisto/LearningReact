@@ -107,10 +107,26 @@ declare module "@mui/material/styles" {
       light?: string,
       lighter?: string,
     }
+    primary?: {
+      darker?: string,
+      dark?: string
+      main?: string,
+      main_light?: string,
+      light?: string,
+      lighter?: string,
+    }
   }
 
   interface PaletteOptions {
     neutral?: {
+      darker?: string,
+      dark?: string
+      main?: string,
+      main_light?: string,
+      light?: string,
+      lighter?: string,
+    }
+    primary?: {
       darker?: string,
       dark?: string
       main?: string,
@@ -203,6 +219,22 @@ const MainTheme = createTheme({
       main_light: '#ABBED1',
       light: '#3F5F7FA',
       lighter: '#FFFFFF',
+    },
+    neutral: {
+      darker: "#212121",
+      dark: '#717171',
+      main: '#89939E',
+      main_light: '#ABBED1',
+      light: '#3F5F7FA',
+      lighter: '#FFFFFF',
+    },
+    primary: {
+      darker: "#6CA342",
+      dark: '#89B568',
+      main: '#A7C88E',
+      main_light: '#C4DAB3',
+      light: '#E2EDD9',
+      lighter: '#F0F5EB',
     }
   },
 })
