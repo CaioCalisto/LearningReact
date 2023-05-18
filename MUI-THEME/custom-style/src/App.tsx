@@ -41,6 +41,11 @@ function App() {
         <Button variant="contained" endIcon={<SendIcon />} sx={{backgroundColor: "secondary.main", color: "primary.lighter"}}>
           Label
         </Button>
+        <br />
+        <br />
+        <Button variant="primary" endIcon={<SendIcon />} sx={{backgroundColor: "secondary.main", color: "primary.lighter"}}>
+          Label
+        </Button>
       </ThemeProvider>
     </>
   );
