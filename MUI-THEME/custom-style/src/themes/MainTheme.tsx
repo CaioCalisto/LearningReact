@@ -151,113 +151,117 @@ declare module "@mui/material/styles" {
   }
 }
 
-const MainTheme = createTheme({
-  typography: {
-    fontFamily: ['Roboto', 'sans-serif'].join(','),
-    h1: {
+const typographyTheme = {
+  fontFamily: ['Roboto', 'sans-serif'].join(','),
+  h1: {
+    fontSize: '28px',
+    fontWeight: '700',
+    '@media (min-width:767px)': {
+      fontSize: '64px',
+    }
+  },
+  h2: {
+    fontSize: '20px',
+    fontWeight: '700',
+    '@media (min-width:767px)': {
+      fontSize: '36px',
+    }
+  },
+  h3: {
+    fontSize: '18px',
+    fontWeight: '700',
+    '@media (min-width:767px)': {
       fontSize: '28px',
-      fontWeight: '700',
-      '@media (min-width:767px)': {
-        fontSize: '64px',
-      }
-    },
-    h2: {
+    }
+  },
+  h4: {
+    fontSize: '16px',
+    fontWeight: '700',
+    '@media (min-width:767px)': {
       fontSize: '20px',
-      fontWeight: '700',
-      '@media (min-width:767px)': {
-        fontSize: '36px',
-      }
-    },
-    h3: {
+    }
+  },
+  body1_medium: {
+    fontSize: '16px',
+    fontWeight: '500',
+    '@media (min-width:767px)': {
+      fontSize: '18px'
+    }
+  },
+  body1_regular: {
+    fontSize: '16px',
+    fontWeight: '400',
+    '@media (min-width:767px)': {
       fontSize: '18px',
-      fontWeight: '700',
-      '@media (min-width:767px)': {
-        fontSize: '28px',
-      }
-    },
-    h4: {
-      fontSize: '16px',
-      fontWeight: '700',
-      '@media (min-width:767px)': {
-        fontSize: '20px',
-      }
-    },
-    body1_medium: {
-      fontSize: '16px',
-      fontWeight: '500',
-      '@media (min-width:767px)': {
-        fontSize: '18px'
-      }
-    },
-    body1_regular: {
-      fontSize: '16px',
-      fontWeight: '400',
-      '@media (min-width:767px)': {
-        fontSize: '18px',
-      }
-    },
-    body2_medium: {
-      fontSize: '14px',
-      fontWeight: '500',
-      '@media (min-width:767px)': {
-        fontSize: '16px',
-      }
-    },
-    body2_regular: {
-      fontSize: '14px',
-      fontWeight: '400',
-      '@media (min-width:767px)': {
-        fontSize: '16px',
-      }
-    },
-    body3_medium: {
-      fontSize: '12px',
-      fontWeight: '500',
-      '@media (min-width:767px)': {
-        fontSize: '14px',
-      }
-    },
-    body3_regular: {
-      fontSize: '12px',
-      fontWeight: '400',
-      '@media (min-width:767px)': {
-        fontSize: '14px',
-      }
     }
   },
-  palette: {
-    neutral: {
-      darker: "#212121",
-      dark: '#717171',
-      main: '#89939E',
-      main_light: '#ABBED1',
-      light: '#3F5F7FA',
-      lighter: '#FFFFFF',
-    },
-    neutral: {
-      darker: "#212121",
-      dark: '#717171',
-      main: '#89939E',
-      main_light: '#ABBED1',
-      light: '#3F5F7FA',
-      lighter: '#FFFFFF',
-    },
-    primary: {
-      darker: "#6CA342",
-      dark: '#89B568',
-      main: '#A7C88E',
-      main_light: '#C4DAB3',
-      light: '#E2EDD9',
-      lighter: '#F0F5EB',
-    },
-    secondary: {
-      main: "#0E2554",
-      dark: "#3E5176",
-      light: "#6E7C98",
-      lighter: "#9FA8BB",
-      constrastText: "#CFD3DD"
+  body2_medium: {
+    fontSize: '14px',
+    fontWeight: '500',
+    '@media (min-width:767px)': {
+      fontSize: '16px',
     }
   },
+  body2_regular: {
+    fontSize: '14px',
+    fontWeight: '400',
+    '@media (min-width:767px)': {
+      fontSize: '16px',
+    }
+  },
+  body3_medium: {
+    fontSize: '12px',
+    fontWeight: '500',
+    '@media (min-width:767px)': {
+      fontSize: '14px',
+    }
+  },
+  body3_regular: {
+    fontSize: '12px',
+    fontWeight: '400',
+    '@media (min-width:767px)': {
+      fontSize: '14px',
+    }
+  }
+}
+
+const paletteTheme = {
+  neutral: {
+    darker: "#212121",
+    dark: '#717171',
+    main: '#89939E',
+    main_light: '#ABBED1',
+    light: '#3F5F7FA',
+    lighter: '#FFFFFF',
+  },
+  neutral: {
+    darker: "#212121",
+    dark: '#717171',
+    main: '#89939E',
+    main_light: '#ABBED1',
+    light: '#3F5F7FA',
+    lighter: '#FFFFFF',
+  },
+  primary: {
+    darker: "#6CA342",
+    dark: '#89B568',
+    main: '#A7C88E',
+    main_light: '#C4DAB3',
+    light: '#E2EDD9',
+    lighter: '#F0F5EB',
+  },
+  secondary: {
+    main: "#0E2554",
+    dark: "#3E5176",
+    light: "#6E7C98",
+    lighter: "#9FA8BB",
+    constrastText: "#CFD3DD"
+  }
+}
+
+const MainTheme = createTheme({
+  typography: typographyTheme,
+  palette: paletteTheme
 })
 
 export default MainTheme
