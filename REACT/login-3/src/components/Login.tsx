@@ -2,14 +2,17 @@ import React, { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext';
 
 function Login() {
-  const [username, setusername] = useState("");
-  const [password, setpassword] = useState("");
   const { setUser } = useAuth()
+  
+  const [user, setUsername] = useState("USER");
+  const [password, setPassword] = useState("PASSWORD");
+  const [role, setRole] = useState("ROLE");
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    // check password
-    setUser(username)
+    let newUser = { user, password, role}
+    setUser(newUser)
+    console.log('Login: ' + newUser.user)
   }
 
   return (
@@ -19,13 +22,20 @@ function Login() {
         <input
           type="text"
           name="Username"
-          value={username}
-          onChange={(e) => setusername(e.target.value)}
+          value={user}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="password"
           name="Password"
-          onChange={(e) => setpassword(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <input
+          type="text"
+          name="Role"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
         />
         <input type="submit" value="Submit" />
       </form>

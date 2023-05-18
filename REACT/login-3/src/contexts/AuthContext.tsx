@@ -1,10 +1,8 @@
 import { createContext, ReactNode, useContext, useMemo, useState } from "react";
 
 type AuthContextProps = {
-  setUser: (user: string) => void;
-  loggedUser: string;
-  isLoggedIn: boolean;
-  level: string;
+  setUser: (user: userAuthProps) => void;
+  user: userAuthProps;
 };
 
 const AuthContext = createContext({} as AuthContextProps);
@@ -17,26 +15,17 @@ type AuthProviderProps = {
   children: ReactNode;
 };
 
+type userAuthProps = {
+  user: string,
+  password: string,
+  role: string,
+}
+
 export function AuthContextProvider({ children }: AuthProviderProps) {
-  const [loggedUser, setLoggedUser] = useState<string>("");
-  const [level, setLevel] = useState<string>("");
+  const [user, setUser] = useState<userAuthProps>({} as userAuthProps);
 
-  function setUser(user: string) {
-    if (user === 'caio') {
-      setLoggedUser(user);
-      setLevel("admin");
-    }
-    if (user === 'natalia') {
-      setLoggedUser(user);
-      setLevel("user");  
-    }
-    console.log('AuthContext setUser method was called')
-  };
-
-  const isLoggedIn = loggedUser != "";
- 
   return (
-    <AuthContext.Provider value={{ setUser, loggedUser, isLoggedIn, level }}>
+    <AuthContext.Provider value={{ setUser, user }}>
       {children}
     </AuthContext.Provider>
   );

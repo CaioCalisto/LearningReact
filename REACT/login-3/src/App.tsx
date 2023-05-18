@@ -2,16 +2,24 @@ import { AuthContextProvider } from "./contexts/AuthContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
+import MainLayout from "./layouts/MainLayout";
+import RequireAuth from "./components/RequireAuth";
+
+const ROLES = {
+  Admin: "admin",
+  User: "user",
+};
 
 function App() {
   return (
-    <AuthContextProvider>
-      <Routes>
-        <Route path="/" element={<h1>HOME</h1>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </AuthContextProvider>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route path="login" element={<Login />} />
+        <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
+          <Route path="dashboard" element={<Dashboard />} />
+        </Route>
+      </Route>
+    </Routes>
   );
 }
 
