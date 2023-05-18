@@ -1,5 +1,4 @@
-import React,  { useRef } from "react";
-import { useAuth } from "../contexts/AuthContext";
+import React from "react";
 
 function Dashboard() {
   

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useAuth } from '../contexts/AuthContext';
+import useAuth from '../contexts/AuthContext';
 
 function Login() {
   const { setUser } = useAuth()
@@ -11,7 +11,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     let newUser = { user, password, role}
-    setUser(newUser)
+    setUser(user)
     console.log('Login: ' + newUser.user)
   }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
+import useAuth from "../contexts/AuthContext";
 
 type RequireAuthProps = {
   allowedRoles: string[];
@@ -8,9 +8,9 @@ type RequireAuthProps = {
 
 function RequireAuth({ allowedRoles }: RequireAuthProps) {
   const { user } = useAuth();
-  console.table(user)
+  console.log('User: ' + user)
 
-  return allowedRoles.includes(user?.role) ? <Outlet /> : <h1>Not allowed</h1>;
+  return allowedRoles.includes(user) ? <Outlet /> : <h1>Not allowed</h1>;
 }
 
 export default RequireAuth;
