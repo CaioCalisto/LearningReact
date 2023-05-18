@@ -26,7 +26,8 @@ function App() {
         <Divider />
         <Button sx={{ backgroundColor: "neutral.darker", color: "neutral.lighter" }}>Neutral</Button>
         <br />
-        <Button sx={{ backgroundColor: "primary.darker", color: "primary.lighter" }}>Neutral</Button>
+        <br />
+        <Button sx={{ backgroundColor: "primary.darker", color: "primary.lighter" }}>Primary</Button>
       </ThemeProvider>
     </>
   )
