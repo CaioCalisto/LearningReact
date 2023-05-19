@@ -7,9 +7,12 @@ import Login from './pages/Login'
 import UserContext from './contexts/UserContext'
 
 function App() {
+
+  const [user, setUser] = useState("caio")
   
   return (
-    <UserContext.Provider value={ { user: 'caio' }}>
+    <UserContext.Provider value={ { user, setUser }}>
+      <h1>Hello {user}</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/">
