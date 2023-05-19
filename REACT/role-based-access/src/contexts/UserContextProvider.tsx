@@ -11,10 +11,6 @@ export function UserContextProvider({ children } : UserContextProvider){
   let userName = 'caio'
   let role = 'user'
 
-  useRef(() => {
-
-  }, [userName, role])
-
   return (
     <UserContext.Provider value={{ userName, role }}>
       {children}
