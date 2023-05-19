@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode, useRef } from "react"
 import UserContext from "./UserContext"
 
 type UserContextProvider = {
@@ -8,8 +8,12 @@ type UserContextProvider = {
 export function UserContextProvider({ children } : UserContextProvider){
 
   // Here we create some logic to get user data ONCE
-  const userName = 'caio'
-  const role = 'user'
+  let userName = 'caio'
+  let role = 'user'
+
+  useRef(() => {
+
+  }, [userName, role])
 
   return (
     <UserContext.Provider value={{ userName, role }}>
