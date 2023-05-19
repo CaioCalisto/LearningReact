@@ -12,7 +12,15 @@ function RequireAuth({ allowedRoles } : RequireAuthProps) {
   return (
     allowedRoles.includes(role)
      ? <Outlet />
-     : <h1>Not allowed</h1>
+     : (
+      <>
+        <h1>User is not allowed to see this page.</h1>
+        <h2>Roles allowed:</h2>
+        {allowedRoles.map((allowedRole) => (
+          <h2>{allowedRole}</h2>
+        ))}
+      </>
+     )
   )
 }
 
