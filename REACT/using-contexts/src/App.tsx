@@ -19,7 +19,6 @@ function App() {
             <Route index element={<Home />} />
           </Route>
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
