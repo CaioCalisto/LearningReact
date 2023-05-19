@@ -21,6 +21,19 @@ function App() {
     prevName.current = name
   }, [name])
 
+  // run just once
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     alert('This is my alert after 1 seconds I rendered this page')
+  //   }, 1000)
+  // }, [])
+
+  useEffect(() => {
+    setTimeout(() => {
+      alert('This is my alert after 1 seconds I changed name')
+    }, 1000)
+  }, [name])
+
   return (
     <>
       <input placeholder='Type your name' value={name} onChange={e => setName(e.target.value)} />
