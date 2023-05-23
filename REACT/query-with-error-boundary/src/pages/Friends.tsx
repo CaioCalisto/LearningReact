@@ -35,7 +35,7 @@ function Friends() {
       <h1>Friends</h1>
       <button onClick={() => refetch()}>Fetch</button>
       {data?.data.map((friend) => (
-        <h1>{friend}</h1>
+        <h1 key={friend.id}>{friend.name}</h1>
       ))}
     </>
   )
