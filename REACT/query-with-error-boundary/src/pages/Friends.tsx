@@ -1,5 +1,4 @@
 import React from 'react'
-import { QueryClient, QueryClientProvider } from 'react-query'
 import { AxiosResponse } from "axios"
 import { getFriends } from '../hooks/ApiClient'
 
