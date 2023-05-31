@@ -1,4 +1,14 @@
 (function () {
+  const user = 'Caio'
+  const location = 'Portugal'
+
+  const msg = {
+    to: user,
+    text: `I am from  ${location}`
+  }
+
+  console.log(msg.text)
+
   console.log('New project just to study Typescript')
 })();
 
