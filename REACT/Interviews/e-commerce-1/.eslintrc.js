@@ -9,6 +9,12 @@ module.exports = {
       version: 'detect',
     },
   },
+  env: {
+    browser: true,
+    es2021: true,
+    'jest/globals': true,
+  },
+  plugins: ['react', 'jest'],
   extends: [
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
@@ -17,8 +23,9 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
+    "plugin:jest/recommended",
     'prettier',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   rules: {
     'no-unused-vars': 'off',
