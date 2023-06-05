@@ -7,14 +7,17 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
-    "test:watch": "test --watch"
+    "test:watch": "test --watch",
+    "fake-api": "json-server -r fake-api/routes.json -w fake-api/datasource.json -p 3030"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.3",
+    "json-server": "^0.17.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.22.1",

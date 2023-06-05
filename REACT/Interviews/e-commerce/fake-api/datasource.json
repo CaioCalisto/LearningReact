@@ -1,0 +1,42 @@
+{
+  "cups": [
+    {
+      "id": 1,
+      "title": "Baby Cup",
+      "price": 5.9,
+      "image": "src/assets/Cup_1.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Friends Cup",
+      "price": 7.5,
+      "image": "src/assets/Cup_2.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Mom Cup",
+      "price": 8.2,
+      "image": "src/assets/Cup_3.jpeg"
+    }
+  ],
+  "shirts": [
+    {
+      "id": 1,
+      "title": "Daddy shirt",
+      "price": 12.9,
+      "image": "src/assets/Shirt_1.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Grandpa shirt",
+      "price": 14.5,
+      "image": "src/assets/Shirt_2.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Kinder shirt",
+      "price": 10.4,
+      "image": "src/assets/Shirt_3.jpeg"
+    }
+  ]
+}
