@@ -19,6 +19,7 @@ function BasicLayout() {
           <Link to={'/backdrop'}>BackDrop</Link>
           <Link to={'/snackbar'}>Snackbar</Link>
           <Link to={"/breadcrumbs"}>Breadcrumbs</Link>
+          <Link to={"/form"}>Form</Link>
         </Stack>
       </nav>
       <main><Outlet /></main>

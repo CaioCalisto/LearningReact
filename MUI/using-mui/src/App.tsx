@@ -10,6 +10,7 @@ import Snackbars from "./components/Snackbars"
 import TextFields from "./components/TextFields"
 import TextFields2 from "./components/TextFields2"
 import BasicLayout from "./layouts/BasicLayout"
+import Forms from "./components/Forms"
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/backdrop" element={<BackDrop />} />
         <Route path="/snackbar" element={<Snackbars />} />
         <Route path="/breadcrumbs" element={<CustomBreadcrumbs />} />
+        <Route path="/form" element={<Forms />} />
       </Route>
     </Routes>
   )
