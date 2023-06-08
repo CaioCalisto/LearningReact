@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
-    "test:watch": "test --watch",
+    "test:watch": "jest --watchAll",
     "test:coverage": "jest --collect-coverage",
     "fake-api": "json-server -r fake-api/routes.json -w fake-api/datasource.json -p 3030"
   },
