@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter, RouterProvider } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import NotFound from "./NotFound";
 
 const errorMessage = "This page was not found!";
