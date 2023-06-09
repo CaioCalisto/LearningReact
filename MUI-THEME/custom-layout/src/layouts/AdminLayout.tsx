@@ -1,9 +1,14 @@
-import React, { ReactElement } from 'react'
+import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 
 function AdminLayout() {
   return (
-    <div>AdminLayout</div>
-  )
+    <>
+      <main>
+        <Outlet />
+      </main>
+    </>
+  );
 }
 
-export default AdminLayout
+export default AdminLayout;
