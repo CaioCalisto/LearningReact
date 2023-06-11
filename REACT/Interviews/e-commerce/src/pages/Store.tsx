@@ -1,4 +1,4 @@
-import { Grid, Paper, Stack } from "@mui/material";
+import { Card, Divider, Grid, Paper, Stack } from "@mui/material";
 import { container } from "../DI";
 import { Api } from "../hooks/Api";
 
@@ -16,22 +16,22 @@ function Store() {
   }
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={1}>
       {data.data.map((product) => (
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} >
-          <Paper elevation={3} key={product.id}>
-            <h1>{product.name}</h1>
-            <h1>{product.price}</h1>
+        <Grid item xs={6} sm={4} md={3} lg={2} xl={1} key={product.id} style={{ width: "130px"}}>
+          <Card elevation={3}  style={{ justifyContent: "center", width: "130px" }}>
             <img
               src={product.imgUrl}
               alt={product.name}
               style={{
-                width: "125px",
-                height: "75px",
+                width: "130px",
                 objectFit: "cover",
               }}
             />
-          </Paper>
+            <h3>{product.name}</h3>
+            <Divider />
+            <h4>R$ {product.price}</h4>
+          </Card>
         </Grid>
       ))}
     </Grid>
