@@ -2,41 +2,41 @@
   "cups": [
     {
       "id": 1,
-      "title": "Baby Cup",
+      "name": "Baby Cup",
       "price": 5.9,
-      "image": "src/assets/Cup_1.jpeg"
+      "imgUrl": "src/assets/Cup_1.jpeg"
     },
     {
       "id": 2,
-      "title": "Friends Cup",
+      "name": "Friends Cup",
       "price": 7.5,
-      "image": "src/assets/Cup_2.jpeg"
+      "imgUrl": "src/assets/Cup_2.jpeg"
     },
     {
       "id": 3,
-      "title": "Mom Cup",
+      "name": "Mom Cup",
       "price": 8.2,
-      "image": "src/assets/Cup_3.jpeg"
+      "imgUrl": "src/assets/Cup_3.jpeg"
     }
   ],
   "shirts": [
     {
       "id": 1,
-      "title": "Daddy shirt",
+      "name": "Daddy shirt",
       "price": 12.9,
-      "image": "src/assets/Shirt_1.jpeg"
+      "imgUrl": "src/assets/Shirt_1.jpeg"
     },
     {
       "id": 2,
-      "title": "Grandpa shirt",
+      "name": "Grandpa shirt",
       "price": 14.5,
-      "image": "src/assets/Shirt_2.jpeg"
+      "imgUrl": "src/assets/Shirt_2.jpeg"
     },
     {
       "id": 3,
-      "title": "Kinder shirt",
+      "name": "Kinder shirt",
       "price": 10.4,
-      "image": "src/assets/Shirt_3.jpeg"
+      "imgUrl": "src/assets/Shirt_3.jpeg"
     }
   ]
 }

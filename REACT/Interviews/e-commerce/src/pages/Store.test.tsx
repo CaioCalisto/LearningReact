@@ -1,9 +1,9 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { container } from "../DI";
 import { Api } from "../hooks/Api";
 import Store from "./Store";
 
-describe("Store page", () => {
+describe("Store page with products", () => {
   const products = [
     {
       id: 1,
@@ -20,7 +20,7 @@ describe("Store page", () => {
       description: "Description 2",
     },
   ];
-  const apiMock: Api = {
+  let apiMock: Api = {
     getProducts: jest.fn().mockImplementation(() => {
       return {
         data: { data: products },
@@ -65,7 +65,39 @@ describe("Store page", () => {
 
     products.map((product) => {
       const image = screen.getByAltText(product.name) as HTMLImageElement;
-      expect(image).toHaveAttribute('src', product.imgUrl)
+      expect(image).toHaveAttribute("src", product.imgUrl);
     });
+  });
+});
+
+describe("Store page with loading", () => {
+  let apiMock: Api = {
+    getProducts: jest.fn().mockImplementation(() => {
+      return {
+        data: undefined,
+        error: {
+          /* mock error */
+        },
+        isLoading: true,
+        isFetching: false,
+        isSuccess: true,
+        isError: false,
+        refetch: jest.fn(),
+        remove: jest.fn(),
+        update: jest.fn(),
+        onSettled: jest.fn(),
+        onMutate: jest.fn(),
+      };
+    }),
+  };
+
+  beforeAll(() => {
+    container.register("api", { useValue: apiMock });
+  });
+
+  it("Show message when data is loading", () => {
+    render(<Store />);
+
+    expect(screen.getByText(/Is Loading.../)).toBeInTheDocument();
   });
 });

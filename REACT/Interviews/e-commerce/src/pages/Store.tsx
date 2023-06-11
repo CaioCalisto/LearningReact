@@ -1,10 +1,14 @@
-import React from "react";
 import { container } from "../DI";
 import { Api } from "../hooks/Api";
 
 function Store() {
   const api: Api = container.resolve<Api>("api");
-  const { data } = api.getProducts();
+  const { isLoading, isSuccess, isFetching, isError, data, error, refetch } =
+    api.getProducts();
+
+  if (isLoading) {
+    return <h1>Is Loading...</h1>;
+  }
 
   return (
     <>
