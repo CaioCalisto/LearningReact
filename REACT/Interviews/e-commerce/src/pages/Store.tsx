@@ -10,6 +10,10 @@ function Store() {
     return <h1>Is Loading...</h1>;
   }
 
+  if (isError){
+    return <h1>{error.message}</h1>
+  }
+
   return (
     <>
       {data.data.map((product) => (

@@ -101,3 +101,36 @@ describe("Store page with loading", () => {
     expect(screen.getByText(/Is Loading.../)).toBeInTheDocument();
   });
 });
+
+describe("Store page with errors", () => {
+  const customMessage = "You have got an error....";
+  let apiMock: Api = {
+    getProducts: jest.fn().mockImplementation(() => {
+      return {
+        data: undefined,
+        error: {
+          message: customMessage,
+        },
+        isLoading: false,
+        isFetching: false,
+        isSuccess: true,
+        isError: true,
+        refetch: jest.fn(),
+        remove: jest.fn(),
+        update: jest.fn(),
+        onSettled: jest.fn(),
+        onMutate: jest.fn(),
+      };
+    }),
+  };
+
+  beforeAll(() => {
+    container.register("api", { useValue: apiMock });
+  });
+
+  it("Show error message", () => {
+    render(<Store />);
+
+    expect(screen.getByText(customMessage)).toBeInTheDocument();
+  });
+});
