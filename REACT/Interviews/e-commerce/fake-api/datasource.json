@@ -4,19 +4,19 @@
       "id": 1,
       "name": "Baby Cup",
       "price": 5.9,
-      "imgUrl": "src/assets/Cup_1.jpeg"
+      "imgUrl": "src/assets/Cup_1.png"
     },
     {
       "id": 2,
       "name": "Friends Cup",
       "price": 7.5,
-      "imgUrl": "src/assets/Cup_2.jpeg"
+      "imgUrl": "src/assets/Cup_2.png"
     },
     {
       "id": 3,
       "name": "Mom Cup",
       "price": 8.2,
-      "imgUrl": "src/assets/Cup_3.jpeg"
+      "imgUrl": "src/assets/Cup_3.png"
     }
   ],
   "shirts": [
@@ -24,19 +24,19 @@
       "id": 1,
       "name": "Daddy shirt",
       "price": 12.9,
-      "imgUrl": "src/assets/Shirt_1.jpeg"
+      "imgUrl": "src/assets/Shirt_1.jpg"
     },
     {
       "id": 2,
       "name": "Grandpa shirt",
       "price": 14.5,
-      "imgUrl": "src/assets/Shirt_2.jpeg"
+      "imgUrl": "src/assets/Shirt_2.jpg"
     },
     {
       "id": 3,
       "name": "Kinder shirt",
       "price": 10.4,
-      "imgUrl": "src/assets/Shirt_3.jpeg"
+      "imgUrl": "src/assets/Shirt_3.jpg"
     }
   ]
 }

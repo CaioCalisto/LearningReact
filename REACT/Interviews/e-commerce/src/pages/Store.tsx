@@ -20,7 +20,11 @@ function Store() {
         <div key={product.id}>
           <h1>{product.name}</h1>
           <h1>{product.price}</h1>
-          <img src={product.imgUrl} alt={product.name} />
+          <img src={product.imgUrl} alt={product.name} style={{ 
+          width: "125px", 
+          height: "75px", 
+          objectFit: "cover" 
+        }}  />
         </div>
       ))}
     </>
