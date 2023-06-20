@@ -1,15 +1,22 @@
 (function () {
   const user = 'Caio'
   const location = 'Portugal'
+  const whatever = undefined
+  const whatever2 = ''
 
   const msg = {
     to: user,
     text: `I am from  ${location}`
   }
 
-  console.log(msg.text)
+  // console.log(msg.text)
+  // console.log(msg.text + ' - more data')
 
-  console.log('New project just to study Typescript')
+  //console.log('New project just to study Typescript')
+
+  if (whatever === undefined || whatever === '') {
+    console.log('IS EMPTY')
+  }
 })();
 
 /*
