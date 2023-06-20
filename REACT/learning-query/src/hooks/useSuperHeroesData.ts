@@ -13,6 +13,6 @@ export const useSuperHeroesData = (onSuccess, onError) => {
     //refetchInterval: 1000,
     enabled: false,
     onSuccess: onSuccess,
-    onError: onError
+    onError: onError,
   })
 }
