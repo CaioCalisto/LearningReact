@@ -1,23 +1,23 @@
-(function () {
-  const user = 'Caio'
-  const location = 'Portugal'
-  const whatever = undefined
-  const whatever2 = ''
+import { retry, sleep } from "./Timer";
 
-  const msg = {
-    to: user,
-    text: `I am from  ${location}`
+(async function () {
+  const obj: MyObject = {
+    someProp: 'taaa ddaaa'
   }
 
-  // console.log(msg.text)
-  // console.log(msg.text + ' - more data')
+  print(obj, 'someProp')
 
-  //console.log('New project just to study Typescript')
-
-  if (whatever === undefined || whatever === '') {
-    console.log('IS EMPTY')
-  }
+  console.log('Finish')
 })();
+
+function print<T>(obj: T, prop: keyof T) {
+  
+  console.log(obj[prop])
+}
+
+interface MyObject {
+  someProp: string
+}
 
 /*
 Step to create simple typescript project with ts-node (TypeScript execution engine and REPL for Node.js)
