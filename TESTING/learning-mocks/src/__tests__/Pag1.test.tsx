@@ -7,7 +7,7 @@ jest.mock("../hooks/useUser");
 
 describe("Hook 1 - mock for all tests", () => {
   it("Mock constant 1", () => {
-    useUser.mockReturnValue({
+    (useUser as jest.Mock).mockReturnValue({
       username: "calicc",
     });
 
@@ -16,7 +16,7 @@ describe("Hook 1 - mock for all tests", () => {
   });
 
   it("Mock constant 2", () => {
-    useUser.mockReturnValue({
+    (useUser as jest.Mock).mockReturnValue({
       email: "caio.calisto@gmail.com",
     });
 
@@ -26,7 +26,7 @@ describe("Hook 1 - mock for all tests", () => {
 
   it("Mock function call", () => {
     const myFunction = jest.fn();
-    useUser.mockReturnValue({
+    (useUser as jest.Mock).mockReturnValue({
       someAction: myFunction,
     });
     render(<Page1 />);
@@ -41,7 +41,7 @@ describe("Hook 1 - mock for all tests", () => {
     const now = "2020-05-10T10:13:08.000Z";
     const usernameId = "calicc";
     jest.useFakeTimers().setSystemTime(new Date(now));
-    useUser.mockReturnValue({
+    (useUser as jest.Mock).mockReturnValue({
       username: usernameId,
       anotherAction: myFunction,
     });
