@@ -3,6 +3,10 @@ import { useUser } from "../hooks/useUser";
 
 function Page1() {
   const { username, email, someAction, anotherAction, asyncAction } = useUser();
+   
+  async function executeAsyncMethod() {
+    await asyncAction()
+  }
 
   return (
     <>
@@ -16,6 +20,9 @@ function Page1() {
         onClick={() => anotherAction(username, new Date().toISOString())}
       >
         Button 2
+      </button>
+      <button data-testid="button3" onClick={executeAsyncMethod}>
+        Button 3
       </button>
     </>
   );

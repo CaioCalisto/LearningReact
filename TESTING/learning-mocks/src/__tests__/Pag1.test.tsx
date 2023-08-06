@@ -52,5 +52,15 @@ describe("Hook 1 - mock for all tests", () => {
     expect(myFunction).toHaveBeenCalledWith(usernameId, now);
   });
 
-  it("Mock async Action", () => {});
+  it("Mock async Action", async () => {
+    const myAsyncFunction = jest.fn(() => Promise.resolve(true))
+    useUser.mockReturnValue({
+      asyncAction: myAsyncFunction
+    })
+    render(<Page1 />)
+
+    fireEvent.click(screen.getByTestId('button3'))
+
+    expect(myAsyncFunction).toHaveBeenCalledTimes(1)
+  });
 });
