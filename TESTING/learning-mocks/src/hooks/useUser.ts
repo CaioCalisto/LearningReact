@@ -6,7 +6,7 @@ type useUserType = {
   asyncAction: () => Promise<boolean>
 }
 
-export default function useUser(): useUserType {
+export function useUser(): useUserType {
   return {
     username: '',
     email: '',

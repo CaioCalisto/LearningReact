@@ -1,11 +1,15 @@
 import React from 'react'
-import useUser from '../hooks/useUser'
+import { useUser } from '../hooks/useUser'
 
 function Page1() {
-  //const { username, email, someAction, anotherAction, asyncAction } = useUser()
+  const { username, email, someAction, anotherAction, asyncAction } = useUser()
 
   return (
-    <div>Page1</div>
+    <>
+      <p>{username}</p>
+      <p>{email}</p>
+      <button data-testid='button1' onClick={() => someAction}>Button 1</button>
+    </>
   )
 }
 
