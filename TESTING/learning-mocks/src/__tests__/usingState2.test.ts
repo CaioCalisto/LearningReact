@@ -31,14 +31,14 @@ describe('Using State: multiples', () => {
       .mockImplementationOnce(() => ['caio', setStateMock1])
       .mockImplementationOnce(() => ['natalia', setStateMock2]);
 
-      const { action1, action2 } = MyHookWithState2()
+    const { action1, action2 } = MyHookWithState2();
 
-      action1()
-      expect(setStateMock1).toHaveBeenCalled()
-      expect(setStateMock1).toHaveBeenCalledWith('ABC')
+    action1();
+    expect(setStateMock1).toHaveBeenCalled();
+    expect(setStateMock1).toHaveBeenCalledWith('ABC');
 
-      action2()
-      expect(setStateMock2).toHaveBeenCalled()
-      expect(setStateMock2).toHaveBeenCalledWith('DEF')
+    action2();
+    expect(setStateMock2).toHaveBeenCalled();
+    expect(setStateMock2).toHaveBeenCalledWith('DEF');
   });
 });

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function comp1() {
-  return (
-    <div>comp1</div>
-  )
+  return <div>comp1</div>;
 }
 
-export default comp1
+export default comp1;

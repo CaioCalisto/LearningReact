@@ -1,11 +1,11 @@
-import React from "react";
-import { useUser } from "../hooks/useUser";
+import React from 'react';
+import { useUser } from '../hooks/useUser';
 
 function Page1() {
   const { username, email, someAction, anotherAction, asyncAction } = useUser();
-   
+
   async function executeAsyncMethod() {
-    await asyncAction()
+    await asyncAction();
   }
 
   return (

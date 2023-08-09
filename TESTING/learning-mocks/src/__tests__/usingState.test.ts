@@ -9,17 +9,23 @@ const setStateMock = jest.fn();
 
 describe('Using State - only one', () => {
   it('props return initial value from state', () => {
-    (useStateMock as jest.Mock).mockImplementation(() => ['caio', setStateMock])
+    (useStateMock as jest.Mock).mockImplementation(() => [
+      'caio',
+      setStateMock,
+    ]);
     const { value } = MyHookWithState();
 
     expect(value).toBe('caio');
   });
 
   it('props return different value after running method', () => {
-    (useStateMock as jest.Mock).mockImplementation(() => ['caio', setStateMock])
+    (useStateMock as jest.Mock).mockImplementation(() => [
+      'caio',
+      setStateMock,
+    ]);
     const { value, changeValue } = MyHookWithState();
-    changeValue()
+    changeValue();
 
-    expect(setStateMock).toHaveBeenCalledWith('natalia')
-  })
+    expect(setStateMock).toHaveBeenCalledWith('natalia');
+  });
 });

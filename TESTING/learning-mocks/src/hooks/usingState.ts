@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 type MyHookWithState1Type = {
   value: string;
-  changeValue: () => void
+  changeValue: () => void;
 };
 
 function MyHookWithState(): MyHookWithState1Type {
-  const [value, setValue] = useState('caio')
+  const [value, setValue] = useState('caio');
 
   function changeValue() {
-    setValue('natalia')
+    setValue('natalia');
   }
 
   return { value, changeValue };

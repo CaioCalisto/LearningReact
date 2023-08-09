@@ -3,7 +3,7 @@ import { useCopyToClipboard } from '../hooks/useCopyToClipboard';
 import React from 'react';
 import Page2 from '../pages/Page2';
 
-const handleCopyMock = jest.fn()
+const handleCopyMock = jest.fn();
 jest.mock('../hooks/useCopyToClipboard');
 
 describe('Hook 2 - forcing consumer to get all properties', () => {
@@ -24,11 +24,14 @@ describe('Hook 2 - forcing consumer to get all properties', () => {
   });
 
   it('call handleCopy when button is clicked', () => {
-    (useCopyToClipboard as jest.Mock).mockReturnValueOnce([true, handleCopyMock]);
+    (useCopyToClipboard as jest.Mock).mockReturnValueOnce([
+      true,
+      handleCopyMock,
+    ]);
     render(<Page2 />);
 
-    fireEvent.click(screen.getByTestId('copy-button'))
+    fireEvent.click(screen.getByTestId('copy-button'));
 
-    expect(handleCopyMock).toHaveBeenCalledWith('caio')
-  })
+    expect(handleCopyMock).toHaveBeenCalledWith('caio');
+  });
 });
