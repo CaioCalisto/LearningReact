@@ -16,7 +16,7 @@ const initialNodes: Node[] = [
   {
     id: '0',
     position: { x: 0, y: 0 },
-    data: { name: 'Trigger' },
+    data: { name: 'Incoming call' },
     type: NodeTypeNames.trigger,
   },
 ]
