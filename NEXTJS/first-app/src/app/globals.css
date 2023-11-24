@@ -26,24 +26,24 @@ main {
 
 header {
   grid-area: header;
-  background-color: rgb(128, 127, 127);
+  background-color: #D7D5D5FF;
   height: 5vh;
 }
 
 article {
   grid-area: content;
-  background-color: rgb(170, 164, 164);
+  background-color: #fcfcfc;
   height: 90vh;
 }
 
 aside {
   grid-area: side;
-  background-color: rgb(80, 79, 79);
+  background-color: #e7dede;
 }
 
 footer {
   grid-area: footer;
-  background-color: rgb(101, 82, 82);
+  background-color: #D7D5D5FF;
   position: sticky;
   bottom: 0;
   height: 5vh;
