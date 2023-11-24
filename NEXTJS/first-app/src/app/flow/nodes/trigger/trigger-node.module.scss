@@ -12,6 +12,10 @@
   box-shadow: 0px 4px 16px 4px var(--COLOUR-NEUTRAL-400);
 }
 
+.node:hover {
+  border: 2px solid var(--COLOUR-PRIMARY-600);
+}
+
 .icon {
   display: flex;
   width: 36px;
