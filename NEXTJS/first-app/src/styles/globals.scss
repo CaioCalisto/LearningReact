@@ -1,0 +1,49 @@
+@use 'typography.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
+  font-size: 100%;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "side content content"
+    "footer footer footer";
+  grid-auto-columns: 10vw auto;
+}
+
+header {
+  grid-area: header;
+  background-color: #D7D5D5FF;
+  height: 5vh;
+}
+
+article {
+  grid-area: content;
+  background-color: #fcfcfc;
+  height: 90vh;
+}
+
+aside {
+  grid-area: side;
+  background-color: #e7dede;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #D7D5D5FF;
+  position: sticky;
+  bottom: 0;
+  height: 5vh;
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Capriola } from 'next/font/google'
-import './globals.css'
+import '../styles/globals.scss'
 
 import SidebarMenu from '@/app/shared/layout/sidebar-menu'
 

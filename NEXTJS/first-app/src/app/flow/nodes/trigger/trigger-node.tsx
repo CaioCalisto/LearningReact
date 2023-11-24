@@ -1,6 +1,6 @@
 import { NodeProps, NodeToolbar } from 'reactflow'
 import { useState } from 'react'
-import styles from './trigger-node.module.css'
+import styles from './trigger-node.module.scss'
 import { MdFlashOn } from 'react-icons/md'
 
 type TriggerNodeProps = {

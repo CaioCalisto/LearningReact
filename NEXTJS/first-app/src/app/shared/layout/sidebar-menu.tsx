@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import './sidebar-menu.css'
+import styles from './sidebar-menu.module.scss'
 
 export default function SidebarMenu() {
   return (
@@ -7,12 +7,12 @@ export default function SidebarMenu() {
       <ul>
         <li>
           <Link href={'/'}>
-            <p className={'menu'}>Home</p>
+            <p className={styles.menu}>Home</p>
           </Link>
         </li>
         <li>
           <Link href={'/flow'}>
-            <p className={'menu'}>Flow</p>
+            <p className={styles.menu}>Flow</p>
           </Link>
         </li>
       </ul>
