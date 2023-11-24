@@ -21,8 +21,10 @@ function TriggerNode({ data }: NodeProps<TriggerNodeProps>) {
         <div className={styles.icon}>
           <MdFlashOn />
         </div>
-        <p className={styles.typeLabel}>Trigger</p>
-        <p className={styles.nameLabel}>{data.name}</p>
+        <div className={styles.labels}>
+          <p className={styles.typeLabel}>Trigger</p>
+          <p className={styles.nameLabel}>{data.name}</p>
+        </div>
       </div>
     </>
   )
