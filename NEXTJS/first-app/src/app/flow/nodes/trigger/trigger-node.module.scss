@@ -40,3 +40,9 @@
 .nameLabel {
   font: var(--FONT-TEXT-SM-MEDIUM);
 }
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
