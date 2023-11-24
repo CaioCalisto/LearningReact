@@ -2,6 +2,7 @@ import { NodeProps, NodeToolbar } from 'reactflow'
 import { useState } from 'react'
 import styles from './trigger-node.module.scss'
 import { MdFlashOn } from 'react-icons/md'
+import EditTrigger from '@/app/flow/menus/edit/edit-trigger';
 
 type TriggerNodeProps = {
   name: string
@@ -13,9 +14,7 @@ function TriggerNode({ data }: NodeProps<TriggerNodeProps>) {
   return (
     <>
       <NodeToolbar isVisible={open}>
-        <div>
-          <p>toolbar</p>
-        </div>
+        <EditTrigger />
       </NodeToolbar>
       <div onClick={() => setOpen(!open)} className={styles.node}>
         <div className={styles.icon}>
