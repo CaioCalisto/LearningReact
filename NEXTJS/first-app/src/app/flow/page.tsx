@@ -10,7 +10,7 @@ import ReactFlow, {
   useNodesState,
 } from 'reactflow'
 import 'reactflow/dist/style.css'
-import { NodeTypeNames, NodeTypes } from '@/app/flow/nodes/NodeTypes'
+import { NodeTypeNames, NodeTypes } from '@/app/flow/nodes/node-types'
 
 const initialNodes: Node[] = [
   {
