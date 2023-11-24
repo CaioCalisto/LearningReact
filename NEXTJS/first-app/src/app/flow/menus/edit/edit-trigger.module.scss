@@ -8,10 +8,8 @@
   align-items: center;
   gap: 16px;
   border-radius: 4px;
-  background: #FFF;
-
-  /* Shadow/sm focused 4px primary-100 */
-  box-shadow: 0px 0px 0px 4px #E1EFFF, 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10);
+  background: var(--COLOUR-NEUTRAL-25);
+  box-shadow: 0px 0px 0px 4px var(--COLOUR-PRIMARY-200);
 }
 
 .icon {
@@ -19,6 +17,6 @@
 }
 
 .verticalLine {
-  border-left: 1px solid #EAECF0;
+  border-left: 1px solid var(--COLOUR-NEUTRAL-200);
   height: 21px;
 }
