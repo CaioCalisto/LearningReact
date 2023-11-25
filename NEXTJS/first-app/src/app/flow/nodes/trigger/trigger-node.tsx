@@ -11,6 +11,11 @@ type TriggerNodeProps = {
 
 function TriggerNode({ id, data }: NodeProps<TriggerNodeProps>) {
   const [open, setOpen] = useState(false)
+  const [showAddButton, setShowAddButton] = useState(true)
+
+  function onNodeAdded() {
+    setShowAddButton(false)
+  }
 
   return (
     <>
@@ -26,9 +31,11 @@ function TriggerNode({ id, data }: NodeProps<TriggerNodeProps>) {
           <p className={styles.nameLabel}>{data.name}</p>
         </div>
       </div>
-      <div className={styles.buttons}>
-        <AddNode parentNodeId={id} />
-      </div>
+      {showAddButton && (
+        <div className={styles.buttons}>
+          <AddNode parentNodeId={id} onNodeAdded={onNodeAdded} />
+        </div>
+      )}
       <Handle type={'source'} position={Position.Bottom} />
     </>
   )
