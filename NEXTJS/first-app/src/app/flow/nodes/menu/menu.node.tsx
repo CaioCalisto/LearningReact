@@ -1,7 +1,7 @@
-import { Handle, NodeProps, Position } from 'reactflow'
-import { useState } from 'react'
+import {Handle, NodeProps, Position} from 'reactflow'
+import {useState} from 'react'
 import styles from '../node.module.scss'
-import { MdDialpad } from 'react-icons/md'
+import {MdDialpad} from 'react-icons/md'
 import AddNode from '@/app/flow/menus/add/add-node'
 
 type MenuNodeProps = {
@@ -24,8 +24,9 @@ export default function MenuNode({ id, data }: NodeProps<MenuNodeProps>) {
         </div>
       </div>
       <div className={styles.buttons}>
-        <AddNode nodeId={id} />
+        <AddNode parentNodeId={id} />
       </div>
+        <Handle type={'source'} position={Position.Bottom} />
     </>
   )
 }

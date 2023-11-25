@@ -3,25 +3,27 @@ import { MdAdd } from 'react-icons/md'
 import { MdDialpad, MdQueueMusic } from 'react-icons/md'
 import { useReactFlow } from 'reactflow'
 import { NodeTypeNames } from '@/app/flow/nodes/node-types'
+import { v4 as uuidv4 } from 'uuid'
 
 type AddNodeProps = {
-  nodeId: string
+  parentNodeId: string
 }
 
-export default function AddNode({ nodeId }: AddNodeProps) {
+export default function AddNode({ parentNodeId }: AddNodeProps) {
   const reactFlow = useReactFlow()
 
   function addMenu() {
+    const newId = uuidv4();
     const newNode = {
-      id: '1',
+      id: newId,
       position: { x: 100, y: 100 },
       data: { name: 'Support' },
       type: NodeTypeNames.menu,
     }
     const newEdge = {
-      id: '1',
-      source: '0',
-      target: '1',
+      id: uuidv4(),
+      source: parentNodeId,
+      target: newId,
     }
     reactFlow.addNodes(newNode)
     reactFlow.addEdges(newEdge)

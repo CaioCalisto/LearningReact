@@ -27,7 +27,7 @@ function TriggerNode({ id, data }: NodeProps<TriggerNodeProps>) {
         </div>
       </div>
       <div className={styles.buttons}>
-        <AddNode nodeId={id} />
+        <AddNode parentNodeId={id} />
       </div>
       <Handle type={'source'} position={Position.Bottom} />
     </>

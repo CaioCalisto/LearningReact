@@ -11,10 +11,11 @@ import ReactFlow, {
 } from 'reactflow'
 import 'reactflow/dist/style.css'
 import { NodeTypeNames, NodeTypes } from '@/app/flow/nodes/node-types'
+import { v4 as uuidv4 } from 'uuid'
 
 const initialNodes: Node[] = [
   {
-    id: '0',
+    id: uuidv4(),
     position: { x: 0, y: 0 },
     data: { name: 'Incoming call' },
     type: NodeTypeNames.trigger,
