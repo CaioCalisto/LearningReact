@@ -50,10 +50,16 @@
 
 .actionContainer {
   display: none;
-  flex-direction: column;
-  gap: 4px;
+  flex-direction: row;
+  padding: 4px 16px 4px 4px;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  width: auto;
+  border-radius: 100px;
   animation: growDown 0.5s ease-in-out forwards;
   transform-origin: top center;
+  background-color: var(--COLOUR-NEUTRAL-100);
 }
 
 .actionContainer:hover {
@@ -64,22 +70,15 @@
   }
 }
 
-.actionButton {
-  display: flex;
-  flex-direction: row;
-  padding: 4px 16px 4px 4px;
-  align-items: center;
-  gap: 8px;
-  height: 44px;
-  width: auto;
-  border-radius: 100px;
-  background: var(--COLOUR-NEUTRAL-100);
-}
-
 .actionIconContainer {
-  border-radius: 100px;
+  display: flex;
+  width: 36px;
+  height: 36px;
   padding: 8px;
-  background: var(--COLOUR-NEUTRAL-300);
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background-color: var(--COLOUR-NEUTRAL-300);
 }
 
 .actionIcon {
