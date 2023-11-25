@@ -1,6 +1,6 @@
 import styles from './add-node.module.scss'
 import { MdAdd } from 'react-icons/md'
-import { MdDialpad } from 'react-icons/md'
+import { MdDialpad, MdQueueMusic } from 'react-icons/md'
 
 export default function AddNode() {
   return (
@@ -13,6 +13,12 @@ export default function AddNode() {
           <MdDialpad className={styles.actionIcon} />
         </div>
         <p className={styles.actionLabel}>Menu</p>
+      </div>
+      <div className={styles.actionContainer}>
+        <div className={styles.actionIconContainer}>
+          <MdQueueMusic className={styles.actionIcon} />
+        </div>
+        <p className={styles.actionLabel}>Queue</p>
       </div>
     </div>
   )
