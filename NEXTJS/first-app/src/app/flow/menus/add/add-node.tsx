@@ -12,13 +12,13 @@ type AddNodeProps = {
 export default function AddNode({ parentNodeId }: AddNodeProps) {
   const reactFlow = useReactFlow()
 
-  function addMenu() {
+  function addNode(type: 'menu' | 'queue') {
     const newId = uuidv4();
     const newNode = {
       id: newId,
       position: { x: 100, y: 100 },
-      data: { name: 'Support' },
-      type: NodeTypeNames.menu,
+      data: { name: 'NA' },
+      type: type === 'menu' ? NodeTypeNames.menu : NodeTypeNames.queue,
     }
     const newEdge = {
       id: uuidv4(),
@@ -34,13 +34,13 @@ export default function AddNode({ parentNodeId }: AddNodeProps) {
       <div className={styles.addButton}>
         <MdAdd className={styles.icon} />
       </div>
-      <div className={styles.actionContainer} onClick={() => addMenu()}>
+      <div className={styles.actionContainer} onClick={() => addNode('menu')}>
         <div className={styles.actionIconContainer}>
           <MdDialpad className={styles.actionIcon} />
         </div>
         <p className={styles.actionLabel}>Menu</p>
       </div>
-      <div className={styles.actionContainer}>
+      <div className={styles.actionContainer} onClick={() => addNode('queue')}>
         <div className={styles.actionIconContainer}>
           <MdQueueMusic className={styles.actionIcon} />
         </div>
