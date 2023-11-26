@@ -1,14 +1,14 @@
 import styles from './edit-trigger.module.scss'
 import { MdOutlineLock } from 'react-icons/md'
 import { MdPhoneCallback } from 'react-icons/md'
-import { MdDelete } from 'react-icons/md'
-import RenameNode from "@/app/flow/menus/edit/common/rename-node";
+import RenameNode from '@/app/flow/menus/edit/common/rename-node'
+import DeleteNode from '@/app/flow/menus/edit/common/delete-node'
 
 type EditTriggerProps = {
-    nodeId: string
+  nodeId: string
 }
 
-export default function EditTrigger({ nodeId } : EditTriggerProps) {
+export default function EditTrigger({ nodeId }: EditTriggerProps) {
   return (
     <div className={styles.menu}>
       <MdOutlineLock className={styles.icon} />
@@ -16,7 +16,7 @@ export default function EditTrigger({ nodeId } : EditTriggerProps) {
       <MdPhoneCallback className={styles.icon} />
       <RenameNode nodeId={nodeId} />
       <hr className={styles.verticalLine} />
-      <MdDelete className={styles.icon} />
+      <DeleteNode nodeId={nodeId} />
     </div>
   )
 }

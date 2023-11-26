@@ -1,7 +1,8 @@
 import styles from './edit-trigger.module.scss'
 import { MdOutlineLock } from 'react-icons/md'
-import { MdDelete, MdDialpad } from 'react-icons/md'
+import { MdDialpad } from 'react-icons/md'
 import RenameNode from '@/app/flow/menus/edit/common/rename-node'
+import DeleteNode from '@/app/flow/menus/edit/common/delete-node'
 
 type EditMenuProps = {
   nodeId: string
@@ -15,7 +16,7 @@ export default function EditMenu({ nodeId }: EditMenuProps) {
       <MdDialpad className={styles.icon} />
       <RenameNode nodeId={nodeId} />
       <hr className={styles.verticalLine} />
-      <MdDelete className={styles.icon} />
+      <DeleteNode nodeId={nodeId} />
     </div>
   )
 }

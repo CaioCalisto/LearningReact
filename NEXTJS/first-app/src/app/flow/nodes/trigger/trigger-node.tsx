@@ -32,6 +32,7 @@ function TriggerNode({ id, data }: NodeProps<TriggerNodeProps>) {
         </div>
       </div>
       {showAddButton && (
+          //TODO: mostrar o botão quando deletar o filho
         <div className={styles.buttons}>
           <AddNode parentNodeId={id} onNodeAdded={onNodeAdded} />
         </div>
