@@ -1,7 +1,7 @@
 import styles from '@/app/flow/menus/edit/common/common.module.scss'
 import styles2 from './rename-node.module.scss'
 import { MdEdit } from 'react-icons/md'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useReactFlow } from 'reactflow'
 
 type RenameNodeProps = {
@@ -13,7 +13,7 @@ export default function RenameNode({ nodeId }: RenameNodeProps) {
   const reactFlow = useReactFlow()
   const node = reactFlow.getNode(nodeId)
 
-  function handleChange(event) {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     if (node) {
       node.data.name = event.target.value
     }
