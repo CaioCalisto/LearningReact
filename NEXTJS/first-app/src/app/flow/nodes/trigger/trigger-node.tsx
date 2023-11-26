@@ -20,7 +20,7 @@ function TriggerNode({ id, data }: NodeProps<TriggerNodeProps>) {
   return (
     <>
       <NodeToolbar isVisible={open}>
-        <EditTrigger />
+        <EditTrigger nodeId={id} />
       </NodeToolbar>
       <div onClick={() => setOpen(!open)} className={styles.node}>
         <div className={styles.icon}>

@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  position: fixed;
+  top: 50px;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 4px;
+  width: 247px;
+  height: 94px;
+  background-color: var(--COLOUR-NEUTRAL-100);
+}
