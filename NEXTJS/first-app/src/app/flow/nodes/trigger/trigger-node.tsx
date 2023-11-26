@@ -1,5 +1,10 @@
-import { Handle, NodeProps, NodeToolbar, Position } from 'reactflow'
-import { useState } from 'react'
+import {
+  Handle,
+  NodeProps,
+  NodeToolbar,
+  Position, useEdges,
+} from 'reactflow'
+import {useEffect, useState} from 'react'
 import styles from '../node.module.scss'
 import { MdFlashOn } from 'react-icons/md'
 import EditTrigger from '@/app/flow/menus/edit/edit-trigger'
@@ -12,10 +17,16 @@ type TriggerNodeProps = {
 function TriggerNode({ id, data }: NodeProps<TriggerNodeProps>) {
   const [open, setOpen] = useState(false)
   const [showAddButton, setShowAddButton] = useState(true)
+  const edges = useEdges()
 
-  function onNodeAdded() {
-    setShowAddButton(false)
-  }
+  useEffect(() => {
+    const edge = edges.find((edge) => edge.source === id)
+    if (edge) {
+      setShowAddButton(false)
+    } else {
+      setShowAddButton(true)
+    }
+  }, [edges])
 
   return (
     <>
@@ -32,9 +43,8 @@ function TriggerNode({ id, data }: NodeProps<TriggerNodeProps>) {
         </div>
       </div>
       {showAddButton && (
-          //TODO: mostrar o botão quando deletar o filho
         <div className={styles.buttons}>
-          <AddNode parentNodeId={id} onNodeAdded={onNodeAdded} />
+          <AddNode parentNodeId={id} />
         </div>
       )}
       {!showAddButton && <Handle type={'source'} position={Position.Bottom} />}

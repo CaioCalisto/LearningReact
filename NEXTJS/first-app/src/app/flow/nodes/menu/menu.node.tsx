@@ -2,7 +2,6 @@ import { Handle, NodeProps, NodeToolbar, Position } from 'reactflow'
 import { useState } from 'react'
 import styles from '../node.module.scss'
 import { MdDialpad } from 'react-icons/md'
-import AddNode from '@/app/flow/menus/add/add-node'
 import EditMenu from '@/app/flow/menus/edit/edit-menu'
 
 type MenuNodeProps = {
@@ -11,11 +10,6 @@ type MenuNodeProps = {
 
 export default function MenuNode({ id, data }: NodeProps<MenuNodeProps>) {
   const [open, setOpen] = useState(false)
-  const [showAddButton, setShowAddButton] = useState(true)
-
-  function onNodeAdded() {
-    setShowAddButton(false)
-  }
 
   return (
     <>
@@ -32,12 +26,7 @@ export default function MenuNode({ id, data }: NodeProps<MenuNodeProps>) {
           <p className={styles.nameLabel}>{data.name}</p>
         </div>
       </div>
-      {showAddButton && (
-        <div className={styles.buttons}>
-          <AddNode parentNodeId={id} onNodeAdded={onNodeAdded} />
-        </div>
-      )}
-      {!showAddButton && <Handle type={'source'} position={Position.Bottom} />}
+      <Handle type={'source'} position={Position.Bottom} />
     </>
   )
 }

@@ -7,10 +7,9 @@ import { v4 as uuidv4 } from 'uuid'
 
 type AddNodeProps = {
   parentNodeId: string
-  onNodeAdded: () => void
 }
 
-export default function AddNode({ parentNodeId, onNodeAdded }: AddNodeProps) {
+export default function AddNode({ parentNodeId }: AddNodeProps) {
   const reactFlow = useReactFlow()
 
   function addNode(type: 'menu' | 'queue') {
@@ -28,7 +27,6 @@ export default function AddNode({ parentNodeId, onNodeAdded }: AddNodeProps) {
     }
     reactFlow.addNodes(newNode)
     reactFlow.addEdges(newEdge)
-    onNodeAdded()
   }
 
   return (
