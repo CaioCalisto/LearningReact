@@ -5,13 +5,15 @@ import ReactFlow, {
   Controls,
   Edge,
   MiniMap,
-  Node,
+  Node, Panel,
   useEdgesState,
   useNodesState,
 } from 'reactflow'
 import 'reactflow/dist/style.css'
 import { NodeTypeNames, NodeTypes } from '@/app/flow/nodes/node-types'
 import { v4 as uuidv4 } from 'uuid'
+import { useCallback } from 'react'
+import { getLayoutedElements } from '@/app/flow/utils/layout'
 
 const initialNodes: Node[] = [
   {
@@ -27,6 +29,16 @@ export default function FlowPage() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
 
+  const onLayout = useCallback(() => {
+    const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
+      nodes,
+      edges
+    )
+
+    setNodes([...layoutedNodes])
+    setEdges([...layoutedEdges])
+  }, [nodes, edges, setNodes, setEdges])
+
   return (
     <>
       <ReactFlow
@@ -40,6 +52,9 @@ export default function FlowPage() {
         <Controls position={'bottom-left'} />
         <MiniMap pannable position={'bottom-right'} />
         <Background variant={BackgroundVariant.Lines} gap={12} size={1} />
+        <Panel position={'top-right'}>
+          <button onClick={() => onLayout()}>Clean Layout</button>
+        </Panel>
       </ReactFlow>
     </>
   )

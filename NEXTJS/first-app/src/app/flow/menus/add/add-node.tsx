@@ -17,7 +17,7 @@ export default function AddNode({ parentNodeId, onNodeAdded }: AddNodeProps) {
     const newId = uuidv4()
     const newNode = {
       id: newId,
-      position: { x: 100, y: 100 },
+      position: { x: 0, y: 0 },
       data: { name: 'NA' },
       type: type === 'menu' ? NodeTypeNames.menu : NodeTypeNames.queue,
     }
