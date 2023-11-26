@@ -36,7 +36,7 @@ function TriggerNode({ id, data }: NodeProps<TriggerNodeProps>) {
           <AddNode parentNodeId={id} onNodeAdded={onNodeAdded} />
         </div>
       )}
-      <Handle type={'source'} position={Position.Bottom} />
+      {!showAddButton && <Handle type={'source'} position={Position.Bottom} />}
     </>
   )
 }
