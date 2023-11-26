@@ -1,4 +1,4 @@
-import styles from './edit-trigger.module.scss'
+import styles from './common/common.module.scss'
 import { MdOutlineLock } from 'react-icons/md'
 import { MdDialpad } from 'react-icons/md'
 import RenameNode from '@/app/flow/menus/edit/common/rename-node'

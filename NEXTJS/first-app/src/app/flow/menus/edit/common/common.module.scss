@@ -1,3 +1,22 @@
+.menu {
+  width: 208px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 16px;
+  border-radius: 4px;
+  background: var(--COLOUR-NEUTRAL-25);
+  box-shadow: 0px 0px 0px 4px var(--COLOUR-PRIMARY-200);
+}
+
 .icon {
   font-size: 24px;
+}
+
+.verticalLine {
+  border-left: 1px solid var(--COLOUR-NEUTRAL-200);
+  height: 21px;
 }

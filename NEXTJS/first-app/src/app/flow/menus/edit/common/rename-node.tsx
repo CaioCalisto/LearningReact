@@ -1,4 +1,4 @@
-import styles from '@/app/flow/menus/edit/common/common.module.scss'
+import styles from './common.module.scss'
 import styles2 from './rename-node.module.scss'
 import { MdEdit } from 'react-icons/md'
 import React, { useState } from 'react'

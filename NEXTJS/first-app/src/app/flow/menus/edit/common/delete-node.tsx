@@ -1,4 +1,4 @@
-import styles from '@/app/flow/menus/edit/common/common.module.scss'
+import styles from './common.module.scss'
 import { MdDelete } from 'react-icons/md'
 import { useReactFlow } from 'reactflow'
 
