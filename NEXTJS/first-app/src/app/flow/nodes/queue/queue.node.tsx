@@ -2,7 +2,7 @@ import { Handle, NodeProps, NodeToolbar, Position } from 'reactflow'
 import { useState } from 'react'
 import styles from '../node.module.scss'
 import { MdQueueMusic } from 'react-icons/md'
-import EditQueue from '@/app/flow/menus/edit/edit.queue'
+import EditQueue from '@/app/flow/menus/edit/queue/edit.queue'
 
 type QueueNodeProps = {
   name: string

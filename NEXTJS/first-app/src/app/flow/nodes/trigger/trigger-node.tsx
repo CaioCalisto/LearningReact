@@ -7,7 +7,7 @@ import {
 import {useEffect, useState} from 'react'
 import styles from '../node.module.scss'
 import { MdFlashOn } from 'react-icons/md'
-import EditTrigger from '@/app/flow/menus/edit/edit-trigger'
+import EditTrigger from '@/app/flow/menus/edit/trigger/edit-trigger'
 import AddNode from '@/app/flow/menus/add/add-node'
 
 type TriggerNodeProps = {

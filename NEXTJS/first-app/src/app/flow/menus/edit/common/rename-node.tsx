@@ -23,12 +23,10 @@ export default function RenameNode({ nodeId }: RenameNodeProps) {
     <>
       <MdEdit className={styles.icon} onClick={() => setOpen(!open)} />
       {open && (
-        <>
-          <div className={styles2.container}>
-            <p>Rename node</p>
-            <input type={'text'} onChange={handleChange} />
-          </div>
-        </>
+        <div className={styles2.container}>
+          <p>Rename node</p>
+          <input type={'text'} onChange={handleChange} />
+        </div>
       )}
     </>
   )

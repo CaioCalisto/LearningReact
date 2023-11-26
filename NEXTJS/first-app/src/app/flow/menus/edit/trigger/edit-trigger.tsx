@@ -1,4 +1,4 @@
-import styles from './common/common.module.scss'
+import styles from '../common/common.module.scss'
 import { MdOutlineLock } from 'react-icons/md'
 import { MdPhoneCallback } from 'react-icons/md'
 import RenameNode from '@/app/flow/menus/edit/common/rename-node'

@@ -1,7 +1,7 @@
-import styles from './common/common.module.scss'
+import styles from '../common/common.module.scss'
 import { MdQueueMusic, MdOutlineLock } from 'react-icons/md'
-import RenameNode from './common/rename-node'
-import DeleteNode from './common/delete-node'
+import RenameNode from '../common/rename-node'
+import DeleteNode from '../common/delete-node'
 
 type EditQueueProps = {
   nodeId: string

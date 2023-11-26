@@ -2,7 +2,7 @@ import { Handle, NodeProps, NodeToolbar, Position } from 'reactflow'
 import { useState } from 'react'
 import styles from '../node.module.scss'
 import { MdDialpad } from 'react-icons/md'
-import EditMenu from '@/app/flow/menus/edit/edit-menu'
+import EditMenu from '@/app/flow/menus/edit/menu/edit-menu'
 
 type MenuNodeProps = {
   name: string

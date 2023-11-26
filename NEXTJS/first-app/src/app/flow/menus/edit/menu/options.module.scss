@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  position: fixed;
+  top: 50px;
+  width: 288px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px 4px var(--COLOUR-PRIMARY-200);
+  background-color: var(--COLOUR-NEUTRAL-100);
+}
+
+.keypadContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  justify-content: center;
+  gap: 15px;
+  border-radius: 20px;
+  align-self: stretch;
+  flex-wrap: wrap;
+  background-color: var(--COLOUR-NEUTRAL-300);
+}
+
+.keypad {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 100px;
+  width: 56px;
+  height: 48px;
+  background: var(--COLOUR-ERROR-25);
+  box-shadow: 0px 0px 0px 4px var(--COLOUR-PRIMARY-100), 0px 1px 2px 0px var(--COLOUR-PRIMARY-100), 0px 1px 3px 0px var(--COLOUR-PRIMARY-100);
+}
