@@ -13,7 +13,7 @@ export default function EditMenu({ nodeId }: EditMenuProps) {
     <div className={styles.menu}>
       <MdOutlineLock className={styles.icon} />
       <hr className={styles.verticalLine} />
-      <Options />
+      <Options nodeId={nodeId} />
       <RenameNode nodeId={nodeId} />
       <hr className={styles.verticalLine} />
       <DeleteNode nodeId={nodeId} />

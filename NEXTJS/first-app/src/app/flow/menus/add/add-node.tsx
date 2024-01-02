@@ -1,6 +1,5 @@
 import styles from './add-node.module.scss'
-import { MdAdd } from 'react-icons/md'
-import { MdDialpad, MdQueueMusic } from 'react-icons/md'
+import { MdAdd, MdDialpad, MdQueueMusic } from 'react-icons/md'
 import { useReactFlow } from 'reactflow'
 import { NodeTypeNames } from '@/app/flow/nodes/node-types'
 import { v4 as uuidv4 } from 'uuid'

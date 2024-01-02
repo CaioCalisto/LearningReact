@@ -5,7 +5,8 @@ import ReactFlow, {
   Controls,
   Edge,
   MiniMap,
-  Node, Panel,
+  Node,
+  Panel,
   useEdgesState,
   useNodesState,
 } from 'reactflow'
@@ -40,22 +41,20 @@ export default function FlowPage() {
   }, [nodes, edges, setNodes, setEdges])
 
   return (
-    <>
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        nodeTypes={NodeTypes}
-        fitView={true}
-      >
-        <Controls position={'bottom-left'} />
-        <MiniMap pannable position={'bottom-right'} />
-        <Background variant={BackgroundVariant.Lines} gap={12} size={1} />
-        <Panel position={'top-right'}>
-          <button onClick={() => onLayout()}>Clean Layout</button>
-        </Panel>
-      </ReactFlow>
-    </>
+    <ReactFlow
+      nodes={nodes}
+      edges={edges}
+      onNodesChange={onNodesChange}
+      onEdgesChange={onEdgesChange}
+      nodeTypes={NodeTypes}
+      fitView={true}
+    >
+      <Controls position={'bottom-left'} />
+      <MiniMap pannable position={'bottom-right'} />
+      <Background variant={BackgroundVariant.Lines} gap={12} size={1} />
+      <Panel position={'top-right'}>
+        <button onClick={() => onLayout()}>Clean Layout</button>
+      </Panel>
+    </ReactFlow>
   )
 }
