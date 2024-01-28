@@ -21,6 +21,19 @@ export default function Home() {
           <input type="text" name="text1" id="text2" className="textbox" placeholder="Age" />
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <div className="my-form2">
+        <p className="text-vw">Form</p>
+        <div className="my-form-line2">
+          <input type="text" name="text1" id="text1" className="textbox2" placeholder="Name" />
+          <input type="text" name="text1" id="text2" className="textbox2" placeholder="Age" />
+          <input type="text" name="text1" id="text2" className="textbox2" placeholder="Address" />
+          <input type="text" name="text1" id="text2" className="textbox2" placeholder="Surname" />
+          <input type="text" name="text1" id="text2" className="textbox2" placeholder="Whatever" />
+        </div>
+      </div>
     </main>
   );
 }
