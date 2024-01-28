@@ -8,6 +8,7 @@
 
 html {
   font-size: 6.25%;
+  background-color: lightblue;
 }
 
 .text-rem {
@@ -23,4 +24,22 @@ html {
 .text-vw {
   color: green;
   font-size: 7vw;
+}
+
+.my-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.my-form-line {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+}
+
+.textbox {
+  height: 5vh;
+  width: 40%;
+  font-size: 2vw;
 }
