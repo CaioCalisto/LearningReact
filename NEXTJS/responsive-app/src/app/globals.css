@@ -59,8 +59,8 @@ html {
 
 .textbox2 {
   height: 5vh;
-  min-width: 20%;
   /* min-width: 20%; */
+  max-width: 30%; 
   font-size: 2vw;
   flex-grow: 1;
 }

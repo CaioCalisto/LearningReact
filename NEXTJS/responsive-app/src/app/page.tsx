@@ -34,6 +34,10 @@ export default function Home() {
           <input type="text" name="text1" id="text2" className="textbox2" placeholder="Whatever" />
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <img src="/Ferrari.jpeg" width={'60%'} />
     </main>
   );
 }
