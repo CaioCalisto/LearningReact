@@ -3,9 +3,26 @@
 @tailwind utilities;
 
 :root {
-   
-}
+  --FONT-FAMILY: Inter, sans-serif;
 
-body {
-  
+  --TITLE-SIZE-XL: 6vw;
+  --TITLE-SIZE-L: 4vw;
+  --TITLE-SIZE-M: 3vw;
+  --TITLE-SIZE-S: 2vw;
+  --TITLE-SIZE-XS: 1vw;
+
+  --BODY-SIZE-XL: 3.15vw;
+  --BODY-SIZE-L: 3.52vw;
+  --BODY-SIZE-M: 1.89vw;
+  --BODY-SIZE-S: 1.89vw;
+  --BODY-SIZE-XS: 1.575vw;
+
+  --FONT-WEIGHT-REGULAR: 400;
+  --FONT-WEIGHT-MEDIUM: 500;
+  --FONT-WEIGHT-SEMIBOLD: 600;
+  --FONT-WEIGHT-BOLD: 700;
+
+  --LINE-HEIGH-XS: 110%;
+  --LINE-HEIGHT-S: 120%;
+  --LINE-HEIGHT-M: 140%; 
 }

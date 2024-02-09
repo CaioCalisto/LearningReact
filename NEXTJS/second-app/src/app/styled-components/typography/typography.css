@@ -1,0 +1,69 @@
+/* XL */
+.TITLE-XL-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--TITLE-SIZE-XL)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+.TITLE-XL-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--TITLE-SIZE-XL)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+.TITLE-XL-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--TITLE-SIZE-XL)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+.TITLE-XL-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--TITLE-SIZE-XL)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+
+/* L */
+.TITLE-L-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--TITLE-SIZE-L)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+.TITLE-L-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--TITLE-SIZE-L)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+.TITLE-L-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--TITLE-SIZE-L)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+.TITLE-L-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--TITLE-SIZE-L)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+
+/* M */
+.TITLE-M-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--TITLE-SIZE-M)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+.TITLE-M-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--TITLE-SIZE-M)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+.TITLE-M-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--TITLE-SIZE-M)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+.TITLE-M-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--TITLE-SIZE-M)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
+}
+
+/* S */
+.TITLE-S-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--TITLE-SIZE-S)/var(--LINE-HEIGHT-S) var(--FONT-FAMILY)
+}
+.TITLE-S-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--TITLE-SIZE-S)/var(--LINE-HEIGHT-S) var(--FONT-FAMILY)
+}
+.TITLE-S-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--TITLE-SIZE-S)/var(--LINE-HEIGHT-S) var(--FONT-FAMILY)
+}
+.TITLE-S-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--TITLE-SIZE-S)/var(--LINE-HEIGHT-S) var(--FONT-FAMILY)
+}
+
+/* XS */
+.TITLE-XS-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--TITLE-SIZE-XS)/var(--LINE-HEIGHT-S) var(--FONT-FAMILY)
+}
+.TITLE-XS-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--TITLE-SIZE-XS)/var(--LINE-HEIGHT-S) var(--FONT-FAMILY)
+}
+.TITLE-XS-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--TITLE-SIZE-XS)/var(--LINE-HEIGHT-S) var(--FONT-FAMILY)
+}
+.TITLE-XS-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--TITLE-SIZE-XS)/var(--LINE-HEIGHT-S) var(--FONT-FAMILY)
+}
