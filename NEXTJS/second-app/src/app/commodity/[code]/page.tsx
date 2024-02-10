@@ -1,5 +1,8 @@
+import LargeTabs from "@/app/styled-components/tabs/large-tabs";
 import { Typography } from "@/app/styled-components/typography/typography";
 import React from "react";
+import OverviewChart from "../overview-chart";
+import ForecastChart from "../forecast-chart";
 
 function CommodityView() {
   return (
@@ -17,7 +20,7 @@ function CommodityView() {
       {/* END TITLE AND DESCRIPTION */}
 
       {/* ITEM SUMMARY */}
-      <div className="flex flex-row">
+      <div className="flex flex-row pb-4">
         {/* ITEM DETAIL */}
         <div className="flex flex-col pr-6">
           <Typography type="TITLE" size="XS" weight="SEMIBOLD">
@@ -43,6 +46,15 @@ function CommodityView() {
         {/* END ITEM PRICE */}
       </div>
       {/* END ITEM SUMMARY */}
+
+      {/* CHART */}
+      <LargeTabs
+        contents={[
+          { title: "Overview", render: <OverviewChart /> },
+          { title: "Forecast", render: <ForecastChart /> },
+        ]}
+      />
+      {/* END CHART */}
     </div>
   );
 }
