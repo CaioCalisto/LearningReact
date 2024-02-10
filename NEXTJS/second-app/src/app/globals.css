@@ -5,17 +5,17 @@
 :root {
   --FONT-FAMILY: Inter, sans-serif;
 
-  --TITLE-SIZE-XL: 6vw;
-  --TITLE-SIZE-L: 4vw;
+  --TITLE-SIZE-XL: 4vw;
+  --TITLE-SIZE-L: 3.5vw;
   --TITLE-SIZE-M: 3vw;
-  --TITLE-SIZE-S: 2vw;
-  --TITLE-SIZE-XS: 1vw;
+  --TITLE-SIZE-S: 2.5vw;
+  --TITLE-SIZE-XS: 2vw;
 
-  --BODY-SIZE-XL: 3.15vw;
-  --BODY-SIZE-L: 3.52vw;
-  --BODY-SIZE-M: 1.89vw;
-  --BODY-SIZE-S: 1.89vw;
-  --BODY-SIZE-XS: 1.575vw;
+  --BODY-SIZE-XL: 1.7vw;
+  --BODY-SIZE-L: 1.5vw;
+  --BODY-SIZE-M: 1vw;
+  --BODY-SIZE-S: 0.8vw;
+  --BODY-SIZE-XS: 0.5vw;
 
   --FONT-WEIGHT-REGULAR: 400;
   --FONT-WEIGHT-MEDIUM: 500;

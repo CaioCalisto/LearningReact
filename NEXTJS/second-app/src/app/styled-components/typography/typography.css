@@ -1,3 +1,4 @@
+/* TITLE */
 /* XL */
 .TITLE-XL-REGULAR {
   font: var(--FONT-WEIGHT-REGULAR) var(--TITLE-SIZE-XL)/var(--LINE-HEIGH-XS) var(--FONT-FAMILY)
@@ -66,4 +67,75 @@
 }
 .TITLE-XS-BOLD {
   font: var(--FONT-WEIGHT-BOLD) var(--TITLE-SIZE-XS)/var(--LINE-HEIGHT-S) var(--FONT-FAMILY)
+}
+
+/* BODY */
+/* XL */
+.BODY-XL-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--BODY-SIZE-XL)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-XL-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--BODY-SIZE-XL)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-XL-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--BODY-SIZE-XL)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-XL-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--BODY-SIZE-XL)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+
+/* L */
+.BODY-L-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--BODY-SIZE-L)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-L-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--BODY-SIZE-L)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-L-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--BODY-SIZE-L)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-L-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--BODY-SIZE-L)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+
+/* M */
+.BODY-M-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--BODY-SIZE-M)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-M-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--BODY-SIZE-M)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-M-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--BODY-SIZE-M)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-M-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--BODY-SIZE-M)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+
+/* S */
+.BODY-S-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--BODY-SIZE-S)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-S-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--BODY-SIZE-S)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-S-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--BODY-SIZE-S)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-S-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--BODY-SIZE-S)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+
+/* XS */
+.BODY-XS-REGULAR {
+  font: var(--FONT-WEIGHT-REGULAR) var(--BODY-SIZE-XS)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-XS-MEDIUM {
+  font: var(--FONT-WEIGHT-MEDIUM) var(--BODY-SIZE-XS)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-XS-SEMIBOLD {
+  font: var(--FONT-WEIGHT-SEMIBOLD) var(--BODY-SIZE-XS)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
+}
+.BODY-XS-BOLD {
+  font: var(--FONT-WEIGHT-BOLD) var(--BODY-SIZE-XS)/var(--LINE-HEIGHT-M) var(--FONT-FAMILY)
 }
