@@ -1,5 +1,6 @@
 "use client";
 
+import HighchartsAnnotationsModule from 'highcharts/modules/annotations';
 import HighchartsReact from "highcharts-react-official";
 import Highchats from "highcharts";
 import React from "react";
@@ -42,9 +43,30 @@ const options: Highcharts.Options = {
       ],
     },
   ],
+  annotations: [
+    {
+      labelOptions: {
+        backgroundColor: "rgba(255,255,255,0.5)",
+        verticalAlign: "top",
+        y: 15,
+      },
+      labels: [
+        {
+          point: {
+            xAxis: 100,
+            yAxis: 95.6,
+            x: 215,
+            y: 180,
+          },
+          text: "TARGET 1",
+        },
+      ],
+    },
+  ],
 };
 
 function OverviewChart() {
+  HighchartsAnnotationsModule(Highchats)
   return (
     <div>
       <HighchartsReact highcharts={Highchats} options={options} />
