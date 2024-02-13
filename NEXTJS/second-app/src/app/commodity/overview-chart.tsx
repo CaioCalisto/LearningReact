@@ -45,6 +45,13 @@ const options: Highcharts.Options = {
   ],
   annotations: [
     {
+      draggable: '',
+      events: {
+        click: function(e) {
+          var modal = document.getElementById('annotation-modal');
+          modal?.removeAttribute('hidden');
+        }
+      },
       labelOptions: {
         backgroundColor: "rgba(255,255,255,0.5)",
         verticalAlign: "top",
@@ -65,11 +72,20 @@ const options: Highcharts.Options = {
   ],
 };
 
+function hideModal() {
+  var modal = document.getElementById('annotation-modal');
+  modal?.setAttribute('hidden', true);
+}
+
 function OverviewChart() {
   HighchartsAnnotationsModule(Highchats)
   return (
     <div>
       <HighchartsReact highcharts={Highchats} options={options} />
+      <div id="annotation-modal" hidden aria-hidden="true">
+        <div>OLÁ</div>
+        <button onClick={hideModal} className='bg-gray-200 p-4 rounded-2xl'>CLOSE</button>
+      </div>
     </div>
   );
 }
