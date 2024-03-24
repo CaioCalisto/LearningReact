@@ -3,10 +3,9 @@ import { useCopyToClipboard } from '../hooks/useCopyToClipboard';
 import React from 'react';
 import Page2 from '../pages/Page2';
 
-const handleCopyMock = jest.fn();
 jest.mock('../hooks/useCopyToClipboard');
 
-describe('Hook 2 - forcing consumer to get all properties', () => {
+describe('Hook with Tupple', () => {
   it('show isCopied or not in the screen', async () => {
     (useCopyToClipboard as jest.Mock).mockReturnValueOnce([true, jest.fn()]);
     render(<Page2 />);
@@ -24,6 +23,7 @@ describe('Hook 2 - forcing consumer to get all properties', () => {
   });
 
   it('call handleCopy when button is clicked', () => {
+    const handleCopyMock = jest.fn();
     (useCopyToClipboard as jest.Mock).mockReturnValueOnce([
       true,
       handleCopyMock,

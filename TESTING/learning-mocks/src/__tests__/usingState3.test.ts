@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MyHookWithState3 } from '../hooks/usingState3';
 
 jest.mock('react', () => ({

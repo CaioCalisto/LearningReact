@@ -9,7 +9,7 @@ jest.mock('react', () => ({
 describe('Using State: multiples', () => {
   it('each state should have different values', () => {
     const useStateMock = (useState) => [useState, jest.fn()];
-    React.useState.mockImplementation(useStateMock);
+    (React.useState as jest.Mock).mockImplementation(useStateMock);
     jest
       .spyOn(React, 'useState')
       .mockImplementationOnce(() => ['caio', jest.fn()])
@@ -25,7 +25,7 @@ describe('Using State: multiples', () => {
     const setStateMock1 = jest.fn();
     const setStateMock2 = jest.fn();
     const useStateMock = (useState) => [useState, jest.fn()];
-    React.useState.mockImplementation(useStateMock);
+    (React.useState as jest.Mock).mockImplementation(useStateMock);
     jest
       .spyOn(React, 'useState')
       .mockImplementationOnce(() => ['caio', setStateMock1])
@@ -33,11 +33,11 @@ describe('Using State: multiples', () => {
 
     const { action1, action2 } = MyHookWithState2();
 
-    action1();
+    action1('ABC');
     expect(setStateMock1).toHaveBeenCalled();
     expect(setStateMock1).toHaveBeenCalledWith('ABC');
 
-    action2();
+    action2('DEF');
     expect(setStateMock2).toHaveBeenCalled();
     expect(setStateMock2).toHaveBeenCalledWith('DEF');
   });

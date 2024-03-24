@@ -5,23 +5,14 @@ import { useUser } from '../hooks/useUser';
 
 jest.mock('../hooks/useUser');
 
-describe('Hook 1 - mock for all tests', () => {
-  it('Mock constant 1', () => {
+describe('Testing a page that call a hook', () => {
+  it('Mock constant', () => {
     (useUser as jest.Mock).mockReturnValue({
       username: 'calicc',
     });
 
     render(<Page1 />);
     expect(screen.getByText(/calicc/)).toBeVisible();
-  });
-
-  it('Mock constant 2', () => {
-    (useUser as jest.Mock).mockReturnValue({
-      email: 'caio.calisto@gmail.com',
-    });
-
-    render(<Page1 />);
-    expect(screen.getByText(/caio.calisto@gmail.com/)).toBeVisible();
   });
 
   it('Mock function call', () => {
@@ -54,7 +45,7 @@ describe('Hook 1 - mock for all tests', () => {
 
   it('Mock async Action', async () => {
     const myAsyncFunction = jest.fn(() => Promise.resolve(true));
-    useUser.mockReturnValue({
+    (useUser as jest.Mock).mockReturnValue({
       asyncAction: myAsyncFunction,
     });
     render(<Page1 />);

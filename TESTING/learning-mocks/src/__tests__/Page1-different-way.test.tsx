@@ -3,7 +3,8 @@ import React from 'react';
 import Page1 from '../pages/Page1';
 import {useUser} from '../hooks/useUser';
 
-const useUserMock = jest.spyOn() // how can I mock ?
+const useUserMock = jest.fn()
+jest.spyOn(global, useUser).mockImplementation(useUserMock)
 
 describe('Hook 1 - mock for all tests', () => {
   it('Mock constant 1', () => {
@@ -17,7 +18,7 @@ describe('Hook 1 - mock for all tests', () => {
       username: 'calicc',
     };
 
-    useUserMock.mockReturnValue(response);
+    (useUserMock as jest.Mock).mockReturnValue(response);
 
     render(<Page1 />);
     expect(screen.getByText(/calicc/)).toBeVisible();

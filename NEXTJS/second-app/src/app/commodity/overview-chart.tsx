@@ -1,6 +1,6 @@
 "use client";
 
-import HighchartsAnnotationsModule from 'highcharts/modules/annotations';
+import HighchartsAnnotationsModule from "highcharts/modules/annotations";
 import HighchartsReact from "highcharts-react-official";
 import Highchats from "highcharts";
 import React from "react";
@@ -45,12 +45,12 @@ const options: Highcharts.Options = {
   ],
   annotations: [
     {
-      draggable: '',
+      draggable: "",
       events: {
-        click: function(e) {
-          var modal = document.getElementById('annotation-modal');
-          modal?.removeAttribute('hidden');
-        }
+        click: function (e) {
+          var modal = document.getElementById("annotation-modal");
+          modal?.removeAttribute("hidden");
+        },
       },
       labelOptions: {
         backgroundColor: "rgba(255,255,255,0.5)",
@@ -73,18 +73,27 @@ const options: Highcharts.Options = {
 };
 
 function hideModal() {
-  var modal = document.getElementById('annotation-modal');
-  modal?.setAttribute('hidden', true);
+  var modal = document.getElementById("annotation-modal");
+  modal?.setAttribute("hidden", true);
 }
 
 function OverviewChart() {
-  HighchartsAnnotationsModule(Highchats)
+  HighchartsAnnotationsModule(Highchats);
   return (
     <div>
       <HighchartsReact highcharts={Highchats} options={options} />
-      <div id="annotation-modal" hidden aria-hidden="true">
-        <div>OLÁ</div>
-        <button onClick={hideModal} className='bg-gray-200 p-4 rounded-2xl'>CLOSE</button>
+      <div
+        id="annotation-modal"
+        hidden
+        aria-hidden="true"
+        className="bg-gray-100 w-32"
+      >
+        <div className="flex flex-col">
+          <div>OLÁ</div>
+          <button onClick={hideModal} className="bg-gray-200 p-4 rounded-2xl">
+            CLOSE
+          </button>
+        </div>
       </div>
     </div>
   );

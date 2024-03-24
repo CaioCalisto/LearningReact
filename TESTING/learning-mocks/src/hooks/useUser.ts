@@ -1,12 +1,12 @@
-type useUserType = {
+interface User {
   username: string;
   email: string;
   someAction: () => void;
   anotherAction: (id: string, timestamp: string) => boolean;
   asyncAction: () => Promise<boolean>;
-};
+}
 
-export function useUser(): useUserType {
+export function useUser(): User {
   return {
     username: '',
     email: '',
