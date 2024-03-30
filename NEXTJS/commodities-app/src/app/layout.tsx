@@ -18,7 +18,8 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <div className={"h-screen flex overflow-hidden"}>
           <div
-            className={"flex-col w-24 py-6 px-2 hidden md:block"} style={{backgroundColor: "var(--MYCOLOR)"}}
+            className={"flex-col w-24 py-6 px-2 hidden md:block"}
+            style={{ backgroundColor: "var(--BLUE-100)" }}
           >
             <Image
               src={"/acme.svg"}
@@ -29,13 +30,16 @@ export default function RootLayout({
             />
           </div>
           <div className={"flex-1 overflow-auto focus:outline-none"}>
-            <header className={"bg-gray-800 h-12 p-2 md:hidden"}>
+            <header
+              className={"h-12 p-2 md:hidden"}
+              style={{ backgroundColor: "var(--BLUE-100)" }}
+            >
               <Image
-                  src={"/acme.svg"}
-                  alt={"Logo"}
-                  width={"0"}
-                  height={"0"}
-                  style={{ width: "auto", height: "100%" }}
+                src={"/acme.svg"}
+                alt={"Logo"}
+                width={"0"}
+                height={"0"}
+                style={{ width: "auto", height: "100%" }}
               />
             </header>
             <main className={"flex-1 relative z-0 overflow-y-auto p-6"}>
