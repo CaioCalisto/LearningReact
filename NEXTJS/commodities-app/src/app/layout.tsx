@@ -25,13 +25,24 @@ export default function RootLayout({
               alt={"Logo"}
               width={"0"}
               height={"0"}
-              style={{ width: '100%', height: 'auto' }}
+              style={{ width: "100%", height: "auto" }}
             />
           </div>
+          <div className={"flex-1 overflow-auto focus:outline-none"}>
+            <header className={"bg-gray-800 h-12 p-2 md:hidden"}>
+              <Image
+                  src={"/acme.svg"}
+                  alt={"Logo"}
+                  width={"0"}
+                  height={"0"}
+                  style={{ width: "auto", height: "100%" }}
+              />
+            </header>
+            <main className={"flex-1 relative z-0 overflow-y-auto p-6"}>
+              {children}
+            </main>
+          </div>
         </div>
-        <main className={"flex-1 overflow-auto focus:outline-none"}>
-          {children}
-        </main>
       </body>
     </html>
   );
