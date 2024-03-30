@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <div className={"h-screen flex overflow-hidden"}>
           <div
-            className={"flex-col bg-gray-800 w-24 py-6 px-2 hidden md:block"}
+            className={"flex-col w-24 py-6 px-2 hidden md:block"} style={{backgroundColor: "var(--MYCOLOR)"}}
           >
             <Image
               src={"/acme.svg"}
