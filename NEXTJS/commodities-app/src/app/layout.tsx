@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <div className={"h-screen flex overflow-hidden bg-gray-200"}>
+        <div className={"h-screen flex overflow-hidden"}>
           <div
             className={"flex-col bg-gray-800 w-24 py-6 px-2 hidden md:block"}
           >
