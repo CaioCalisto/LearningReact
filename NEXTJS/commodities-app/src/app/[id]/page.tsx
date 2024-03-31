@@ -27,7 +27,7 @@ function Page() {
           </Typography>
         </div>
         <div className={"flex flex-col px-3"}>
-          <Typography style={"body"} size={"l"} weight={"bold"}>
+          <Typography style={"body"} size={"l"} weight={"bold"} color={"var(--GREEN-60)"}>
             + 36.09%
           </Typography>
           <Typography style={"body"} size={"m"} weight={"regular"}>
