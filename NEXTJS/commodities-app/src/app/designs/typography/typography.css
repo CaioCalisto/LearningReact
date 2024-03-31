@@ -6,70 +6,70 @@
 .title.xl {
     font-size: 3vw;
     @media (max-width: 768px) {
-        font-size: 7vw;
+        font-size: 6vw;
     }
 }
 
 .title.l {
     font-size: 2.75vw;
     @media (max-width: 768px) {
-        font-size: 6.75vw;
+        font-size: 5.5vw;
     }
 }
 
 .title.m {
     font-size: 2.5vw;
     @media (max-width: 768px) {
-        font-size: 6.5vw;
+        font-size: 5vw;
     }
 }
 
 .title.s {
     font-size: 2.25vw;
     @media (max-width: 768px) {
-        font-size: 6.25vw;
+        font-size: 4.5vw;
     }
 }
 
 .title.xs {
     font-size: 2vw;
     @media (max-width: 768px) {
-        font-size: 6vw;
+        font-size: 4vw;
     }
 }
 
 .body.xl {
     font-size: 1.7vw;
     @media (max-width: 768px) {
-        font-size: 5.25vw;
+        font-size: 3.5vw;
     }
 }
 
 .body.l {
     font-size: 1.5vw;
     @media (max-width: 768px) {
-        font-size: 5vw;
+        font-size: 3vw;
     }
 }
 
 .body.m {
     font-size: 1.25vw;
     @media (max-width: 768px) {
-        font-size: 4.5vw;
+        font-size: 2.75vw;
     }
 }
 
 .body.s {
     font-size: 1vw;
     @media (max-width: 768px) {
-        font-size: 4.25vw;
+        font-size: 2.5vw;
     }
 }
 
 .body.xs {
     font-size: .075vw;
     @media (max-width: 768px) {
-        font-size: 4vw;
+        font-size: 2vw;
     }
 }
 
