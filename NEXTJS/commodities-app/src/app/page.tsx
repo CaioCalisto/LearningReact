@@ -1,3 +1,4 @@
+'use client'
 import { Typography } from "@/app/designs";
 
 export default function Home() {
