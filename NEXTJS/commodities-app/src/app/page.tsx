@@ -1,5 +1,5 @@
 'use client'
-import { Typography } from "@/app/designs";
+import { Typography } from "../designs";
 
 export default function Home() {
   return (

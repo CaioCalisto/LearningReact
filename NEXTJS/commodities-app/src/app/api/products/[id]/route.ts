@@ -1,4 +1,4 @@
-import {Product} from "@/app/types";
+import {Product} from "@/types";
 
 export async function GET(
   request: Request,

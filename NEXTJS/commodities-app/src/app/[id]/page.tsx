@@ -1,8 +1,8 @@
 'use client'
 import React from "react";
-import { SeriesButton, Typography } from "@/app/designs";
-import useData from "@/app/hooks/useData";
-import { Product } from "@/app/types";
+import { SeriesButton, Typography } from "../../designs";
+import useData from "@/hooks/useData";
+import { Product } from "@/types";
 
 function Page() {
   const { data, isLoading } = useData<Product>("api/products/2LN6");

@@ -1,6 +1,6 @@
 "use client"
 import { useQuery } from "react-query";
-import api from "../middlewares/axiosInterceptors";
+import api from "@/middlewares/axiosInterceptors";
 import { useState } from "react";
 
 interface useDataResponse<T> {
