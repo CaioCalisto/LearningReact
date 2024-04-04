@@ -1,13 +1,13 @@
-import { Product } from "@/types";
+import { Commodity } from "@/types";
 import useData from "@/hooks/useData";
 
 interface Response {
   isLoading: boolean;
-  commodity: Product;
+  commodity: Commodity;
 }
 
 export default function useDetails(id: string): Response {
-  const { data, isLoading } = useData<Product>(`api/products/${id}`);
+  const { data, isLoading } = useData<Commodity>(`api/commodities/${id}`);
 
   return {
     isLoading,

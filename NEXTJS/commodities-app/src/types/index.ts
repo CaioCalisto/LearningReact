@@ -1,3 +1,3 @@
-import { Product} from "@/types/product";
+import { Commodity} from "@/types/commodity";
 
-export type { Product }
+export type { Commodity }
