@@ -11,17 +11,23 @@ function Bar({ options }: TabProps) {
 
   return (
     <div className={"flex flex-col gap-4"}>
-      <div className={"flex flex-row gap-3"}>
+      <div className={"flex flex-row gap-3 overflow-x-auto"}>
         {options.map((option, index) => (
           <button
             key={`option-bar-title-${option.title.replace(/\s/g, "")}-${index}`}
             className={"px-5 py-3 border-b-2"}
-            style={{ borderColor: `${currentTab === index ? 'var(--BLUE-50)' : 'var(--GRAY-40)'}`}}
+            style={{
+              borderColor: `${currentTab === index ? "var(--BLUE-50)" : "var(--GRAY-40)"}`,
+            }}
             onClick={() => {
               handleTabChange(index);
             }}
           >
-            <Typography style={"body"} size={"s"} weight={`${currentTab === index ? 'bold': 'regular'}`}>
+            <Typography
+              style={"body"}
+              size={"s"}
+              weight={`${currentTab === index ? "bold" : "regular"}`}
+            >
               {option.title}
             </Typography>
           </button>
