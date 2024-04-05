@@ -10,7 +10,7 @@ function Pill({ options }: TabProps) {
   };
 
   return (
-    <>
+    <div className={'flex flex-col gap-5'}>
       <div className={"flex flex-row gap-3"}>
         {options.map((option, index) => (
           <button
@@ -44,7 +44,7 @@ function Pill({ options }: TabProps) {
             </div>
           ),
       )}
-    </>
+    </div>
   );
 }
 
