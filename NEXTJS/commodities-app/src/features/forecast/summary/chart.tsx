@@ -2,7 +2,7 @@ import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import useChart from "./useChart";
-import { FilterButton, RightSidePanel } from "@/designs";
+import { Bar, FilterButton, RightSidePanel, RoundedContainer } from "@/designs";
 
 type Props = {
   commodityId: string;
@@ -20,6 +20,22 @@ export default function Chart({ commodityId }: Props) {
         <FilterButton>3Y</FilterButton>
         <FilterButton>5Y</FilterButton>
         <FilterButton>All</FilterButton>
+      </div>
+      <div className={"md:hidden"}>
+        <RoundedContainer>
+          <Bar
+            options={[
+              {
+                title: "Key Data",
+                renderItem: <>Key Data Content</>,
+              },
+                {
+                    title: "Targets",
+                    renderItem: <>Targets Content</>,
+                },
+            ]}
+          />
+        </RoundedContainer>
       </div>
     </div>
   );
