@@ -3,6 +3,7 @@ import React from "react";
 import Details from "./details";
 import { useParams } from "next/navigation";
 import { Pill } from "@/designs";
+import {ForecastContent} from "@/features/forecast";
 
 function Page() {
   const { id } = useParams();
@@ -12,8 +13,8 @@ function Page() {
       <Details id={id as string} />
       <Pill
         options={[
-          { title: "Overview", renderItem: <>1</> },
-          { title: "Forecast", renderItem: <>2</> },
+          { title: "Overview", renderItem: <>Overview</> },
+          { title: "Forecast", renderItem: <ForecastContent /> },
         ]}
       />
     </div>
