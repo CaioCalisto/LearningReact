@@ -2,10 +2,14 @@ import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-function Chart() {
+type Props = {
+  commodityId: string;
+};
+
+export default function Chart({ commodityId }: Props) {
   const options = {
     title: {
-      text: "My chart",
+      text: `Commodity ${commodityId}`,
     },
     series: [
       {
@@ -16,5 +20,3 @@ function Chart() {
 
   return <HighchartsReact highcharts={Highcharts} options={options} />;
 }
-
-export default Chart;

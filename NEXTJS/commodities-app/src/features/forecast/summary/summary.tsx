@@ -7,10 +7,9 @@ type Props = {
 
 function Summary({ commodityId }: Props) {
   return (
-      <>
-        <div>Summary for {commodityId}</div>
-        <Chart />
-      </>
+    <>
+      <Chart commodityId={commodityId} />
+    </>
   );
 }
 
