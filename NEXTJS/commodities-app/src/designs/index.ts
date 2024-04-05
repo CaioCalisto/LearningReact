@@ -1,5 +1,6 @@
 import Typography from "./typography/typography";
 import SeriesButton from "./buttons/series-button";
-import Pill from "@/designs/tabs/pill";
+import Pill from "./tabs/pill";
+import Bar from "./tabs/bar"
 
-export { Pill, SeriesButton, Typography };
+export { Bar, Pill, SeriesButton, Typography };
