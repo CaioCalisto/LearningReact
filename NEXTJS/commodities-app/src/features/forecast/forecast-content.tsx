@@ -11,7 +11,10 @@ function ForecastContent({ commodityId }: Props) {
     <div className={"flex-col"}>
       <Bar
         options={[
-          { title: "Summary", renderItem: <Summary commodityId={commodityId} /> },
+          {
+            title: "Summary",
+            renderItem: <Summary commodityId={commodityId} />,
+          },
           { title: "Technical Analysis", renderItem: <>Technical Analysis</> },
           { title: "Key Fundamentals", renderItem: <>Key Fundamentals</> },
           { title: "Supply", renderItem: <>Supply</> },

@@ -29,10 +29,10 @@ export default function Chart({ commodityId }: Props) {
                 title: "Key Data",
                 renderItem: <>Key Data Content</>,
               },
-                {
-                    title: "Targets",
-                    renderItem: <>Targets Content</>,
-                },
+              {
+                title: "Targets",
+                renderItem: <>Targets Content</>,
+              },
             ]}
           />
         </RoundedContainer>
