@@ -14,7 +14,7 @@ function Page() {
       <Pill
         options={[
           { title: "Overview", renderItem: <>Overview</> },
-          { title: "Forecast", renderItem: <ForecastContent /> },
+          { title: "Forecast", renderItem: <ForecastContent commodityId={id as string} /> },
         ]}
       />
     </div>

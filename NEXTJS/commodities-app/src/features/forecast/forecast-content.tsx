@@ -1,12 +1,17 @@
 import React from "react";
 import { Bar } from "@/designs";
+import Summary from "./summary/summary";
 
-function ForecastContent() {
+type Props = {
+  commodityId: string;
+};
+
+function ForecastContent({ commodityId }: Props) {
   return (
     <div className={"flex-col"}>
       <Bar
         options={[
-          { title: "Summary", renderItem: <>Summary</> },
+          { title: "Summary", renderItem: <Summary commodityId={commodityId} /> },
           { title: "Technical Analysis", renderItem: <>Technical Analysis</> },
           { title: "Key Fundamentals", renderItem: <>Key Fundamentals</> },
           { title: "Supply", renderItem: <>Supply</> },
