@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@/designs";
+import {TextArea, Typography} from "@/designs";
 import useKeyData from "@/features/forecast/summary/useKeyData";
 import Image from "next/image";
 import { ForecastMovement, Indicators, Trends } from "@/types";
@@ -147,9 +147,9 @@ export default function KeyData({ commodityId }: Props) {
           <div className={"flex flex-row gap-1 justify-evenly"}>
             {renderIndicators(recommendationIndicator)}
           </div>
-          <Typography style={"body"} size={"m"} weight={"regular"}>
+          <TextArea style={"body"} size={"m"} weight={"regular"} maxLength={100}>
             {summary}
-          </Typography>
+          </TextArea>
           <Typography style={"body"} size={"s"} weight={"regular"}>
             Last changed: {lastChanged}
             <br />
