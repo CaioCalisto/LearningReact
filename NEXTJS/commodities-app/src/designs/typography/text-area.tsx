@@ -26,15 +26,19 @@ export default function TextArea({
   return (
     <div className={"flex flex-col gap-2"}>
       <Typography style={style} size={size} weight={weight} color={color}>
-        {displayText}
+        {displayText} {!expanded && "..."}
       </Typography>
       {children && children.toString().length > maxLength && (
-        <button onClick={toggleExpanded} className={"flex justify-end"}>
-          <Typography style={style} size={size} weight={weight}>
-            {expanded ? "See less" : "See more"}
-          </Typography>
-        </button>
-      )}
+
+          <button onClick={toggleExpanded} className={"flex justify-end"}>
+            <div className={"border-b-2"} style={{borderColor: "var(--BLUE-50)"}}>
+              <Typography style={style} size={size} weight={weight} color={"var(--BLUE-50)"}>
+                {expanded ? "See less" : "Read more"}
+              </Typography>
+            </div>
+
+          </button>
+        )}
     </div>
   );
 }
