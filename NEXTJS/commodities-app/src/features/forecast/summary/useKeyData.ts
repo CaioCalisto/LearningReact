@@ -1,9 +1,4 @@
-import { Indicators, Trends } from "@/types";
-
-type ForecastMovement = {
-  months: number;
-  value: number;
-};
+import {ForecastMovement, Indicators, Trends} from "@/types";
 
 interface Response {
   id: string;

@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@/designs";
 import useKeyData from "@/features/forecast/summary/useKeyData";
 import Image from "next/image";
-import { Indicators, Trends } from "@/types";
+import { ForecastMovement, Indicators, Trends } from "@/types";
 
 type Props = {
   commodityId: string;
@@ -95,6 +95,36 @@ function renderTrend(trend: Trends, startDate: string) {
   );
 }
 
+function renderForecastMovement(forecastMovement: ForecastMovement) {
+  return (
+    <>
+      <div
+        key={`forecast-movement-${forecastMovement.months}`}
+        className={"flex flex-col align-baseline"}
+      >
+        <Typography style={"body"} size={"m"} weight={"regular"}>
+          Next {forecastMovement.months} months
+        </Typography>
+        <div className={"flex flex-row gap-1"}>
+          <Image
+            src={"/arrow-upward.svg"}
+            alt={"Series Button"}
+            width={"0"}
+            height={"0"}
+            style={{ width: "auto", height: "auto" }}
+          />
+          <Typography style={"body"} size={"m"} weight={"bold"}>
+            {forecastMovement.value} %
+          </Typography>
+          <Typography style={"body"} size={"m"} weight={"regular"}>
+            1729 USD/MT
+          </Typography>
+        </div>
+      </div>
+    </>
+  );
+}
+
 export default function KeyData({ commodityId }: Props) {
   const {
     trend,
@@ -131,29 +161,7 @@ export default function KeyData({ commodityId }: Props) {
             Forecasted Price Movements
           </Typography>
           {forecastMovements.map((forecastMovement) => (
-            <div
-              key={`forecast-movement-${forecastMovement.months}`}
-              className={"flex flex-col align-baseline"}
-            >
-              <Typography style={"body"} size={"m"} weight={"regular"}>
-                Next {forecastMovement.months} months
-              </Typography>
-              <div className={"flex flex-row gap-1"}>
-                <Image
-                  src={"/arrow-upward.svg"}
-                  alt={"Series Button"}
-                  width={"0"}
-                  height={"0"}
-                  style={{ width: "auto", height: "auto" }}
-                />
-                <Typography style={"body"} size={"m"} weight={"bold"}>
-                  {forecastMovement.value} %
-                </Typography>
-                <Typography style={"body"} size={"m"} weight={"regular"}>
-                  1729 USD/MT
-                </Typography>
-              </div>
-            </div>
+            <>{renderForecastMovement(forecastMovement)}</>
           ))}
         </div>
       </div>
