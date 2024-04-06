@@ -52,11 +52,11 @@ function renderIndicator(label: string, active: boolean) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        borderColor: `${active ? 'var(--BLUE-70)' : ''}`,
+        borderColor: `${active ? "var(--BLUE-70)" : ""}`,
       }}
     >
       <Typography style={"body"} size={"m"} weight={"regular"}>
-        Avoid
+        {label}
       </Typography>
     </div>
   );
@@ -65,55 +65,10 @@ function renderIndicator(label: string, active: boolean) {
 function renderIndicators(indicator: Indicator) {
   return (
     <>
-      <div
-        className={"border-b-8 w-28"}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderColor: "var(--BLUE-70)",
-        }}
-      >
-        <Typography style={"body"} size={"m"} weight={"regular"}>
-          Avoid
-        </Typography>
-      </div>
-      <div
-        className={"border-b-8 w-28"}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Typography style={"body"} size={"m"} weight={"regular"}>
-          Plan
-        </Typography>
-      </div>
-      <div
-        className={"border-b-8 w-28"}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Typography style={"body"} size={"m"} weight={"regular"}>
-          Partial
-        </Typography>
-      </div>
-      <div
-        className={"border-b-8 w-28"}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Typography style={"body"} size={"m"} weight={"regular"}>
-          Full
-        </Typography>
-      </div>
+      {renderIndicator("Avoid", indicator === "avoid")}
+      {renderIndicator("Plan", indicator === "plan")}
+      {renderIndicator("Partial", indicator === "partial")}
+      {renderIndicator("Full", indicator === "full")}
     </>
   );
 }
