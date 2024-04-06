@@ -103,6 +103,7 @@ export default function KeyData({ commodityId }: Props) {
     lastUpdated,
     lastChanged,
     summary,
+    forecastMovements,
   } = useKeyData(commodityId);
 
   return (
@@ -124,6 +125,36 @@ export default function KeyData({ commodityId }: Props) {
             <br />
             Last updated: {lastUpdated}
           </Typography>
+        </div>
+        <div className={"flex flex-col gap-2"}>
+          <Typography style={"body"} size={"m"} weight={"bold"}>
+            Forecasted Price Movements
+          </Typography>
+          {forecastMovements.map((forecastMovement) => (
+            <div
+              key={`forecast-movement-${forecastMovement.months}`}
+              className={"flex flex-col align-baseline"}
+            >
+              <Typography style={"body"} size={"m"} weight={"regular"}>
+                Next {forecastMovement.months} months
+              </Typography>
+              <div className={"flex flex-row gap-1"}>
+                <Image
+                  src={"/arrow-upward.svg"}
+                  alt={"Series Button"}
+                  width={"0"}
+                  height={"0"}
+                  style={{ width: "auto", height: "auto" }}
+                />
+                <Typography style={"body"} size={"m"} weight={"bold"}>
+                  {forecastMovement.value} %
+                </Typography>
+                <Typography style={"body"} size={"m"} weight={"regular"}>
+                  1729 USD/MT
+                </Typography>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
