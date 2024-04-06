@@ -2,6 +2,7 @@ import React from "react";
 import { Typography } from "@/designs";
 import useKeyData from "@/features/forecast/summary/useKeyData";
 import Image from "next/image";
+import { Indicator } from "@/types";
 
 type Props = {
   commodityId: string;
@@ -43,6 +44,80 @@ function getArrowUp() {
   );
 }
 
+function renderIndicator(label: string, active: boolean) {
+  return (
+    <div
+      className={"border-b-8 w-28"}
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        borderColor: `${active ? 'var(--BLUE-70)' : ''}`,
+      }}
+    >
+      <Typography style={"body"} size={"m"} weight={"regular"}>
+        Avoid
+      </Typography>
+    </div>
+  );
+}
+
+function renderIndicators(indicator: Indicator) {
+  return (
+    <>
+      <div
+        className={"border-b-8 w-28"}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderColor: "var(--BLUE-70)",
+        }}
+      >
+        <Typography style={"body"} size={"m"} weight={"regular"}>
+          Avoid
+        </Typography>
+      </div>
+      <div
+        className={"border-b-8 w-28"}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography style={"body"} size={"m"} weight={"regular"}>
+          Plan
+        </Typography>
+      </div>
+      <div
+        className={"border-b-8 w-28"}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography style={"body"} size={"m"} weight={"regular"}>
+          Partial
+        </Typography>
+      </div>
+      <div
+        className={"border-b-8 w-28"}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography style={"body"} size={"m"} weight={"regular"}>
+          Full
+        </Typography>
+      </div>
+    </>
+  );
+}
+
 export default function KeyData({ commodityId }: Props) {
   const { trend, startDate, recommendationIndicator } = useKeyData(commodityId);
 
@@ -69,54 +144,7 @@ export default function KeyData({ commodityId }: Props) {
             Hedging recommendation
           </Typography>
           <div className={"flex flex-row gap-1 justify-evenly"}>
-            <div
-              className={"border-b-8 w-28"}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Typography style={"body"} size={"m"} weight={"regular"}>
-                Avoid
-              </Typography>
-            </div>
-            <div
-              className={"border-b-8 w-28"}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Typography style={"body"} size={"m"} weight={"regular"}>
-                Plan
-              </Typography>
-            </div>
-            <div
-              className={"border-b-8 w-28"}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Typography style={"body"} size={"m"} weight={"regular"}>
-                Partial
-              </Typography>
-            </div>
-            <div
-              className={"border-b-8 w-28"}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Typography style={"body"} size={"m"} weight={"regular"}>
-                Full
-              </Typography>
-            </div>
+            {renderIndicators(recommendationIndicator)}
           </div>
           <Typography style={"body"} size={"m"} weight={"regular"}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto

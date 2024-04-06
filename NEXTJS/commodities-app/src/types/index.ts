@@ -1,3 +1,4 @@
-import { Commodity} from "@/types/commodity";
+import { Commodity} from "./commodity";
+import { Indicator } from "./indicator";
 
-export type { Commodity }
+export type { Commodity, Indicator }
