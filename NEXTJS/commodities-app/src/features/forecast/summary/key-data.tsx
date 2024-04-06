@@ -74,7 +74,13 @@ function renderIndicators(indicator: Indicator) {
 }
 
 export default function KeyData({ commodityId }: Props) {
-  const { trend, startDate, recommendationIndicator } = useKeyData(commodityId);
+  const {
+    trend,
+    startDate,
+    recommendationIndicator,
+    lastUpdated,
+    lastChanged,
+  } = useKeyData(commodityId);
 
   return (
     <div className={"flex flex-col gap-4"}>
@@ -110,6 +116,11 @@ export default function KeyData({ commodityId }: Props) {
             tempore voluptate. Commodi dolores eius, et facilis, iste iusto
             maxime nesciunt nobis perferendis praesentium qui ratione ut,
             veritatis! Impedit ipsam laborum voluptate.
+          </Typography>
+          <Typography style={"body"} size={"s"} weight={"regular"}>
+            Last changed: {lastChanged}
+            <br />
+            Last updated: {lastUpdated}
           </Typography>
         </div>
       </div>
