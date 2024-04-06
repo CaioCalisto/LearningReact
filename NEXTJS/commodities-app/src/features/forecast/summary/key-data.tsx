@@ -102,6 +102,7 @@ export default function KeyData({ commodityId }: Props) {
     recommendationIndicator,
     lastUpdated,
     lastChanged,
+    summary,
   } = useKeyData(commodityId);
 
   return (
@@ -116,14 +117,7 @@ export default function KeyData({ commodityId }: Props) {
             {renderIndicators(recommendationIndicator)}
           </div>
           <Typography style={"body"} size={"m"} weight={"regular"}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-            deleniti ducimus expedita laboriosam modi nam natus pariatur
-            praesentium tempore, vitae! Aperiam asperiores assumenda cum, cumque
-            cupiditate distinctio eum exercitationem id ipsam necessitatibus
-            nesciunt, officiis pariatur perspiciatis reprehenderit tempora
-            tempore voluptate. Commodi dolores eius, et facilis, iste iusto
-            maxime nesciunt nobis perferendis praesentium qui ratione ut,
-            veritatis! Impedit ipsam laborum voluptate.
+            {summary}
           </Typography>
           <Typography style={"body"} size={"s"} weight={"regular"}>
             Last changed: {lastChanged}
