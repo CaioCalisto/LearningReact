@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@/designs";
 import useKeyData from "@/features/forecast/summary/useKeyData";
 import Image from "next/image";
-import { Indicator } from "@/types";
+import { Indicators, Trends } from "@/types";
 
 type Props = {
   commodityId: string;
@@ -62,13 +62,35 @@ function renderIndicator(label: string, active: boolean) {
   );
 }
 
-function renderIndicators(indicator: Indicator) {
+function renderIndicators(indicator: Indicators) {
   return (
     <>
       {renderIndicator("Avoid", indicator === "avoid")}
       {renderIndicator("Plan", indicator === "plan")}
       {renderIndicator("Partial", indicator === "partial")}
       {renderIndicator("Full", indicator === "full")}
+    </>
+  );
+}
+
+function renderTrend(trend: Trends, startDate: string) {
+  return (
+    <>
+      <Typography style={"body"} size={"m"} weight={"bold"}>
+        Current trend
+      </Typography>
+      <div className={"flex flex-row gap-4"}>
+        <div className={"p-2"} style={{ backgroundColor: "var(--BLUE-10)" }}>
+          {trend === "up" && getArrowUp()}
+          {trend === "down" && getArrowDown()}
+          {trend === "forward" && getArrowForward()}
+        </div>
+        <Typography style={"body"} size={"m"} weight={"regular"}>
+          Trend started:
+          <br />
+          {startDate}
+        </Typography>
+      </div>
     </>
   );
 }
@@ -85,21 +107,7 @@ export default function KeyData({ commodityId }: Props) {
   return (
     <div className={"flex flex-col gap-4"}>
       <div className={"flex flex-col gap-6"}>
-        <Typography style={"body"} size={"m"} weight={"bold"}>
-          Current trend
-        </Typography>
-        <div className={"flex flex-row gap-4"}>
-          <div className={"p-2"} style={{ backgroundColor: "var(--BLUE-10)" }}>
-            {trend === "up" && getArrowUp()}
-            {trend === "down" && getArrowDown()}
-            {trend === "forward" && getArrowForward()}
-          </div>
-          <Typography style={"body"} size={"m"} weight={"regular"}>
-            Trend started:
-            <br />
-            {startDate}
-          </Typography>
-        </div>
+        {renderTrend(trend, startDate)}
         <div className={"flex flex-col gap-4"}>
           <Typography style={"body"} size={"m"} weight={"bold"}>
             Hedging recommendation

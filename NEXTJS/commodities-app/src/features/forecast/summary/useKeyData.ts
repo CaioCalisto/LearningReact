@@ -1,10 +1,10 @@
-import { Indicator } from "@/types";
+import {Indicators, Trends} from "@/types";
 
 interface Response {
   id: string;
-  trend: "up" | "down" | "forward";
+  trend: Trends;
   startDate: string;
-  recommendationIndicator: Indicator;
+  recommendationIndicator: Indicators;
   lastChanged: string;
   lastUpdated: string;
 }

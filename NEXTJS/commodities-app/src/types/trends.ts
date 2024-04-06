@@ -1,0 +1,1 @@
+export type Trends = "up" | "down" | "forward";

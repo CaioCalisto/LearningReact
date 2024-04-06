@@ -1,4 +1,5 @@
 import { Commodity} from "./commodity";
-import { Indicator } from "./indicator";
+import { Indicators } from "./indicators";
+import { Trends} from "@/types/trends";
 
-export type { Commodity, Indicator }
+export type { Commodity, Indicators, Trends }
