@@ -3,15 +3,24 @@ import { Options } from "highcharts";
 
 export default function useChart(commodityId: string): HighchartsReactProps {
   const options: Options = {
-    title: {
-      text: `Commodity ${commodityId}`,
-    },
+    title: { text: "" },
     series: [
       {
-        type: 'line',
+        name: commodityId,
+        type: "line",
         data: [1, 2, 4, 3, 4, 1],
+        color: "var(--BLUE-50)",
       },
     ],
+    xAxis: { title: { text: "Period" } },
+    yAxis: { title: { text: "Value" } },
+    tooltip: {
+      backgroundColor: "var(--GRAY-70)",
+      style: { color: "var(--GRAY-2)" },
+      formatter: function () {
+        return `Custom message`;
+      },
+    },
   };
 
   return { options };
