@@ -30,7 +30,7 @@ function Summary({ commodityId }: Props) {
       </div>
       <br />
       <hr />
-      <div className={"grid grid-cols-2 gap-8"}>
+      <div className={"grid md:grid-cols-2 gap-8"}>
         <div className={"flex flex-col gap-2"}>
           <Typography style={"body"} size={"xl"} weight={"bold"}>
             Forecast Summary
