@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Image from "next/image";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
+} from "@/lib/components/ui/drawer";
 
 function getChevronRight() {
   return (
@@ -25,26 +30,29 @@ function getChevronLeft() {
   );
 }
 
-export default function RightSidePanel() {
+type Props = {
+  children: ReactNode;
+};
+
+export default function RightSidePanel({ children }: Props) {
   const [accordionOpen, setAccordionOpen] = useState<boolean>(false);
 
   return (
-    <div className={"flex flex-row"}>
-      <div className={"flex flex-col align-top pt-2"}>
+    <Drawer direction={"right"}>
+      <DrawerTrigger asChild>
         <button
           className={"h-6 w-6 border-2 rounded-l-2xl"}
-          onClick={() => setAccordionOpen(!accordionOpen)}
+          onClick={() => {
+            setAccordionOpen(!accordionOpen);
+          }}
         >
           {accordionOpen ? getChevronRight() : getChevronLeft()}
         </button>
-      </div>
-      <div
-        className={`grid overflow-hidden transition-all duration-500 ease-in-out ${accordionOpen ? "grid-cols-[1fr] opacity-100" : "grid-cols-[0fr] opacity-0"}`}
-      >
-        <div className={"overflow-hidden px-3 py-2 border-2 rounded-t-lg"}>
-          This is the Content
-        </div>
-      </div>
-    </div>
+      </DrawerTrigger>
+        {/*TODO: implement scroll here*/}
+      <DrawerContent className={"px-3 py-2 border-2 rounded-t-lg"}>
+        {children}
+      </DrawerContent>
+    </Drawer>
   );
 }
