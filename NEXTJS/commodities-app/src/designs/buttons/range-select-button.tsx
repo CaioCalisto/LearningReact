@@ -8,7 +8,6 @@ import {
 import { Calendar } from "@/components/ui/calendar";
 import { DateRange } from "react-day-picker";
 import { format } from "date-fns";
-import { Typography } from "@/designs";
 
 function RangeSelectButton() {
   const [dateRange, setDateRange] = React.useState<DateRange>();
