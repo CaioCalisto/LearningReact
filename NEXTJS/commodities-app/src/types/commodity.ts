@@ -1,11 +1,9 @@
 export type Commodity = {
-    title: string;
-    description: string;
-    code: string;
-    currentPrice: number;
-    currency: string;
-    frequency: string;
-    lastUpdate: string;
-    comparison: string;
-    lastPrice: number;
-};
+    title: string,
+    region: string,
+    category: string,
+    lastUpdate: string,
+    price: number,
+    metric: string,
+    code: string,
+}

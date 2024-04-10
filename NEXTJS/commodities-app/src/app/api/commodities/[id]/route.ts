@@ -1,4 +1,4 @@
-import {Commodity} from "@/types";
+import {CommodityDetails} from "@/types";
 
 export async function GET(
   request: Request,
@@ -7,7 +7,7 @@ export async function GET(
    return Response.json(getDummyDate(params.id as string));
 }
 
-function getDummyDate(id: string): Commodity[] {
+function getDummyDate(id: string): CommodityDetails[] {
   return [{
     title: "LDPE cont fob US",
     description:
