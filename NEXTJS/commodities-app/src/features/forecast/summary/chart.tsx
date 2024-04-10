@@ -3,7 +3,6 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import useChart from "./useChart";
 import { FilterButton } from "@/designs";
-import { Calendar } from "@/components/ui/calendar";
 import RangeSelectButton from "@/designs/buttons/range-select-button";
 
 type Props = {
