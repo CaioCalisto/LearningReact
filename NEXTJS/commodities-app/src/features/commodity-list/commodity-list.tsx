@@ -7,18 +7,22 @@ const columns: ColumnDefinitionType<Commodity>[] = [
   {
     attribute: "title",
     header: "Title",
+    width: '40%'
   },
   {
     attribute: "region",
     header: "Region",
+    width: '10%'
   },
   {
     attribute: "category",
     header: "Category",
+    width: '15%'
   },
   {
     attribute: "lastUpdate",
     header: "Last Update",
+    width: '10%'
   },
   {
     attribute: "price",

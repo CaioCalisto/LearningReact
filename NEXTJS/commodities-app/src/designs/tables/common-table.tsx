@@ -32,7 +32,7 @@ function CommonTable<T extends object>({ data, columns }: Props<T>) {
         {data.map((dataRow, dataIndex) => (
           <tr key={`table-row-${dataIndex}`}>
             {columns.map((column, columnIndex) => (
-              <td key={`table-row-cel-${columnIndex}`}>
+              <td width={column.width} key={`table-row-cel-${columnIndex}`}>
                 {getColumnValue(dataRow, column.attribute, column.customValue)}
               </td>
             ))}
