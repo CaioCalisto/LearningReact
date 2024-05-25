@@ -49,7 +49,6 @@ function CommodityList() {
     );
   }
 
-  console.log(data);
   return <CommonTable data={data} columns={columns} />;
 }
 
