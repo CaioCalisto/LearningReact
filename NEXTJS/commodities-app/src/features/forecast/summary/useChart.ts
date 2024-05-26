@@ -27,7 +27,6 @@ export default function useChart(commodityId: string): HighchartsReactProps {
     .withXAsis("Period", generateDateStrings(2022, 2027))
     .withYAsisTitle("Value")
     .withTooltip("Custom message")
-    .withNavigator(data)
     .getOptions();
 
   return { options };
