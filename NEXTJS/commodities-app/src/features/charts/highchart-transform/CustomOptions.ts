@@ -68,6 +68,27 @@ export class CustomOptions {
     return this;
   }
 
+  withNavigator(data: number[]): this {
+    this.highchartOptions = {
+      ...this.highchartOptions,
+      navigator: {
+        enabled: true,
+        handles: {
+          width: 10,
+          height: 24,
+          borderColor: '#BABCC0',
+          backgroundColor: '#FFF',
+        },
+        series: {
+          fillColor: `rgba(250,122,30,0.2)`,
+          data
+        },
+      }
+    }
+
+    return this;
+  }
+
   getOptions(): Options {
     return this.highchartOptions;
   }
