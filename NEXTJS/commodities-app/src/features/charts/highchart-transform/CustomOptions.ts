@@ -68,6 +68,19 @@ export class CustomOptions {
     return this;
   }
 
+  withZoom(min: number, max: number): this {
+    this.highchartOptions = {
+      ...this.highchartOptions,
+      xAxis: {
+        ...this.highchartOptions.xAxis,
+        min,
+        max,
+      },
+    };
+
+    return this;
+  }
+
   getOptions(): Options {
     return this.highchartOptions;
   }

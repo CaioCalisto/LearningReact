@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function Chart({ commodityId }: Props) {
-  const { options } = useChart(commodityId);
+  const { options, changeZoom } = useChart(commodityId);
 
   return (
     <div className={"flex flex-col gap-3"}>
@@ -33,11 +33,11 @@ export default function Chart({ commodityId }: Props) {
         </RightSidePanel>
       </div>
       <div className={"flex flex-row gap-3 flex-wrap justify-center"}>
-        <FilterButton>6M</FilterButton>
-        <FilterButton>1Y</FilterButton>
-        <FilterButton>3Y</FilterButton>
-        <FilterButton>5Y</FilterButton>
-        <FilterButton>All</FilterButton>
+        <FilterButton onClick={() => changeZoom(0, 6)}>6M</FilterButton>
+        <FilterButton onClick={() => changeZoom(0, 12)}>1Y</FilterButton>
+        <FilterButton onClick={() => changeZoom(0, 36)}>3Y</FilterButton>
+        <FilterButton onClick={() => changeZoom(0, 60)}>5Y</FilterButton>
+        <FilterButton onClick={() => changeZoom(0, 1200)}>All</FilterButton>
         <RangeSelectButton />
       </div>
     </div>
